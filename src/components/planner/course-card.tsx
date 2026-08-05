@@ -114,12 +114,12 @@ export function CourseCard({
           <button
             ref={prerequisiteTriggerRef}
             type="button"
-            aria-label={`Prereqs for ${section.courseCode}`}
+            aria-label={`Prerequisites for ${section.courseCode}`}
             aria-expanded={isPrerequisiteOpen}
             aria-haspopup="dialog"
             onClick={() => setIsPrerequisiteOpen((isOpen) => !isOpen)}
           >
-            Prereqs
+            Prerequisites
           </button>
           {isPrerequisiteOpen ? (
             <PrerequisitePopover

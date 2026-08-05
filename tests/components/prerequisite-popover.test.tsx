@@ -34,7 +34,7 @@ describe("prerequisite disclosure", () => {
   ])("renders %s prerequisite information distinctly", (prerequisite, expectedText, sourceUrl) => {
     render(<CourseCard section={sectionWith(prerequisite)} onAdd={() => {}} />);
 
-    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^prerequisites for amst 140$/i }));
 
     const dialog = screen.getByRole("dialog", { name: /prerequisites for amst 140/i });
     expect(dialog).toHaveTextContent(expectedText);
@@ -49,7 +49,7 @@ describe("prerequisite disclosure", () => {
 
   it("closes disclosure by pointer and restores focus to its trigger", () => {
     render(<CourseCard section={sectionWith({ status: "unavailable" })} onAdd={() => {}} />);
-    const trigger = screen.getByRole("button", { name: /^prereqs for amst 140$/i });
+    const trigger = screen.getByRole("button", { name: /^prerequisites for amst 140$/i });
 
     fireEvent.click(trigger);
     const popover = screen.getByRole("dialog", { name: /prerequisites for amst 140/i });
@@ -71,7 +71,7 @@ describe("prerequisite disclosure", () => {
         return { width: 420, height: 160, top: 0, left: 0, right: 420, bottom: 160 } as DOMRect;
       }
 
-      if (this.getAttribute("aria-label") === "Prereqs for AMST 140") {
+      if (this.getAttribute("aria-label") === "Prerequisites for AMST 140") {
         return { width: 80, height: 40, top: 400, left: 720, right: 800, bottom: 440 } as DOMRect;
       }
 
@@ -79,14 +79,14 @@ describe("prerequisite disclosure", () => {
     });
 
     render(<CourseCard section={sectionWith({ status: "unavailable" })} onAdd={() => {}} />);
-    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^prerequisites for amst 140$/i }));
 
     expect(screen.getByRole("dialog", { name: /prerequisites for amst 140/i })).toHaveStyle({ left: "720px" });
   });
 
   it("closes by keyboard control and Escape, returning focus to its trigger", () => {
     render(<CourseCard section={sectionWith({ status: "unavailable" })} onAdd={() => {}} />);
-    const trigger = screen.getByRole("button", { name: /^prereqs for amst 140$/i });
+    const trigger = screen.getByRole("button", { name: /^prerequisites for amst 140$/i });
 
     fireEvent.click(trigger);
     const closeButton = screen.getByRole("button", { name: /close prerequisites/i });

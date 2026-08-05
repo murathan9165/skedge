@@ -61,7 +61,7 @@ test("click Add, prerequisite disclosure, refresh reset, and static-only runtime
   ).toBe(true);
   await searchFor(page, "AMST 140");
 
-  const prereqTrigger = page.getByRole("button", { name: "Prereqs for AMST 140", exact: true });
+  const prereqTrigger = page.getByRole("button", { name: "Prerequisites for AMST 140", exact: true });
   await prereqTrigger.click();
   const popover = page.getByRole("dialog", { name: "Prerequisites for AMST 140" });
   await expect(popover).toBeVisible();
@@ -95,7 +95,7 @@ test("prerequisite popovers remain fully visible at desktop and narrow viewport 
       await page.getByRole("button", { name: "Open course search" }).click();
     }
     await searchFor(page, "PHYS 240");
-    const trigger = page.getByRole("button", { name: "Prereqs for PHYS 240", exact: true });
+    const trigger = page.getByRole("button", { name: "Prerequisites for PHYS 240", exact: true });
     await trigger.scrollIntoViewIfNeeded();
     await trigger.click();
     const popover = page.getByRole("dialog", { name: "Prerequisites for PHYS 240" });
@@ -185,7 +185,7 @@ test("untimed sections keep prerequisites but cannot be clicked or dragged into 
   const untimedCard = page.locator('[data-section-number="00"]').filter({ hasText: "AMST 497Y" });
   await expect(untimedCard).not.toHaveAttribute("data-drag-enabled");
   await expect(untimedCard.locator(".course-card__details")).toHaveAttribute("tabindex", "-1");
-  await page.getByRole("button", { name: "Prereqs for AMST 497Y", exact: true }).click();
+  await page.getByRole("button", { name: "Prerequisites for AMST 497Y", exact: true }).click();
   await expect(page.getByRole("dialog", { name: "Prerequisites for AMST 497Y" })).toBeVisible();
   await expect(page.locator(".weekly-calendar__event")).toHaveCount(0);
 });
@@ -203,7 +203,7 @@ test("search, prerequisites, Add, conflict, and Remove are keyboard operable", a
   await page.keyboard.press("Tab");
   await expect(page.getByRole("button", { name: "Add ANTH 111", exact: true }).first()).toBeFocused();
   await page.keyboard.press("Tab");
-  const prerequisiteTrigger = page.getByRole("button", { name: "Prereqs for ANTH 111", exact: true }).first();
+  const prerequisiteTrigger = page.getByRole("button", { name: "Prerequisites for ANTH 111", exact: true }).first();
   await expect(prerequisiteTrigger).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("dialog", { name: "Prerequisites for ANTH 111" })).toBeVisible();
@@ -262,7 +262,7 @@ test("narrow drawer traps keyboard focus and releases it when resized to desktop
   await search.fill("AMST 140");
 
   const closeDrawer = page.getByRole("button", { name: "Close course search" });
-  const prerequisiteTrigger = page.getByRole("button", { name: "Prereqs for AMST 140", exact: true });
+  const prerequisiteTrigger = page.getByRole("button", { name: "Prerequisites for AMST 140", exact: true });
   await page.keyboard.press("Shift+Tab");
   await expect(closeDrawer).toBeFocused();
   await page.keyboard.press("Shift+Tab");
@@ -326,7 +326,7 @@ test("Escape closes a nested prerequisite popover before the narrow drawer", asy
   const openDrawer = page.getByRole("button", { name: "Open course search" });
   await openDrawer.click();
   await searchFor(page, "AMST 140");
-  const trigger = page.getByRole("button", { name: "Prereqs for AMST 140", exact: true });
+  const trigger = page.getByRole("button", { name: "Prerequisites for AMST 140", exact: true });
   await trigger.click();
   const popover = page.getByRole("dialog", { name: "Prerequisites for AMST 140" });
   const drawer = page.getByRole("dialog", { name: "Course search drawer" });

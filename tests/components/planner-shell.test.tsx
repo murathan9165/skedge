@@ -69,7 +69,7 @@ describe("PlannerShell", () => {
     render(<PlannerShell sections={sections} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Add MATH 111" }));
-    fireEvent.click(screen.getByRole("button", { name: "Prereqs for PHYS 112" }));
+    fireEvent.click(screen.getByRole("button", { name: "Prerequisites for PHYS 112" }));
     expect(screen.getByRole("dialog", { name: "Prerequisites for PHYS 112" })).toBeVisible();
     expect(screen.getAllByRole("button", { name: /^added /i })).toHaveLength(1);
 

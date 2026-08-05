@@ -40,12 +40,12 @@ describe("CourseCard", () => {
     expect(screen.getByRole("article")).toHaveAttribute("data-drag-enabled", "true");
   });
 
-  it("keeps Add and Prereqs controls interactive on a draggable card", () => {
+  it("keeps Add and Prerequisites controls interactive on a draggable card", () => {
     const onAdd = vi.fn();
     render(<CourseCard section={scheduledSection} onAdd={onAdd} />);
 
     fireEvent.click(screen.getByRole("button", { name: /^add amst 140$/i }));
-    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^prerequisites for amst 140$/i }));
 
     expect(onAdd).toHaveBeenCalledOnce();
     expect(onAdd).toHaveBeenCalledWith(scheduledSection);
@@ -75,7 +75,7 @@ describe("CourseCard", () => {
     expect(screen.getByRole("article")).not.toHaveAttribute("data-drag-enabled");
   });
 
-  it("keeps prereqs available but disables Add and dragging when time is unavailable", () => {
+  it("keeps prerequisites available but disables Add and dragging when time is unavailable", () => {
     const untimedSection = {
       ...scheduledSection,
       crn: "80566",
@@ -87,13 +87,13 @@ describe("CourseCard", () => {
 
     expect(screen.getByText("Time unavailable")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^add amst 140$/i })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /^prereqs for amst 140$/i })).toBeEnabled();
+    expect(screen.getByRole("button", { name: /^prerequisites for amst 140$/i })).toBeEnabled();
     expect(screen.queryByRole("button", { name: /drag amst 140/i })).not.toBeInTheDocument();
     expect(screen.getByRole("article")).not.toHaveAttribute("data-drag-enabled");
     expect(screen.getByRole("article")).not.toHaveAttribute("draggable", "true");
     expect(screen.getByRole("article").querySelector(".course-card__details")).toHaveAttribute("tabindex", "-1");
 
-    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^prerequisites for amst 140$/i }));
     expect(screen.getByRole("dialog", { name: /prerequisites for amst 140/i })).toBeInTheDocument();
   });
 });
