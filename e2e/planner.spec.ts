@@ -238,6 +238,8 @@ test("search, prerequisites, Add, conflict, and Remove are keyboard operable", a
   await page.keyboard.type("no matching course");
   await page.keyboard.press("Tab");
   await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: "Reset week" })).toBeFocused();
+  await page.keyboard.press("Tab");
   await expect(page.locator(".weekly-calendar__scroll")).toBeFocused();
   await page.keyboard.press("Tab");
   const remove = page.getByRole("button", { name: "Remove ANTH 111 section 01" }).first();

@@ -25,6 +25,7 @@ export interface EventGeometry {
 }
 
 export const CALENDAR_PIXELS_PER_MINUTE = 1;
+export const CALENDAR_START_MINUTES = 8 * 60;
 
 export function timeToMinutes(time: string): number {
   const [hours, minutes] = time.split(":").map(Number);
@@ -62,11 +63,10 @@ export function projectScheduleEvents(
 
 export function deriveCalendarBounds(sections: CourseSection[]): CalendarBounds {
   const meetings = sections.flatMap((section) => section.meetings);
-  const earliest = Math.min(...meetings.map((meeting) => timeToMinutes(meeting.startTime)));
   const latest = Math.max(...meetings.map((meeting) => timeToMinutes(meeting.endTime)));
 
   return {
-    startMinutes: Math.max(0, Math.floor(earliest / 60) * 60 - 60),
+    startMinutes: CALENDAR_START_MINUTES,
     endMinutes: Math.min(24 * 60, Math.ceil(latest / 60) * 60 + 60),
   };
 }

@@ -40,19 +40,21 @@ describe("WeeklyCalendar", () => {
           sectionWith("LATE", "DRAM 104", "F", "19:00", "22:00"),
         ]}
         onRemove={() => {}}
+        onReset={() => {}}
       />,
     );
 
-    expect(screen.getByRole("grid", { name: "Monday through Friday class schedule" })).toHaveStyle({ height: "960px" });
+    expect(screen.getByRole("grid", { name: "Monday through Friday class schedule" })).toHaveStyle({ height: "900px" });
     expect(screen.getByRole("row", { name: "Monday" })).toHaveStyle({ position: "relative" });
-    expect(screen.getByRole("article", { name: /arts 101 section 00, monday/i })).toHaveStyle({ position: "absolute", top: "70px", height: "80px" });
-    expect(screen.getByRole("article", { name: /biol 102 section 00, tuesday/i })).toHaveStyle({ top: "180px", height: "20px" });
-    expect(screen.getByRole("article", { name: /chem 103 section 00, wednesday/i })).toHaveStyle({ top: "70px", height: "170px" });
-    expect(screen.getByRole("article", { name: /dram 104 section 00, friday/i })).toHaveStyle({ top: "720px", height: "180px" });
+    expect(screen.getByRole("article", { name: /arts 101 section 00, monday/i })).toHaveStyle({ position: "absolute", top: "10px", height: "80px" });
+    expect(screen.getByRole("article", { name: /biol 102 section 00, tuesday/i })).toHaveStyle({ top: "120px", height: "20px" });
+    expect(screen.getByRole("article", { name: /chem 103 section 00, wednesday/i })).toHaveStyle({ top: "10px", height: "170px" });
+    expect(screen.getByRole("article", { name: /dram 104 section 00, friday/i })).toHaveStyle({ top: "660px", height: "180px" });
 
-    expect(screen.getByText("7:00 AM")).toHaveStyle({ position: "absolute", top: "0px" });
+    expect(screen.getByText("8:00 AM")).toHaveStyle({ position: "absolute", top: "0px" });
     expect(screen.getByText("11:00 PM")).toBeInTheDocument();
     expect(screen.getByText("ROOM-LATE")).toBeInTheDocument();
+    expect(screen.queryByText("Your week")).not.toBeInTheDocument();
   });
 
   it("keeps both overlapping meetings visible with non-color conflict status", () => {
@@ -63,6 +65,7 @@ describe("WeeklyCalendar", () => {
           sectionWith("TWO", "PHYS 112", "M", "09:30", "10:30"),
         ]}
         onRemove={() => {}}
+        onReset={() => {}}
       />,
     );
 
@@ -81,6 +84,7 @@ describe("WeeklyCalendar", () => {
       <WeeklyCalendar
         sections={[sectionWith("80565", "AMST 140", "W", "08:40", "10:00")]}
         onRemove={(crn) => removedCrns.push(crn)}
+        onReset={() => {}}
       />,
     );
 

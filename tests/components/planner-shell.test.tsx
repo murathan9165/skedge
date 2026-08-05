@@ -77,4 +77,17 @@ describe("PlannerShell", () => {
 
     expect(screen.getAllByRole("status", { name: /^conflict with /i })).toHaveLength(2);
   });
+
+  it("clears every scheduled section with Reset", () => {
+    render(<PlannerShell sections={sections} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Add MATH 111" }));
+    fireEvent.click(screen.getByRole("button", { name: "Add PHYS 112" }));
+    fireEvent.click(screen.getByRole("button", { name: "Reset week" }));
+
+    expect(screen.getByText("0 sections added")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Add MATH 111" })).toBeEnabled();
+    expect(screen.getByRole("button", { name: "Add PHYS 112" })).toBeEnabled();
+    expect(document.querySelectorAll(".weekly-calendar__event")).toHaveLength(0);
+  });
 });

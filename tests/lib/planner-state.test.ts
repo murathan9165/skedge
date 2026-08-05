@@ -28,4 +28,10 @@ describe("plannerReducer", () => {
       selectedCrns: ["80336"],
     });
   });
+
+  it("resets every selected CRN", () => {
+    expect(
+      plannerReducer({ selectedCrns: ["80565", "80336"] }, { type: "reset" }),
+    ).toEqual(initialPlannerState);
+  });
 });

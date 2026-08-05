@@ -196,6 +196,7 @@ export function PlannerShell({ sections = snapshotSections }: PlannerShellProps)
         <WeeklyCalendar
           sections={selectedSections}
           onRemove={(crn) => dispatch({ type: "remove", crn })}
+          onReset={() => dispatch({ type: "reset" })}
         />
         <dialog
           ref={drawerPanelRef}

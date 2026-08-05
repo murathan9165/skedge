@@ -84,12 +84,12 @@ describe("calendar geometry", () => {
   it("derives stable padded whole-hour bounds from the complete Fall 2026 snapshot", () => {
     const bounds = deriveCalendarBounds((snapshot as CourseSnapshot).sections);
 
-    expect(bounds).toEqual({ startMinutes: 420, endMinutes: 1380 });
-    expect(getCalendarHeight(bounds)).toBe(960);
+    expect(bounds).toEqual({ startMinutes: 480, endMinutes: 1380 });
+    expect(getCalendarHeight(bounds)).toBe(900);
   });
 
   it("uses one shared minute scale for event offsets and durations", () => {
-    const bounds = { startMinutes: 420, endMinutes: 1380 };
+    const bounds = { startMinutes: 480, endMinutes: 1380 };
     const earlyLongEvent = {
       ...projectScheduleEvents([section], ["80565"])[0],
       startMinutes: 490,
@@ -97,6 +97,6 @@ describe("calendar geometry", () => {
     };
 
     expect(CALENDAR_PIXELS_PER_MINUTE).toBe(1);
-    expect(getEventGeometry(earlyLongEvent, bounds)).toEqual({ top: 70, height: 170 });
+    expect(getEventGeometry(earlyLongEvent, bounds)).toEqual({ top: 10, height: 170 });
   });
 });

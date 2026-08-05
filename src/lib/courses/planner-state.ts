@@ -4,7 +4,8 @@ export interface PlannerState {
 
 export type PlannerAction =
   | { type: "add"; crn: string }
-  | { type: "remove"; crn: string };
+  | { type: "remove"; crn: string }
+  | { type: "reset" };
 
 export const initialPlannerState: PlannerState = { selectedCrns: [] };
 
@@ -18,6 +19,10 @@ export function plannerReducer(
     }
 
     return { selectedCrns: [...state.selectedCrns, action.crn] };
+  }
+
+  if (action.type === "reset") {
+    return initialPlannerState;
   }
 
   if (!state.selectedCrns.includes(action.crn)) {

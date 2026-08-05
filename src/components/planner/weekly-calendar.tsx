@@ -18,6 +18,7 @@ import type { CourseSection, MeetingDay } from "@/lib/courses/types";
 interface WeeklyCalendarProps {
   sections: CourseSection[];
   onRemove: (crn: string) => void;
+  onReset: () => void;
 }
 
 export const WEEKLY_CALENDAR_DROP_ID = "weekly-calendar";
@@ -99,7 +100,7 @@ function getDayEventLayouts(events: ReturnType<typeof markScheduleConflicts>) {
   return layouts;
 }
 
-export function WeeklyCalendar({ sections, onRemove }: WeeklyCalendarProps) {
+export function WeeklyCalendar({ sections, onRemove, onReset }: WeeklyCalendarProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const { ref: dropTargetRef, isDropTarget } = useDroppable({
     id: WEEKLY_CALENDAR_DROP_ID,
@@ -133,10 +134,22 @@ export function WeeklyCalendar({ sections, onRemove }: WeeklyCalendarProps) {
     >
       <div className="weekly-calendar__heading">
         <div>
-          <p className="eyebrow">Your week</p>
           <h2 ref={headingRef} id="weekly-calendar-heading" tabIndex={-1}>Weekly schedule</h2>
         </div>
-        <p>{sections.length} {sections.length === 1 ? "section" : "sections"} added</p>
+        <div className="weekly-calendar__controls">
+          <p>{sections.length} {sections.length === 1 ? "section" : "sections"} added</p>
+          <button
+            type="button"
+            disabled={sections.length === 0}
+            aria-label="Reset week"
+            onClick={() => {
+              onReset();
+              headingRef.current?.focus();
+            }}
+          >
+            Reset
+          </button>
+        </div>
       </div>
       <p className="visually-hidden" role="status" aria-live="polite">
         {isDropTarget ? "Release to add this section at its official meeting times." : ""}
