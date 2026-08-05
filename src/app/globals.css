@@ -423,11 +423,17 @@ button:disabled {
 }
 
 .weekly-calendar__time-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inline-size: 100%;
-  padding-inline-end: 0.55rem;
-  color: var(--muted-ink);
+  padding: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.68rem;
-  text-align: end;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
   transform: translateY(-50%);
 }
 
