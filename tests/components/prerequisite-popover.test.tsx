@@ -1,11 +1,14 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { CourseCard } from "@/components/planner/course-card";
 import type { CourseSection, Prerequisite } from "@/lib/courses/types";
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+});
 
 function sectionWith(prerequisite: Prerequisite): CourseSection {
   return {
@@ -56,6 +59,29 @@ describe("prerequisite disclosure", () => {
 
     expect(screen.queryByRole("dialog", { name: /prerequisites for amst 140/i })).not.toBeInTheDocument();
     expect(trigger).toHaveFocus();
+  });
+
+  it("opens toward the right side of a right-panel card when there is room", () => {
+    Object.defineProperty(window, "innerWidth", {
+      configurable: true,
+      value: 1200,
+    });
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(function (this: HTMLElement) {
+      if (this.classList.contains("prerequisite-popover")) {
+        return { width: 420, height: 160, top: 0, left: 0, right: 420, bottom: 160 } as DOMRect;
+      }
+
+      if (this.getAttribute("aria-label") === "Prereqs for AMST 140") {
+        return { width: 80, height: 40, top: 400, left: 720, right: 800, bottom: 440 } as DOMRect;
+      }
+
+      return { width: 0, height: 0, top: 0, left: 0, right: 0, bottom: 0 } as DOMRect;
+    });
+
+    render(<CourseCard section={sectionWith({ status: "unavailable" })} onAdd={() => {}} />);
+    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+
+    expect(screen.getByRole("dialog", { name: /prerequisites for amst 140/i })).toHaveStyle({ left: "720px" });
   });
 
   it("closes by keyboard control and Escape, returning focus to its trigger", () => {

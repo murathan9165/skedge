@@ -51,7 +51,7 @@ export function PrerequisitePopover({
         window.innerWidth - popoverBounds.width - margin,
       );
       const left = Math.min(
-        Math.max(margin, triggerBounds.right - popoverBounds.width),
+        Math.max(margin, triggerBounds.left),
         maximumLeft,
       );
       const aboveTop = triggerBounds.top - gap - popoverBounds.height;
