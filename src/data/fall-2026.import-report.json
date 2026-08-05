@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "term": "fall-2026",
+  "importedAt": "2026-08-05T00:47:12.489Z",
+  "sources": {
+    "schedule": {
+      "url": "https://registrar.kenyon.edu/sep26_dept.htm",
+      "retrievedAt": "2026-08-05T00:46:49.651Z"
+    },
+    "catalogIndex": {
+      "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/course-offerings/",
+      "retrievedAt": "2026-08-05T00:46:52.274Z"
+    },
+    "catalogPages": [
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/african-diaspora-studies/courses-in-african-diaspora-studies/",
+        "retrievedAt": "2026-08-05T00:46:52.584Z",
+        "courseCount": 5
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/american-studies/academic-program-and-requirements/courses-in-american-studies/",
+        "retrievedAt": "2026-08-05T00:46:53.035Z",
+        "courseCount": 22
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/anthropology/academic-program-requirements/courses-in-anthropology/",
+        "retrievedAt": "2026-08-05T00:46:54.460Z",
+        "courseCount": 39
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/art-history/academic-program-requirements/courses-in-art-history/",
+        "retrievedAt": "2026-08-05T00:46:55.230Z",
+        "courseCount": 40
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/asian-and-middle-east-studies/academic-program-requirements/courses-in-asian-and-middle-east-studies/",
+        "retrievedAt": "2026-08-05T00:46:52.883Z",
+        "courseCount": 7
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/",
+        "retrievedAt": "2026-08-05T00:46:55.102Z",
+        "courseCount": 50
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/chemistry/academic-program-requirements/courses-in-chemistry/",
+        "retrievedAt": "2026-08-05T00:46:53.231Z",
+        "courseCount": 28
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/",
+        "retrievedAt": "2026-08-05T00:46:53.110Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses/",
+        "retrievedAt": "2026-08-05T00:46:55.404Z",
+        "courseCount": 17
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses-in-latin/",
+        "retrievedAt": "2026-08-05T00:46:55.372Z",
+        "courseCount": 7
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses-in-greek/",
+        "retrievedAt": "2026-08-05T00:46:55.891Z",
+        "courseCount": 10
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/computing/academic-program-requirements/courses-in-computing/",
+        "retrievedAt": "2026-08-05T00:46:55.256Z",
+        "courseCount": 9
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/",
+        "retrievedAt": "2026-08-05T00:46:53.204Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-dance/",
+        "retrievedAt": "2026-08-05T00:46:55.612Z",
+        "courseCount": 21
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-drama/",
+        "retrievedAt": "2026-08-05T00:46:56.145Z",
+        "courseCount": 27
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-film/",
+        "retrievedAt": "2026-08-05T00:46:55.555Z",
+        "courseCount": 19
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-production/",
+        "retrievedAt": "2026-08-05T00:46:55.541Z",
+        "courseCount": 2
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/economics/academic-program-requirements/courses-in-economics/",
+        "retrievedAt": "2026-08-05T00:46:55.292Z",
+        "courseCount": 40
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/english/academic-program-requirements/courses-in-english/",
+        "retrievedAt": "2026-08-05T00:46:54.504Z",
+        "courseCount": 121
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/environmental-studies/academic-program-requirements/courses-in-environmental-studies/",
+        "retrievedAt": "2026-08-05T00:46:52.970Z",
+        "courseCount": 16
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/experiential-learning/",
+        "retrievedAt": "2026-08-05T00:46:53.217Z",
+        "courseCount": 2
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/gender-sexuality-studies/academic-program-requirements/course-in-gender-sexuality-studies/",
+        "retrievedAt": "2026-08-05T00:46:53.051Z",
+        "courseCount": 14
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/history/academic-program-requirements/courses-in-history/",
+        "retrievedAt": "2026-08-05T00:46:56.688Z",
+        "courseCount": 114
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/integrated-program-in-humane-studies/academic-program-requirements/courses-in-integrated-program-in-humane-studies/",
+        "retrievedAt": "2026-08-05T00:46:52.857Z",
+        "courseCount": 10
+      },
+      {
+        "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/interdisciplinary-courses/",
+        "retrievedAt": "2026-08-05T00:46:53.437Z",
+        "courseCount": 16
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/international-studies/academic-program-requirements/courses-in-international-studies/",
+        "retrievedAt": "2026-08-05T00:46:53.024Z",
+        "courseCount": 6
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/islamic-civilizations-cultures/courses-islamic-civilizations-cultures/",
+        "retrievedAt": "2026-08-05T00:46:54.878Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/latine-studies/academic-program-requirements/course-listings-in-latine-studies/",
+        "retrievedAt": "2026-08-05T00:46:53.401Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/law-society/academic-program-requirements/courses-in-law-society/",
+        "retrievedAt": "2026-08-05T00:46:53.331Z",
+        "courseCount": 6
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/",
+        "retrievedAt": "2026-08-05T00:46:53.675Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/courses-in-mathematics/",
+        "retrievedAt": "2026-08-05T00:46:56.054Z",
+        "courseCount": 34
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/courses-in-statistics/",
+        "retrievedAt": "2026-08-05T00:46:55.956Z",
+        "courseCount": 9
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/",
+        "retrievedAt": "2026-08-05T00:46:54.958Z",
+        "courseCount": 0
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-american-sign-language/",
+        "retrievedAt": "2026-08-05T00:46:55.813Z",
+        "courseCount": 2
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-arabic/",
+        "retrievedAt": "2026-08-05T00:46:55.917Z",
+        "courseCount": 11
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-chinese/",
+        "retrievedAt": "2026-08-05T00:46:56.064Z",
+        "courseCount": 13
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-french/",
+        "retrievedAt": "2026-08-05T00:46:56.183Z",
+        "courseCount": 23
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-german/",
+        "retrievedAt": "2026-08-05T00:46:56.196Z",
+        "courseCount": 19
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-italian/",
+        "retrievedAt": "2026-08-05T00:46:55.925Z",
+        "courseCount": 9
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-japanese/",
+        "retrievedAt": "2026-08-05T00:46:55.988Z",
+        "courseCount": 12
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-russian/",
+        "retrievedAt": "2026-08-05T00:46:56.113Z",
+        "courseCount": 16
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-spanish/",
+        "retrievedAt": "2026-08-05T00:46:56.597Z",
+        "courseCount": 36
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-mll/",
+        "retrievedAt": "2026-08-05T00:46:55.951Z",
+        "courseCount": 7
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/music/academic-program-requirements/courses-in-music/",
+        "retrievedAt": "2026-08-05T00:47:12.450Z",
+        "courseCount": 159
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/neuroscience/academic-program-requirements/courses-in-neuroscience/",
+        "retrievedAt": "2026-08-05T00:46:55.905Z",
+        "courseCount": 25
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/philosophy/academic-program-requirements/courses-in-philosophy/",
+        "retrievedAt": "2026-08-05T00:46:56.007Z",
+        "courseCount": 46
+      },
+      {
+        "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/physical-education-and-health-studies/",
+        "retrievedAt": "2026-08-05T00:46:53.628Z",
+        "courseCount": 13
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/physics/academic-program-requirements/courses-in-physics/",
+        "retrievedAt": "2026-08-05T00:46:54.935Z",
+        "courseCount": 42
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/political-science/academic-program-requirements/courses-in-political-science/",
+        "retrievedAt": "2026-08-05T00:46:55.581Z",
+        "courseCount": 62
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/psychology/academic-program-requirements/courses-in-psychology/",
+        "retrievedAt": "2026-08-05T00:46:55.774Z",
+        "courseCount": 41
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/religious-studies/academic-program-requirements/courses-in-religious-studies/",
+        "retrievedAt": "2026-08-05T00:46:55.133Z",
+        "courseCount": 46
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/sociology/academic-program-requirements/courses-in-sociology/",
+        "retrievedAt": "2026-08-05T00:46:55.931Z",
+        "courseCount": 58
+      },
+      {
+        "url": "https://www.kenyon.edu/academics/departments-and-majors/studio-art/academic-program-requirements/courses-in-studio-art/",
+        "retrievedAt": "2026-08-05T00:46:55.465Z",
+        "courseCount": 32
+      }
+    ]
+  },
+  "counts": {
+    "scheduleRows": {
+      "total": 716,
+      "header": 2,
+      "section": 629,
+      "continuation": 5,
+      "divider": 40,
+      "summary": 40
+    },
+    "catalogPages": 53,
+    "catalogCourses": 1363,
+    "sections": 629,
+    "prerequisites": {
+      "known": 461,
+      "none": 119,
+      "unavailable": 49
+    }
+  },
+  "unmatchedPrerequisites": [
+    {
+      "crn": "80566",
+      "courseCode": "AMST 291",
+      "title": "ST: Black Masculinities",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80378",
+      "courseCode": "ANTH 291",
+      "title": "ST:Hyphenat Asian-Amer Identit",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80559",
+      "courseCode": "ARTS 291",
+      "title": "ST: Japanese Craft and Art",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80122",
+      "courseCode": "AMES 101",
+      "title": "Intro Asian & Mid East Studies",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80564",
+      "courseCode": "AMES 291",
+      "title": "ST: SE Asian Hist, Socy, Cultr",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80731",
+      "courseCode": "AMES 391",
+      "title": "ST: Contesting India",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80586",
+      "courseCode": "GREK 201",
+      "title": "Intermediate Greek: Prose",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80587",
+      "courseCode": "GREK 301",
+      "title": "Advanced Greek",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80584",
+      "courseCode": "LATN 201",
+      "title": "Intermediate Latin",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80585",
+      "courseCode": "LATN 301",
+      "title": "Advanced Latin: Roman Women",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80678",
+      "courseCode": "COMP 103",
+      "title": "Electronic Textiles",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80439",
+      "courseCode": "COMP 191",
+      "title": "ST: Intro to Program with AI",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80710",
+      "courseCode": "DDF 300",
+      "title": "Technical Practicum",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80711",
+      "courseCode": "DDF 301",
+      "title": "Performance Practicum",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80531",
+      "courseCode": "DRAM 110",
+      "title": "The Play:Production&Performanc",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80726",
+      "courseCode": "FILM 291",
+      "title": "ST: Women in Cinema",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80549",
+      "courseCode": "FILM 480",
+      "title": "Senior Seminar in Film",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80503",
+      "courseCode": "ENGL 201",
+      "title": "Introduction to Poetry Writing",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80505",
+      "courseCode": "ENGL 205",
+      "title": "Multi-Genre Creative Writing",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80508",
+      "courseCode": "ENGL 217",
+      "title": "Writing Center Colloquium",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80656",
+      "courseCode": "ENGL 391",
+      "title": "ST: Flash Prose Studio",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80696",
+      "courseCode": "ENGL 391",
+      "title": "ST:Feminist Fiction Since 1960",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80719",
+      "courseCode": "ENGL 391",
+      "title": "ST: Modern Indian Literature",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80521",
+      "courseCode": "ENGL 491",
+      "title": "ST: Premodern Sexualities",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80522",
+      "courseCode": "ENGL 491",
+      "title": "ST: Genres of the Contemporary",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80575",
+      "courseCode": "ENVS 392",
+      "title": "ST: Forest Ecology Lab",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80661",
+      "courseCode": "GSS 291",
+      "title": "ST: Gender, Sexuality, & Sci",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80037",
+      "courseCode": "HIST 100",
+      "title": "History First-Year Seminar",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80045",
+      "courseCode": "HIST 291",
+      "title": "ST: History of Korea",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80046",
+      "courseCode": "HIST 291",
+      "title": "ST: US Consumer Culture",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80044",
+      "courseCode": "HIST 491",
+      "title": "ST: Women in Civil Rights Mvmt",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80659",
+      "courseCode": "INDS 191",
+      "title": "ST: Comm Healthcare Sem TtoP",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80047",
+      "courseCode": "INDS 231",
+      "title": "The Holocaust",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80650",
+      "courseCode": "IPHS 111Y",
+      "title": "Odyssey:Wisdom & Understanding",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80651",
+      "courseCode": "IPHS 200",
+      "title": "Programming Humanity",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80652",
+      "courseCode": "IPHS 200",
+      "title": "Programming Humanity",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80724",
+      "courseCode": "JAPN 291",
+      "title": "ST: Love & Loss Japan Lit",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80021",
+      "courseCode": "MLL 100",
+      "title": "2nd Lang Acquisition & Teach",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80571",
+      "courseCode": "SPAN 391",
+      "title": "ST: Fighting Fascism in Spain",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80574",
+      "courseCode": "SPAN 391",
+      "title": "ST: Env Catastroph L Amer Lit",
+      "reason": "special-topic"
+    },
+    {
+      "crn": "80008",
+      "courseCode": "PHIL 450",
+      "title": "Senior Philosophy Workshop",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80011",
+      "courseCode": "PHIL 497",
+      "title": "Senior Honors",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80427",
+      "courseCode": "PHYS 381",
+      "title": "Electronics II",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80392",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80393",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80394",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80395",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80396",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    },
+    {
+      "crn": "80697",
+      "courseCode": "PSCI 101Y",
+      "title": "The Quest for Justice",
+      "reason": "catalog-prerequisite-unavailable"
+    }
+  ]
+}
