@@ -221,6 +221,14 @@ button:disabled {
   background: var(--surface-subtle);
 }
 
+.course-card[data-drag-enabled="true"] .course-card__details {
+  cursor: grab;
+}
+
+.course-card--dragging .course-card__details {
+  cursor: grabbing;
+}
+
 .course-card--dragging {
   opacity: 0.72;
   box-shadow: var(--shadow);
@@ -454,7 +462,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
   min-inline-size: 0;
-  padding: 0.3rem;
+  padding: 0.3rem 1.65rem 0.3rem 0.3rem;
   overflow: auto;
   border: 1px solid #b97b89;
   border-inline-start: 0.22rem solid var(--accent);
@@ -495,15 +503,26 @@ button:disabled {
   font-weight: 700;
 }
 
-.weekly-calendar__event button {
-  align-self: start;
-  margin-block-start: 0.2rem;
-  padding: 0.1rem 0.25rem;
+.weekly-calendar__event-remove {
+  position: absolute;
+  inset-block-start: 0.15rem;
+  inset-inline-end: 0.15rem;
+  display: grid;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  place-items: center;
+  padding: 0;
   border-color: currentColor;
   background: var(--surface);
   color: var(--danger);
-  font-size: 0.62rem;
+  font-size: 1rem;
   font-weight: 700;
+  line-height: 1;
+}
+
+.weekly-calendar__event-remove:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
 }
 
 @media (max-width: 52rem) {

@@ -84,7 +84,11 @@ describe("WeeklyCalendar", () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Remove AMST 140 section 00" }));
+    const removeButton = screen.getByRole("button", { name: "Remove AMST 140 section 00" });
+    expect(removeButton).toHaveTextContent("×");
+    expect(removeButton).toHaveClass("weekly-calendar__event-remove");
+
+    fireEvent.click(removeButton);
 
     expect(removedCrns).toEqual(["80565"]);
   });

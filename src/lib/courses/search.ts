@@ -1,5 +1,53 @@
 import type { CourseSection } from "./types";
 
+const subjectAliases: Record<string, string> = {
+  AMES: "Asian and Middle East Studies",
+  AMST: "American Studies",
+  ANTH: "Anthropology",
+  ARBC: "Arabic",
+  ARHS: "Art History",
+  ARTS: "Studio Art",
+  ASL: "American Sign Language",
+  BIOL: "Biology",
+  CHEM: "Chemistry",
+  CHNS: "Chinese",
+  CLAS: "Classics",
+  COMP: "Computer Science",
+  DANC: "Dance",
+  DDF: "Dance, Drama and Film",
+  DRAM: "Drama",
+  ECON: "Economics",
+  ENGL: "English",
+  ENVS: "Environmental Studies",
+  FILM: "Film",
+  FREN: "French",
+  GERM: "German",
+  GREK: "Greek",
+  GSS: "Gender and Sexuality Studies",
+  HIST: "History",
+  INDS: "International Studies",
+  INST: "Interdisciplinary Studies",
+  IPHS: "Integrated Program in Humane Studies",
+  ITAL: "Italian",
+  JAPN: "Japanese",
+  LATN: "Latin",
+  MATH: "Mathematics",
+  MLL: "Modern Languages and Literatures",
+  MUSC: "Music",
+  NEUR: "Neuroscience",
+  PHIL: "Philosophy",
+  PHYS: "Physics",
+  PSCI: "Political Science",
+  PSYC: "Psychology",
+  RUSS: "Russian",
+  SPAN: "Spanish",
+  STAT: "Statistics",
+};
+
+function normalizeSearchText(value: string) {
+  return value.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+}
+
 function compareSections(left: CourseSection, right: CourseSection) {
   return (
     left.subject.localeCompare(right.subject) ||
@@ -9,19 +57,24 @@ function compareSections(left: CourseSection, right: CourseSection) {
 }
 
 export function searchSections(sections: CourseSection[], query: string) {
-  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const queryTokens = normalizeSearchText(query).split(" ").filter(Boolean);
 
   return sections
     .filter((section) => {
-      if (!normalizedQuery) return true;
+      if (queryTokens.length === 0) return true;
 
-      return [
-        section.subject,
-        section.catalogNumber,
-        section.courseCode,
-        section.title,
-        ...section.instructors,
-      ].some((value) => value.toLocaleLowerCase().includes(normalizedQuery));
+      const searchableText = normalizeSearchText(
+        [
+          section.subject,
+          subjectAliases[section.subject] ?? "",
+          section.catalogNumber,
+          section.courseCode,
+          section.title,
+          ...section.instructors,
+        ].join(" "),
+      );
+
+      return queryTokens.every((token) => searchableText.includes(token));
     })
     .toSorted(compareSections);
 }

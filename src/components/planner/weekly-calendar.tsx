@@ -228,13 +228,14 @@ export function WeeklyCalendar({ sections, onRemove }: WeeklyCalendarProps) {
                     ) : null}
                     <button
                       type="button"
+                      className="weekly-calendar__event-remove"
                       aria-label={`Remove ${event.courseCode} section ${event.sectionNumber}`}
                       onClick={(clickEvent) => {
                         onRemove(event.crn);
                         if (clickEvent.detail === 0) headingRef.current?.focus();
                       }}
                     >
-                      Remove
+                      ×
                     </button>
                   </article>
                 );

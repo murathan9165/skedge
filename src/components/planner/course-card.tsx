@@ -46,7 +46,7 @@ export function CourseCard({
   const isAddDisabled = isUntimed || selected || addDisabled || !onAdd;
   const {
     ref: draggableRef,
-    handleRef: dragHandleRef,
+    handleRef,
     isDragging,
   } = useDraggable({
     id: `course-${section.crn}`,
@@ -65,9 +65,14 @@ export function CourseCard({
       ref={draggableRef}
       className={`course-card${isDragging ? " course-card--dragging" : ""}`}
       data-section-number={section.sectionNumber}
+      data-drag-enabled={isAddDisabled ? undefined : "true"}
       draggable={false}
     >
-      <div className="course-card__details">
+      <div
+        ref={handleRef}
+        className="course-card__details"
+        tabIndex={isAddDisabled ? -1 : undefined}
+      >
         <h3>{section.courseCode}: {section.title}</h3>
         <p className="course-card__instructor">{section.instructors.join(", ") || "Instructor unavailable"}</p>
         {isUntimed ? (
@@ -90,15 +95,6 @@ export function CourseCard({
           onClick={() => onAdd?.(section)}
         >
           {selected ? "Added" : "Add"}
-        </button>
-        <button
-          ref={dragHandleRef}
-          className="course-card__drag-handle"
-          type="button"
-          disabled={isAddDisabled}
-          aria-label={`Drag ${section.courseCode} to weekly schedule`}
-        >
-          Drag
         </button>
         <div className="course-card__prerequisites">
           <button

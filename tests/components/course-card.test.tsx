@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom/vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { DragDropProvider } from "@dnd-kit/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { CourseCard } from "@/components/planner/course-card";
 import type { CourseSection } from "@/lib/courses/types";
@@ -33,14 +34,43 @@ describe("CourseCard", () => {
     expect(screen.getByText("Wed, Fri · 8:40 AM–10:00 AM · CHL300")).toBeInTheDocument();
     expect(screen.getByText("Mon · 1:10 PM–2:30 PM · HSA220")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^add amst 140$/i })).toBeEnabled();
-    expect(screen.getByRole("button", { name: /drag amst 140 to weekly schedule/i })).toBeEnabled();
+    expect(screen.queryByRole("button", { name: /drag amst 140/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("article")).toHaveAttribute("data-drag-enabled", "true");
+  });
+
+  it("keeps Add and Prereqs controls interactive on a draggable card", () => {
+    const onAdd = vi.fn();
+    render(<CourseCard section={scheduledSection} onAdd={onAdd} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /^add amst 140$/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
+
+    expect(onAdd).toHaveBeenCalledOnce();
+    expect(onAdd).toHaveBeenCalledWith(scheduledSection);
+    expect(screen.getByRole("dialog", { name: /prerequisites for amst 140/i })).toBeInTheDocument();
+  });
+
+  it("uses the details surface, rather than the card container, as the accessible drag activator", async () => {
+    render(
+      <DragDropProvider>
+        <CourseCard section={scheduledSection} onAdd={() => {}} />
+      </DragDropProvider>,
+    );
+
+    const card = screen.getByRole("article");
+    const details = card.querySelector(".course-card__details");
+
+    expect(details).not.toBeNull();
+    await waitFor(() => expect(details).toHaveAttribute("role", "button"));
+    expect(details).toHaveAttribute("tabindex", "0");
+    expect(card).not.toHaveAttribute("role", "button");
   });
 
   it("uses an Added disabled state for a selected scheduled section", () => {
     render(<CourseCard section={scheduledSection} onAdd={() => {}} selected />);
 
     expect(screen.getByRole("button", { name: /^added amst 140$/i })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /drag amst 140 to weekly schedule/i })).toBeDisabled();
+    expect(screen.getByRole("article")).not.toHaveAttribute("data-drag-enabled");
   });
 
   it("keeps prereqs available but disables Add and dragging when time is unavailable", () => {
@@ -56,8 +86,10 @@ describe("CourseCard", () => {
     expect(screen.getByText("Time unavailable")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^add amst 140$/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^prereqs for amst 140$/i })).toBeEnabled();
-    expect(screen.getByRole("button", { name: /drag amst 140 to weekly schedule/i })).toBeDisabled();
+    expect(screen.queryByRole("button", { name: /drag amst 140/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("article")).not.toHaveAttribute("data-drag-enabled");
     expect(screen.getByRole("article")).not.toHaveAttribute("draggable", "true");
+    expect(screen.getByRole("article").querySelector(".course-card__details")).toHaveAttribute("tabindex", "-1");
 
     fireEvent.click(screen.getByRole("button", { name: /^prereqs for amst 140$/i }));
     expect(screen.getByRole("dialog", { name: /prerequisites for amst 140/i })).toBeInTheDocument();
