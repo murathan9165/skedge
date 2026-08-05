@@ -47,6 +47,7 @@ button {
   color: var(--ink);
   cursor: pointer;
   font-weight: 800;
+  text-transform: lowercase;
   box-shadow: 0.15rem 0.15rem 0 var(--ink);
 }
 
@@ -143,6 +144,7 @@ button:disabled {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
   font-weight: 900;
+  text-transform: lowercase;
 }
 
 .course-search-drawer__label {
@@ -150,6 +152,7 @@ button:disabled {
   margin-block-end: 0.35rem;
   font-size: 0.8rem;
   font-weight: 700;
+  text-transform: lowercase;
 }
 
 .course-search-drawer__input {
@@ -158,15 +161,20 @@ button:disabled {
   padding: 0.6rem 0.7rem;
   border: 2px solid var(--ink);
   border-radius: 0;
-  background: var(--surface-subtle);
+  background: var(--surface);
   color: var(--ink);
   box-shadow: 0.2rem 0.2rem 0 var(--ink);
+}
+
+.course-search-drawer__input::placeholder {
+  text-transform: lowercase;
 }
 
 .course-search-drawer > p {
   margin-block: 0.65rem;
   color: var(--muted-ink);
   font-size: 0.8rem;
+  text-transform: lowercase;
 }
 
 .course-search-drawer__results {
@@ -234,6 +242,7 @@ button:disabled {
 .course-card__unavailable {
   color: var(--danger);
   font-weight: 700;
+  text-transform: lowercase;
 }
 
 .course-card__meetings {
@@ -276,6 +285,7 @@ button:disabled {
   background: var(--surface);
   box-shadow: var(--shadow);
   font-size: 0.8rem;
+  text-transform: lowercase;
 }
 
 .prerequisite-popover::after {
@@ -334,8 +344,8 @@ button:disabled {
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
-  min-block-size: 5rem;
-  padding: 1rem;
+  min-block-size: 4rem;
+  padding: 0.65rem 1rem;
   border-block-end: 2px solid var(--ink);
 }
 
@@ -355,6 +365,7 @@ button:disabled {
   margin: 0;
   color: var(--muted-ink);
   font-size: 0.8rem;
+  text-transform: lowercase;
 }
 
 .weekly-calendar__controls button {
@@ -415,6 +426,7 @@ button:disabled {
   background: var(--surface);
   color: var(--muted-ink);
   font-size: 0.8rem;
+  text-transform: lowercase;
   transform: translateX(-50%);
 }
 
@@ -506,6 +518,7 @@ button:disabled {
 .weekly-calendar__conflict-status {
   color: var(--danger);
   font-weight: 700;
+  text-transform: lowercase;
 }
 
 .weekly-calendar__event-remove {
@@ -587,7 +600,7 @@ button:disabled {
   }
 
   .weekly-calendar__heading {
-    min-block-size: 4.5rem;
+    min-block-size: 4rem;
   }
 
   .weekly-calendar__scroll {
