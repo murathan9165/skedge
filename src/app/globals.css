@@ -414,22 +414,6 @@ button:disabled {
   );
 }
 
-.weekly-calendar__empty {
-  position: absolute;
-  z-index: 2;
-  inset-block-start: 3rem;
-  inset-inline-start: 50%;
-  margin: 0;
-  padding: 0.65rem 0.9rem;
-  border: 1px dashed var(--line-strong);
-  border-radius: 0.35rem;
-  background: var(--surface);
-  color: var(--muted-ink);
-  font-size: 0.8rem;
-  text-transform: lowercase;
-  transform: translateX(-50%);
-}
-
 .weekly-calendar__time-axis {
   grid-column: 1;
 }

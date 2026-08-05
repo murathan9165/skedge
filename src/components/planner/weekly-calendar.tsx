@@ -171,9 +171,6 @@ export function WeeklyCalendar({ sections, onRemove, onReset }: WeeklyCalendarPr
           aria-label="Monday through Friday class schedule"
           style={{ height: calendarHeight }}
         >
-          {events.length === 0 ? (
-            <p className="weekly-calendar__empty">Add a course to start building your week.</p>
-          ) : null}
         <div
           className="weekly-calendar__time-axis"
           aria-hidden="true"
