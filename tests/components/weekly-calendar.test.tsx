@@ -51,9 +51,9 @@ describe("WeeklyCalendar", () => {
     expect(screen.getByRole("article", { name: /chem 103 section 00, wednesday/i })).toHaveStyle({ top: "10px", height: "170px" });
     expect(screen.getByRole("article", { name: /dram 104 section 00, friday/i })).toHaveStyle({ top: "660px", height: "180px" });
 
-    expect(screen.getByText("8:00 AM")).toHaveStyle({ position: "absolute", top: "0px" });
+    expect(screen.getByText("8:00 AM")).toHaveStyle({ position: "absolute", top: "30px" });
     expect(screen.getByText("8:00 AM")).toHaveClass("weekly-calendar__time-label");
-    expect(screen.getByText("11:00 PM")).toBeInTheDocument();
+    expect(screen.queryByText("11:00 PM")).not.toBeInTheDocument();
     expect(screen.getByText("ROOM-LATE")).toBeInTheDocument();
     expect(screen.queryByText("Your week")).not.toBeInTheDocument();
   });

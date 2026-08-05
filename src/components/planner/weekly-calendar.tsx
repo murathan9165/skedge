@@ -8,6 +8,7 @@ import {
   type ConflictMarkedEvent,
 } from "@/lib/courses/conflicts";
 import {
+  CALENDAR_PIXELS_PER_MINUTE,
   deriveCalendarBounds,
   getCalendarHeight,
   getEventGeometry,
@@ -122,7 +123,7 @@ export function WeeklyCalendar({ sections, onRemove, onReset }: WeeklyCalendarPr
   );
   const calendarHeight = getCalendarHeight(calendarBounds);
   const hourMarkers = Array.from(
-    { length: (calendarBounds.endMinutes - calendarBounds.startMinutes) / 60 + 1 },
+    { length: (calendarBounds.endMinutes - calendarBounds.startMinutes) / 60 },
     (_, index) => calendarBounds.startMinutes + index * 60,
   );
 
@@ -187,7 +188,7 @@ export function WeeklyCalendar({ sections, onRemove, onReset }: WeeklyCalendarPr
                 top: getEventGeometry(
                   { startMinutes: minutes, endMinutes: minutes },
                   calendarBounds,
-                ).top,
+                ).top + 30 * CALENDAR_PIXELS_PER_MINUTE,
               }}
             >
               {formatMinutes(minutes)}
