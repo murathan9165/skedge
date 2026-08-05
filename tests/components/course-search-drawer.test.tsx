@@ -21,13 +21,13 @@ const sections: CourseSection[] = [
 ];
 
 describe("CourseSearchDrawer", () => {
-  it("shows every supplied section in a labeled empty-query browse state", () => {
+  it("shows the search label and every supplied section without redundant browse copy", () => {
     render(<CourseSearchDrawer sections={sections} />);
 
     expect(screen.getByRole("complementary", { name: /course search/i })).toBeInTheDocument();
     expect(screen.getByRole("searchbox", { name: /search fall 2026 courses/i })).toBeInTheDocument();
-    expect(screen.getByText("Browse all Fall 2026 sections")).toBeInTheDocument();
-    expect(screen.getByText("2 sections")).toBeInTheDocument();
+    expect(screen.queryByText("Browse all Fall 2026 sections")).not.toBeInTheDocument();
+    expect(screen.queryByText("2 sections")).not.toBeInTheDocument();
     expect(screen.getAllByRole("article")).toHaveLength(2);
   });
 

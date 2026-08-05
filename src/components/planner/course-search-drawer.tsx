@@ -23,14 +23,10 @@ export function CourseSearchDrawer({
 }: CourseSearchDrawerProps) {
   const [query, setQuery] = useState("");
   const results = searchSections(sections, query);
-  const isBrowseState = query.trim() === "";
+  const hasQuery = query.trim() !== "";
 
   return (
     <aside className="course-search-drawer" aria-label="Course search">
-      <div className="course-search-drawer__heading">
-        <p className="eyebrow">Fall 2026</p>
-        <h2>Find a course</h2>
-      </div>
       <label className="course-search-drawer__label" htmlFor="course-search">
         Search Fall 2026 courses
       </label>
@@ -41,12 +37,13 @@ export function CourseSearchDrawer({
         role="searchbox"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder="Subject, course, title, or instructor"
+        placeholder="Subject, title, code, or instructor"
       />
-      {isBrowseState ? <p>Browse all Fall 2026 sections</p> : null}
       {results.length ? (
         <>
-          <p aria-live="polite">{results.length} {results.length === 1 ? "section" : "sections"}</p>
+          {hasQuery ? (
+            <p aria-live="polite">{results.length} {results.length === 1 ? "match" : "matches"}</p>
+          ) : null}
           <div className="course-search-drawer__results">
             {results.map((section) => (
               <CourseCard

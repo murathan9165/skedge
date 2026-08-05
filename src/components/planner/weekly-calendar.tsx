@@ -213,9 +213,10 @@ export function WeeklyCalendar({ sections, onRemove }: WeeklyCalendarProps) {
                       width: layout?.width,
                     }}
                   >
-                    <strong>{event.courseCode}-{event.sectionNumber}</strong>
+                    <strong>
+                      {event.courseCode}-{event.sectionNumber} <time>{formatTime(event.startTime)}–{formatTime(event.endTime)}</time>
+                    </strong>
                     <span>{event.title}</span>
-                    <time>{formatTime(event.startTime)}–{formatTime(event.endTime)}</time>
                     <span>{event.room}</span>
                     {event.hasConflict ? (
                       <span

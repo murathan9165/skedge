@@ -26,13 +26,15 @@ const scheduledSection: CourseSection = {
 };
 
 describe("CourseCard", () => {
-  it("renders the course name, instructor, and every formatted meeting pattern", () => {
+  it("renders the course name, instructor, compact meeting details, and every time range", () => {
     render(<CourseCard section={scheduledSection} onAdd={() => {}} />);
 
-    expect(screen.getByRole("heading", { name: /amst 140: prisons, policing/i })).toBeInTheDocument();
+    const heading = screen.getByRole("heading", { name: /amst 140: prisons, policing/i });
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveTextContent("8:40 AM–10:00 AM / 1:10 PM–2:30 PM");
     expect(screen.getByText("Dr. Staff")).toBeInTheDocument();
-    expect(screen.getByText("Wed, Fri · 8:40 AM–10:00 AM · CHL300")).toBeInTheDocument();
-    expect(screen.getByText("Mon · 1:10 PM–2:30 PM · HSA220")).toBeInTheDocument();
+    expect(screen.getByText("Wed, Fri · CHL300")).toBeInTheDocument();
+    expect(screen.getByText("Mon · HSA220")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^add amst 140$/i })).toBeEnabled();
     expect(screen.queryByRole("button", { name: /drag amst 140/i })).not.toBeInTheDocument();
     expect(screen.getByRole("article")).toHaveAttribute("data-drag-enabled", "true");

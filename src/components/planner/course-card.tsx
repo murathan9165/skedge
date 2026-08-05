@@ -31,7 +31,15 @@ function formatTime(time: string) {
 function formatMeeting(meeting: MeetingInterval) {
   const days = meeting.days.map((day) => dayLabels[day]).join(", ");
   const location = meeting.room ? ` · ${meeting.room}` : "";
-  return `${days} · ${formatTime(meeting.startTime)}–${formatTime(meeting.endTime)}${location}`;
+  return `${days}${location}`;
+}
+
+function formatTimeRange(meeting: MeetingInterval) {
+  return `${formatTime(meeting.startTime)}–${formatTime(meeting.endTime)}`;
+}
+
+function formatTimeSummary(meetings: MeetingInterval[]) {
+  return [...new Set(meetings.map(formatTimeRange))].join(" / ");
 }
 
 export function CourseCard({
@@ -73,7 +81,13 @@ export function CourseCard({
         className="course-card__details"
         tabIndex={isAddDisabled ? -1 : undefined}
       >
-        <h3>{section.courseCode}: {section.title}</h3>
+        <div className="course-card__identity">
+          <h3 aria-label={`${section.courseCode}: ${section.title}`}>
+            <span>{section.courseCode}</span>
+            {!isUntimed ? <time>{formatTimeSummary(section.meetings)}</time> : null}
+          </h3>
+          <p className="course-card__title">{section.title}</p>
+        </div>
         <p className="course-card__instructor">{section.instructors.join(", ") || "Instructor unavailable"}</p>
         {isUntimed ? (
           <p className="course-card__unavailable">Time unavailable</p>
