@@ -48,7 +48,7 @@ describe("CourseCard", () => {
       />,
     );
 
-    expect(screen.getByText("4 credits · seats: no info. (PI)")).toBeInTheDocument();
+    expect(screen.getByText("4 credits · seats: ? of 15 filled. (PI)")).toBeInTheDocument();
   });
 
   it("keeps Add and Prerequisites controls interactive on a draggable card", () => {

@@ -46,7 +46,8 @@ function formatSeatSummary(section: CourseSection) {
   const credits = `${section.credits} credits`;
   const permission = section.permission === "PI" ? " (PI)" : "";
   if (section.seatLimit === null || section.seatsEnrolled === null) {
-    return `${credits} · seats: no info.${permission}`;
+    const limit = section.seatLimit === null ? "?" : section.seatLimit;
+    return `${credits} · seats: ? of ${limit} filled.${permission}`;
   }
   return `${credits} · seats: ${section.seatsEnrolled} of ${section.seatLimit} filled.${permission}`;
 }
