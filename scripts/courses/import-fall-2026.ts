@@ -855,15 +855,69 @@ export async function importFall2026(options: ImportOptions = {}): Promise<Impor
   return { snapshot, report, outcome: "changed" };
 }
 
+/**
+ * Distinct codes let a scheduled job route without parsing output. `unchanged`
+ * is a success, not a failure -- callers must treat it as such.
+ */
+export const IMPORT_EXIT_CODES = {
+  changed: 0,
+  unchanged: 3,
+  failed: 1,
+} as const;
+
+export function exitCodeForOutcome(outcome: ImportOutcome): number {
+  return IMPORT_EXIT_CODES[outcome];
+}
+
+export interface RunSummary {
+  outcome: ImportOutcome;
+  importedAt: string;
+  sections: number;
+  baseline: number;
+  delta: number;
+  tolerance: number;
+  prerequisites: { known: number; none: number; unavailable: number };
+  unmatchedPrerequisites: number;
+}
+
+export function buildRunSummary({ report, outcome }: ImportResult): RunSummary {
+  return {
+    outcome,
+    importedAt: report.importedAt,
+    sections: report.counts.sections,
+    baseline: report.completeness.baseline,
+    delta: report.completeness.delta,
+    tolerance: report.completeness.tolerance,
+    prerequisites: report.counts.prerequisites,
+    unmatchedPrerequisites: report.unmatchedPrerequisites.length,
+  };
+}
+
+export function describeRunSummary(summary: RunSummary): string {
+  if (summary.outcome === "unchanged") {
+    return `No change: ${summary.sections} Fall 2026 sections match the committed snapshot from ${summary.importedAt}.`;
+  }
+  const drift =
+    summary.delta === 0
+      ? "matching the reviewed baseline"
+      : `${summary.delta > 0 ? "+" : ""}${summary.delta} against the reviewed baseline of ${summary.baseline} (tolerance ${summary.tolerance})`;
+  return `Imported ${summary.sections} Fall 2026 sections, ${drift}.`;
+}
+
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
   importFall2026()
-    .then(({ report }) => {
-      console.log(
-        `Imported ${report.counts.sections} Fall 2026 sections from ${report.counts.scheduleRows.total} classified schedule rows.`,
-      );
+    .then((result) => {
+      const summary = buildRunSummary(result);
+      // Human-readable narration on stderr, machine-readable summary on stdout,
+      // so a scheduled job can capture one without parsing around the other.
+      console.error(describeRunSummary(summary));
+      console.log(JSON.stringify(summary));
+      process.exitCode = exitCodeForOutcome(summary.outcome);
     })
     .catch((error: unknown) => {
-      console.error(error instanceof Error ? error.message : error);
-      process.exitCode = 1;
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(message);
+      console.log(JSON.stringify({ outcome: "failed", error: message }));
+      process.exitCode = IMPORT_EXIT_CODES.failed;
     });
 }

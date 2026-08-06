@@ -6,7 +6,11 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import {
   CATALOG_INDEX_URL,
+  IMPORT_EXIT_CODES,
   SCHEDULE_URL,
+  buildRunSummary,
+  describeRunSummary,
+  exitCodeForOutcome,
   importFall2026,
 } from "../../scripts/courses/import-fall-2026";
 import { verifyFall2026Data } from "../../scripts/courses/verify-fall-2026";
@@ -649,6 +653,70 @@ describe("importFall2026", () => {
     await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /prerequisite source.*fetched catalog pages/i,
     );
+  });
+});
+
+describe("run summary", () => {
+  async function runImport(paths: Awaited<ReturnType<typeof outputPaths>>, schedule?: string) {
+    const source = await fixtures();
+    return importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchFrom({
+        [SCHEDULE_URL]: schedule ?? source.schedule,
+        [CATALOG_INDEX_URL]: catalogIndex(),
+        [catalogUrl]: source.catalog,
+      }),
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+  }
+
+  it("summarizes a changed run with counts drawn from the report", async () => {
+    const paths = await outputPaths();
+    const result = await runImport(paths);
+
+    expect(buildRunSummary(result)).toEqual({
+      outcome: "changed",
+      importedAt: "2026-08-04T19:00:00.000Z",
+      sections: FIXTURE_SECTION_COUNT,
+      baseline: FIXTURE_SECTION_COUNT,
+      delta: 0,
+      tolerance: 15,
+      prerequisites: { known: 0, none: 1, unavailable: 3 },
+      unmatchedPrerequisites: result.report.unmatchedPrerequisites.length,
+    });
+  });
+
+  it("summarizes an unchanged run without advancing importedAt", async () => {
+    const paths = await outputPaths();
+    await runImport(paths);
+    const summary = buildRunSummary(await runImport(paths));
+
+    expect(summary.outcome).toBe("unchanged");
+    expect(summary.importedAt).toBe("2026-08-04T19:00:00.000Z");
+    expect(describeRunSummary(summary)).toMatch(/no change/i);
+  });
+
+  it("maps each outcome to a distinct exit code, with unchanged still a success", () => {
+    expect(exitCodeForOutcome("changed")).toBe(0);
+    expect(exitCodeForOutcome("unchanged")).toBe(3);
+    expect(IMPORT_EXIT_CODES.failed).toBe(1);
+    expect(exitCodeForOutcome("unchanged")).not.toBe(IMPORT_EXIT_CODES.failed);
+  });
+
+  it("narrates a within-tolerance drop with its delta", () => {
+    expect(
+      describeRunSummary({
+        outcome: "changed",
+        importedAt: "2026-08-05T19:00:00.000Z",
+        sections: 627,
+        baseline: 629,
+        delta: -2,
+        tolerance: 15,
+        prerequisites: { known: 1, none: 1, unavailable: 1 },
+        unmatchedPrerequisites: 1,
+      }),
+    ).toMatch(/-2 against the reviewed baseline of 629 \(tolerance 15\)/);
   });
 });
 
