@@ -252,6 +252,9 @@ export function validateCourseSnapshot(value: unknown): asserts value is CourseS
       `Course code does not match subject and catalog number for CRN ${section.crn}`,
     );
     assertion(typeof section.credits === "number" && Number.isFinite(section.credits) && section.credits >= 0, `Invalid credits for CRN ${section.crn}`);
+    assertion(section.permission === undefined || section.permission === null || typeof section.permission === "string", `Invalid permission status for CRN ${section.crn}`);
+    assertion(section.seatLimit === undefined || section.seatLimit === null || (typeof section.seatLimit === "number" && Number.isInteger(section.seatLimit) && section.seatLimit >= 0), `Invalid seat limit for CRN ${section.crn}`);
+    assertion(section.seatsEnrolled === undefined || section.seatsEnrolled === null || (typeof section.seatsEnrolled === "number" && Number.isInteger(section.seatsEnrolled) && section.seatsEnrolled >= 0), `Invalid enrolled seat count for CRN ${section.crn}`);
     assertion(Array.isArray(section.instructors) && section.instructors.length > 0 && section.instructors.every((name) => typeof name === "string" && name.length > 0), `Invalid instructors for CRN ${section.crn}`);
     assertion(Array.isArray(section.meetings), `Invalid meetings for CRN ${section.crn}`);
     assertion(section.meetingStatus === (section.meetings.length > 0 ? "scheduled" : "time-unavailable"), `Invalid meeting status for CRN ${section.crn}`);

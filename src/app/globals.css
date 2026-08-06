@@ -87,6 +87,14 @@ button:disabled {
   padding: 1.25rem;
 }
 
+.planner-disclaimer {
+  max-inline-size: min(34rem, 100%);
+  margin: 0 0 1rem;
+  color: var(--muted-ink);
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
 .eyebrow {
   margin: 0 0 0.35rem;
   color: var(--ink);
@@ -233,10 +241,16 @@ button:disabled {
 }
 
 .course-card__instructor,
-.course-card__unavailable {
+.course-card__unavailable,
+.course-card__availability {
   margin: 0.25rem 0 0;
   color: var(--muted-ink);
   font-size: 0.78rem;
+}
+
+.course-card__availability {
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .course-card__unavailable {

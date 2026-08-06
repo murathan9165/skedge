@@ -4,7 +4,7 @@
     "id": "fall-2026",
     "label": "Fall 2026"
   },
-  "importedAt": "2026-08-06T17:02:46.052Z",
+  "importedAt": "2026-08-06T20:40:35.466Z",
   "sections": [
     {
       "crn": "80565",
@@ -14,6 +14,9 @@
       "courseCode": "AMST 140",
       "title": "Prisons, Policing, & Amer Cult",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 21,
       "instructors": [
         "Dr. Staff"
       ],
@@ -43,6 +46,9 @@
       "courseCode": "AMST 291",
       "title": "ST: Black Masculinities",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 4,
       "instructors": [
         "Gourrier, F"
       ],
@@ -69,6 +75,9 @@
       "courseCode": "AMST 302D",
       "title": "The History of Jazz",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 4,
+      "seatsEnrolled": null,
       "instructors": [
         "Heuchemer, D"
       ],
@@ -97,6 +106,9 @@
       "courseCode": "AMST 331",
       "title": "Visions of \"America\"",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 6,
       "instructors": [
         "DePascuale, J"
       ],
@@ -126,6 +138,9 @@
       "courseCode": "AMST 340",
       "title": "Un-American Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 10,
       "instructors": [
         "Dr. Staff"
       ],
@@ -154,6 +169,9 @@
       "courseCode": "AMST 378D",
       "title": "Art War",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 6,
+      "seatsEnrolled": null,
       "instructors": [
         "Porter, A"
       ],
@@ -182,6 +200,9 @@
       "courseCode": "AMST 400",
       "title": "Senior Sem American Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 2,
       "instructors": [
         "Dr. Staff"
       ],
@@ -210,6 +231,9 @@
       "courseCode": "AMST 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gourrier, F"
       ],
@@ -229,6 +253,9 @@
       "courseCode": "ANTH 111",
       "title": "Intro Biological Anthropology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 11,
       "instructors": [
         "Hardy, B"
       ],
@@ -259,6 +286,9 @@
       "courseCode": "ANTH 111",
       "title": "Intro Biological Anthropology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 9,
       "instructors": [
         "Murphy, K"
       ],
@@ -289,6 +319,9 @@
       "courseCode": "ANTH 112",
       "title": "Introduction to Archaeology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 12,
       "instructors": [
         "Gallareta Cervera, T"
       ],
@@ -319,6 +352,9 @@
       "courseCode": "ANTH 112",
       "title": "Introduction to Archaeology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": null,
       "instructors": [
         "Novotny, C"
       ],
@@ -348,6 +384,9 @@
       "courseCode": "ANTH 113",
       "title": "Intr to Cultural Anthropology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 4,
       "instructors": [
         "Pack, S"
       ],
@@ -377,6 +416,9 @@
       "courseCode": "ANTH 113",
       "title": "Intr to Cultural Anthropology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 5,
       "instructors": [
         "Gallareta Cervera, T"
       ],
@@ -407,6 +449,9 @@
       "courseCode": "ANTH 113",
       "title": "Intr to Cultural Anthropology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Westmor, T"
       ],
@@ -436,6 +481,9 @@
       "courseCode": "ANTH 206D",
       "title": "Seminar in Ethnomusicology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 7,
+      "seatsEnrolled": 7,
       "instructors": [
         "Mendonca, M"
       ],
@@ -465,6 +513,9 @@
       "courseCode": "ANTH 291",
       "title": "ST:Hyphenat Asian-Amer Identit",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 2,
       "instructors": [
         "Pack, S"
       ],
@@ -491,6 +542,9 @@
       "courseCode": "ANTH 320",
       "title": "Anthropology of Food",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 10,
       "instructors": [
         "Murphy, K"
       ],
@@ -519,6 +573,9 @@
       "courseCode": "ANTH 323",
       "title": "Bioarchlgy Sub-Saharan Africa",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 10,
       "instructors": [
         "Hardy, B"
       ],
@@ -547,6 +604,9 @@
       "courseCode": "ANTH 465",
       "title": "Hist Anthropological Thought",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 8,
       "instructors": [
         "Novotny, C"
       ],
@@ -576,6 +636,9 @@
       "courseCode": "ANTH 478",
       "title": "Campus Archaeology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 13,
       "instructors": [
         "Gallareta Cervera, T"
       ],
@@ -604,6 +667,9 @@
       "courseCode": "ANTH 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Novotny, C"
       ],
@@ -623,6 +689,9 @@
       "courseCode": "ARHS 110",
       "title": "Intro Western Art:Ancient-Med",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 14,
       "instructors": [
         "Hostetler, B"
       ],
@@ -652,6 +721,9 @@
       "courseCode": "ARHS 111",
       "title": "Intro Western Art:Ren-Contemp",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 18,
       "instructors": [
         "Calvin, K"
       ],
@@ -681,6 +753,9 @@
       "courseCode": "ARHS 114",
       "title": "Introduction to Asian Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 15,
       "instructors": [
         "Blick, S"
       ],
@@ -711,6 +786,9 @@
       "courseCode": "ARHS 114",
       "title": "Introduction to Asian Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 16,
       "instructors": [
         "Yi, S"
       ],
@@ -741,6 +819,9 @@
       "courseCode": "ARHS 221",
       "title": "Roman Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 22,
       "instructors": [
         "Hostetler, B"
       ],
@@ -770,6 +851,9 @@
       "courseCode": "ARHS 234",
       "title": "Romanesque and Gothic Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 22,
       "instructors": [
         "Blick, S"
       ],
@@ -800,6 +884,9 @@
       "courseCode": "ARHS 235",
       "title": "Art of China",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 7,
       "instructors": [
         "Yi, S"
       ],
@@ -830,6 +917,9 @@
       "courseCode": "ARHS 245",
       "title": "Contemporary Art and Society",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 11,
       "instructors": [
         "Porter, A"
       ],
@@ -859,6 +949,9 @@
       "courseCode": "ARHS 378D",
       "title": "Art War",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 6,
+      "seatsEnrolled": 4,
       "instructors": [
         "Porter, A"
       ],
@@ -887,6 +980,9 @@
       "courseCode": "ARHS 480",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 8,
       "instructors": [
         "Calvin, K"
       ],
@@ -915,6 +1011,9 @@
       "courseCode": "ARHS 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": 1,
       "instructors": [
         "Porter, A"
       ],
@@ -934,6 +1033,9 @@
       "courseCode": "ARTS 102",
       "title": "Drawing I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 8,
       "instructors": [
         "Hill, C"
       ],
@@ -964,6 +1066,9 @@
       "courseCode": "ARTS 102",
       "title": "Drawing I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 8,
       "instructors": [
         "Warndorf, N"
       ],
@@ -994,6 +1099,9 @@
       "courseCode": "ARTS 104",
       "title": "3D Design",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1024,6 +1132,9 @@
       "courseCode": "ARTS 105",
       "title": "Design Foundations",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 8,
       "instructors": [
         "Oehmke, A"
       ],
@@ -1053,6 +1164,9 @@
       "courseCode": "ARTS 106",
       "title": "Photography I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 9,
       "instructors": [
         "Zeller, E"
       ],
@@ -1083,6 +1197,9 @@
       "courseCode": "ARTS 107",
       "title": "Digital Imaging",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 7,
       "instructors": [
         "Johnston, J"
       ],
@@ -1112,6 +1229,9 @@
       "courseCode": "ARTS 109",
       "title": "Creative Coding",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 9,
       "instructors": [
         "Zeller, E"
       ],
@@ -1142,6 +1262,9 @@
       "courseCode": "ARTS 250",
       "title": "Fundamentals of Painting",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 7,
       "instructors": [
         "Hill, C"
       ],
@@ -1172,6 +1295,9 @@
       "courseCode": "ARTS 255",
       "title": "Typography Studio",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 6,
       "instructors": [
         "Oehmke, A"
       ],
@@ -1201,6 +1327,9 @@
       "courseCode": "ARTS 291",
       "title": "ST: Japanese Craft and Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1229,6 +1358,9 @@
       "courseCode": "ARTS 345",
       "title": "Printmaking",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 14,
       "instructors": [
         "Warndorf, N"
       ],
@@ -1259,6 +1391,9 @@
       "courseCode": "ARTS 360",
       "title": "Installation Art",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 3,
       "instructors": [
         "Johnston, J"
       ],
@@ -1288,6 +1423,9 @@
       "courseCode": "ARTS 480",
       "title": "Advanced Studio",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": 8,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1317,6 +1455,9 @@
       "courseCode": "ARTS 480",
       "title": "Advanced Studio",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": 9,
       "instructors": [
         "Oehmke, A"
       ],
@@ -1346,6 +1487,9 @@
       "courseCode": "AMES 101",
       "title": "Intro Asian & Mid East Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Carter, P"
       ],
@@ -1372,6 +1516,9 @@
       "courseCode": "AMES 140D",
       "title": "Intro to the Islamic Tradition",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": null,
       "instructors": [
         "Schubel, V"
       ],
@@ -1401,6 +1548,9 @@
       "courseCode": "AMES 291",
       "title": "ST: SE Asian Hist, Socy, Cultr",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Novak, R"
       ],
@@ -1429,6 +1579,9 @@
       "courseCode": "AMES 391",
       "title": "ST: Contesting India",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Raza, S"
       ],
@@ -1456,6 +1609,9 @@
       "courseCode": "BIOL 108",
       "title": "Life of the Past",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 26,
+      "seatsEnrolled": 24,
       "instructors": [
         "Holdener, E"
       ],
@@ -1485,6 +1641,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 3,
       "instructors": [
         "McMahon, J"
       ],
@@ -1513,6 +1672,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 8,
       "instructors": [
         "Gillen, K"
       ],
@@ -1541,6 +1703,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 2,
       "instructors": [
         "Tsunekage, T"
       ],
@@ -1569,6 +1734,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 1,
       "instructors": [
         "Clements, R"
       ],
@@ -1597,6 +1765,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 3,
       "instructors": [
         "McMahon, J"
       ],
@@ -1625,6 +1796,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 7,
       "instructors": [
         "Petersen, S"
       ],
@@ -1653,6 +1827,9 @@
       "courseCode": "BIOL 109Y",
       "title": "Intro to Experimental Biology",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 5,
       "instructors": [
         "Regmi, K"
       ],
@@ -1681,6 +1858,9 @@
       "courseCode": "BIOL 115",
       "title": "Energy in Living Systems",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 11,
       "instructors": [
         "Tsunekage, T"
       ],
@@ -1711,6 +1891,9 @@
       "courseCode": "BIOL 115",
       "title": "Energy in Living Systems",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 2,
       "instructors": [
         "Regmi, K"
       ],
@@ -1741,6 +1924,9 @@
       "courseCode": "BIOL 115",
       "title": "Energy in Living Systems",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 5,
       "instructors": [
         "Kropp, P"
       ],
@@ -1771,6 +1957,9 @@
       "courseCode": "BIOL 115",
       "title": "Energy in Living Systems",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 16,
       "instructors": [
         "Gillen, C"
       ],
@@ -1801,6 +1990,9 @@
       "courseCode": "BIOL 116",
       "title": "Information in Living Systems",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 2,
       "instructors": [
         "Gillen, K"
       ],
@@ -1831,6 +2023,9 @@
       "courseCode": "BIOL 211",
       "title": "Health Service & Biomed Analys",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": 14,
       "instructors": [
         "Kropp, P"
       ],
@@ -1859,6 +2054,9 @@
       "courseCode": "BIOL 228",
       "title": "Ecology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 24,
       "instructors": [
         "Fahey, C"
       ],
@@ -1888,6 +2086,9 @@
       "courseCode": "BIOL 229",
       "title": "Ecology Laboratory",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 11,
+      "seatsEnrolled": 11,
       "instructors": [
         "Fahey, C"
       ],
@@ -1916,6 +2117,9 @@
       "courseCode": "BIOL 245",
       "title": "Plant Biology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 7,
       "instructors": [
         "Regmi, K"
       ],
@@ -1945,6 +2149,9 @@
       "courseCode": "BIOL 247",
       "title": "Comp Vertebrate Anatomy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 21,
+      "seatsEnrolled": 19,
       "instructors": [
         "Wright, N",
         "Mendez, L"
@@ -1976,6 +2183,9 @@
       "courseCode": "BIOL 248",
       "title": "Comp Vertebrate Anatomy Lab",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 21,
+      "seatsEnrolled": 18,
       "instructors": [
         "Wright, N"
       ],
@@ -2004,6 +2214,9 @@
       "courseCode": "BIOL 263",
       "title": "Molecular Biology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 30,
+      "seatsEnrolled": 29,
       "instructors": [
         "Hillman, E"
       ],
@@ -2034,6 +2247,9 @@
       "courseCode": "BIOL 264",
       "title": "Gene Manipulation",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 11,
+      "seatsEnrolled": 11,
       "instructors": [
         "Hillman, E"
       ],
@@ -2062,6 +2278,9 @@
       "courseCode": "BIOL 315",
       "title": "Cell Signaling",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "Gillen, K"
       ],
@@ -2091,6 +2310,9 @@
       "courseCode": "BIOL 321",
       "title": "Evol. Developmental Biology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 9,
       "instructors": [
         "Hicks, K"
       ],
@@ -2120,6 +2342,9 @@
       "courseCode": "BIOL 385",
       "title": "Research in Biology",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 40,
+      "seatsEnrolled": 15,
       "instructors": [
         "Clements, R"
       ],
@@ -2139,6 +2364,9 @@
       "courseCode": "BIOL 475",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 11,
       "instructors": [
         "Tsunekage, T"
       ],
@@ -2168,6 +2396,9 @@
       "courseCode": "BIOL 475",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 11,
       "instructors": [
         "Clements, R"
       ],
@@ -2197,6 +2428,9 @@
       "courseCode": "BIOL 475",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 8,
       "instructors": [
         "Gillen, C"
       ],
@@ -2226,6 +2460,9 @@
       "courseCode": "BIOL 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 10,
+      "seatsEnrolled": 3,
       "instructors": [
         "Wright, N"
       ],
@@ -2254,6 +2491,9 @@
       "courseCode": "CHEM 112",
       "title": "Chemistry & Climate Change",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 11,
       "instructors": [
         "Rouhier, M"
       ],
@@ -2284,6 +2524,9 @@
       "courseCode": "CHEM 121",
       "title": "Introductory Chemistry",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 45,
+      "seatsEnrolled": 16,
       "instructors": [
         "Hunter, N"
       ],
@@ -2314,6 +2557,9 @@
       "courseCode": "CHEM 121",
       "title": "Introductory Chemistry",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 45,
+      "seatsEnrolled": 21,
       "instructors": [
         "Rouhier, K"
       ],
@@ -2344,6 +2590,9 @@
       "courseCode": "CHEM 122",
       "title": "Chemical Principles",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 1,
       "instructors": [
         "Garcia, S"
       ],
@@ -2374,6 +2623,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 4,
       "instructors": [
         "Garcia, S"
       ],
@@ -2402,6 +2654,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 6,
       "instructors": [
         "Hunter, N"
       ],
@@ -2430,6 +2685,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 5,
       "instructors": [
         "Garcia, S"
       ],
@@ -2458,6 +2716,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 4,
       "instructors": [
         "Oliveira, L"
       ],
@@ -2486,6 +2747,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 5,
       "instructors": [
         "Dr. Staff"
       ],
@@ -2514,6 +2778,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -2542,6 +2809,9 @@
       "courseCode": "CHEM 123",
       "title": "Introductory Chemistry Lab I",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": null,
       "instructors": [
         "Garcia, S"
       ],
@@ -2570,6 +2840,9 @@
       "courseCode": "CHEM 232",
       "title": "Organic Chemistry II",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 45,
+      "seatsEnrolled": 38,
       "instructors": [
         "Starr, K"
       ],
@@ -2599,6 +2872,9 @@
       "courseCode": "CHEM 234",
       "title": "Organic Chemistry Lab II",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 13,
+      "seatsEnrolled": 13,
       "instructors": [
         "Hunsen, M"
       ],
@@ -2627,6 +2903,9 @@
       "courseCode": "CHEM 234",
       "title": "Organic Chemistry Lab II",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 13,
+      "seatsEnrolled": 10,
       "instructors": [
         "Hunsen, M"
       ],
@@ -2655,6 +2934,9 @@
       "courseCode": "CHEM 234",
       "title": "Organic Chemistry Lab II",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 13,
+      "seatsEnrolled": 7,
       "instructors": [
         "Hunsen, M"
       ],
@@ -2683,6 +2965,9 @@
       "courseCode": "CHEM 243",
       "title": "Inorganic Chemistry",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 13,
       "instructors": [
         "Hunter, N"
       ],
@@ -2712,6 +2997,9 @@
       "courseCode": "CHEM 335",
       "title": "Chem Kinetics & Thermodynamics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 17,
       "instructors": [
         "Keller, J"
       ],
@@ -2741,6 +3029,9 @@
       "courseCode": "CHEM 370",
       "title": "Adv. Lab:Computational Chem",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Oliveira, L"
       ],
@@ -2769,6 +3060,9 @@
       "courseCode": "CHEM 374",
       "title": "Advanced Lab--Spectroscopy",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Keller, J"
       ],
@@ -2797,6 +3091,9 @@
       "courseCode": "CHEM 375",
       "title": "Chemical Research",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 25,
+      "seatsEnrolled": 2,
       "instructors": [
         "Rouhier, K"
       ],
@@ -2816,6 +3113,9 @@
       "courseCode": "CHEM 375",
       "title": "Chemical Research",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 25,
+      "seatsEnrolled": 1,
       "instructors": [
         "Rouhier, K"
       ],
@@ -2835,6 +3135,9 @@
       "courseCode": "CHEM 475",
       "title": "Senior Seminar",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 10,
       "instructors": [
         "Rouhier, K"
       ],
@@ -2863,6 +3166,9 @@
       "courseCode": "CHEM 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Hunsen, M"
       ],
@@ -2882,6 +3188,9 @@
       "courseCode": "CLAS 112",
       "title": "Roman History",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 33,
+      "seatsEnrolled": 18,
       "instructors": [
         "Davis, B"
       ],
@@ -2911,6 +3220,9 @@
       "courseCode": "CLAS 130",
       "title": "Classical Mythology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 33,
+      "seatsEnrolled": 11,
       "instructors": [
         "Hahnemann, C"
       ],
@@ -2941,6 +3253,9 @@
       "courseCode": "CLAS 471",
       "title": "Senior Seminar in Classics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 12,
       "instructors": [
         "Serfass, A"
       ],
@@ -2970,6 +3285,9 @@
       "courseCode": "CLAS 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Myers, M"
       ],
@@ -2989,6 +3307,9 @@
       "courseCode": "GREK 101Y",
       "title": "Elementary Ancient Greek",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 1,
       "instructors": [
         "Myers, M"
       ],
@@ -3019,6 +3340,9 @@
       "courseCode": "GREK 201",
       "title": "Intermediate Greek: Prose",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 3,
       "instructors": [
         "Barich, M"
       ],
@@ -3047,6 +3371,9 @@
       "courseCode": "GREK 301",
       "title": "Advanced Greek",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hahnemann, C"
       ],
@@ -3075,6 +3402,9 @@
       "courseCode": "LATN 101Y",
       "title": "Elementary Latin",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 5,
       "instructors": [
         "Barich, M"
       ],
@@ -3105,6 +3435,9 @@
       "courseCode": "LATN 101Y",
       "title": "Elementary Latin",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 9,
       "instructors": [
         "Myers, M"
       ],
@@ -3135,6 +3468,9 @@
       "courseCode": "LATN 201",
       "title": "Intermediate Latin",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 10,
       "instructors": [
         "Davis, B"
       ],
@@ -3163,6 +3499,9 @@
       "courseCode": "LATN 301",
       "title": "Advanced Latin: Roman Women",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Serfass, A"
       ],
@@ -3190,6 +3529,9 @@
       "courseCode": "COMP 103",
       "title": "Electronic Textiles",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 8,
       "instructors": [
         "Howley, I"
       ],
@@ -3217,6 +3559,9 @@
       "courseCode": "COMP 118",
       "title": "Introduction to Programming",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 7,
       "instructors": [
         "Oliveira, L"
       ],
@@ -3246,6 +3591,9 @@
       "courseCode": "COMP 118",
       "title": "Introduction to Programming",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 8,
       "instructors": [
         "Skon, J",
         "Cain, E"
@@ -3276,6 +3624,9 @@
       "courseCode": "COMP 191",
       "title": "ST: Intro to Program with AI",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 5,
       "instructors": [
         "Skon, J",
         "Cain, E"
@@ -3305,6 +3656,9 @@
       "courseCode": "COMP 218",
       "title": "Data Structures & Prog Design",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 5,
       "instructors": [
         "Skon, J"
       ],
@@ -3335,6 +3689,9 @@
       "courseCode": "COMP 236",
       "title": "User Experience Research & Des",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 2,
       "instructors": [
         "Howley, I"
       ],
@@ -3364,6 +3721,9 @@
       "courseCode": "DANC 104",
       "title": "Yoga",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 17,
       "instructors": [
         "Radella Feller, K"
       ],
@@ -3394,6 +3754,9 @@
       "courseCode": "DANC 105",
       "title": "Introduction to Dance Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 12,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -3423,6 +3786,9 @@
       "courseCode": "DANC 107",
       "title": "Repertory Performance",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Garcia Nino, M"
       ],
@@ -3452,6 +3818,9 @@
       "courseCode": "DANC 109",
       "title": "Beginning Ballet Technique",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 9,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -3481,6 +3850,9 @@
       "courseCode": "DANC 208",
       "title": "Mod/Postmod Dance Pract:Interm",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 10,
       "instructors": [
         "Radella Feller, K"
       ],
@@ -3510,6 +3882,9 @@
       "courseCode": "DANC 220",
       "title": "Dance Labanotation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 4,
       "instructors": [
         "Brodie, J"
       ],
@@ -3540,6 +3915,9 @@
       "courseCode": "DANC 227",
       "title": "Choreography I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 5,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -3569,6 +3947,9 @@
       "courseCode": "DDF 300",
       "title": "Technical Practicum",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 5,
+      "seatsEnrolled": 2,
       "instructors": [
         "Dr. Staff"
       ],
@@ -3586,6 +3967,9 @@
       "courseCode": "DDF 301",
       "title": "Performance Practicum",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 5,
+      "seatsEnrolled": 1,
       "instructors": [
         "Dr. Staff"
       ],
@@ -3603,6 +3987,9 @@
       "courseCode": "DRAM 110",
       "title": "The Play:Production&Performanc",
       "credits": 0,
+      "permission": null,
+      "seatLimit": 0,
+      "seatsEnrolled": null,
       "instructors": [
         "Tazewell, J"
       ],
@@ -3620,6 +4007,9 @@
       "courseCode": "DRAM 111",
       "title": "Introduction to the Theater",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 14,
+      "seatsEnrolled": 4,
       "instructors": [
         "Wolf, R"
       ],
@@ -3649,6 +4039,9 @@
       "courseCode": "DRAM 111",
       "title": "Introduction to the Theater",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 3,
       "instructors": [
         "Dudley, A"
       ],
@@ -3678,6 +4071,9 @@
       "courseCode": "DRAM 220",
       "title": "Acting",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 7,
       "instructors": [
         "Viccellio, B"
       ],
@@ -3707,6 +4103,9 @@
       "courseCode": "DRAM 241",
       "title": "Scene Design",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 10,
       "instructors": [
         "Wolf, R"
       ],
@@ -3737,6 +4136,9 @@
       "courseCode": "DRAM 244",
       "title": "Interpreting the Character",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 5,
       "instructors": [
         "Cappuccilli, C"
       ],
@@ -3766,6 +4168,9 @@
       "courseCode": "DRAM 362A",
       "title": "Rehearsal Collab Directors",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Dudley, A"
       ],
@@ -3794,6 +4199,9 @@
       "courseCode": "DRAM 362B",
       "title": "Rehearsal Collab Actors",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Dudley, A"
       ],
@@ -3822,6 +4230,9 @@
       "courseCode": "FILM 111",
       "title": "Introduction to Film",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 7,
       "instructors": [
         "Tazewell, J"
       ],
@@ -3851,6 +4262,9 @@
       "courseCode": "FILM 111",
       "title": "Introduction to Film",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 4,
       "instructors": [
         "Sherman, J"
       ],
@@ -3880,6 +4294,9 @@
       "courseCode": "FILM 111",
       "title": "Introduction to Film",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": null,
       "instructors": [
         "Riegel-Cobb, N"
       ],
@@ -3909,6 +4326,9 @@
       "courseCode": "FILM 231",
       "title": "Screenwriting",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 15,
       "instructors": [
         "Sherman, J"
       ],
@@ -3938,6 +4358,9 @@
       "courseCode": "FILM 261",
       "title": "Directing for the Camera",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Tazewell, J"
       ],
@@ -3966,6 +4389,9 @@
       "courseCode": "FILM 288",
       "title": "Narrative Podcasting",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 18,
       "instructors": [
         "Silverman, F"
       ],
@@ -3995,6 +4421,9 @@
       "courseCode": "FILM 291",
       "title": "ST: Women in Cinema",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 23,
+      "seatsEnrolled": null,
       "instructors": [
         "Riegel-Cobb, N"
       ],
@@ -4021,6 +4450,9 @@
       "courseCode": "FILM 480",
       "title": "Senior Seminar in Film",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 15,
       "instructors": [
         "Sherman, J"
       ],
@@ -4047,6 +4479,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 3,
       "instructors": [
         "Treber, J"
       ],
@@ -4076,6 +4511,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 7,
       "instructors": [
         "Treber, J"
       ],
@@ -4105,6 +4543,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 7,
       "instructors": [
         "Corrigan, J"
       ],
@@ -4135,6 +4576,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 9,
       "instructors": [
         "Corrigan, J"
       ],
@@ -4165,6 +4609,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 2,
       "instructors": [
         "Kolliner, D"
       ],
@@ -4195,6 +4642,9 @@
       "courseCode": "ECON 101",
       "title": "Princ of Microeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 4,
       "instructors": [
         "Kolliner, D"
       ],
@@ -4225,6 +4675,9 @@
       "courseCode": "ECON 102",
       "title": "Princ of Macroeconomics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 9,
       "instructors": [
         "Rendell, L"
       ],
@@ -4254,6 +4707,9 @@
       "courseCode": "ECON 201",
       "title": "Microeconomic Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 27,
       "instructors": [
         "Black, K"
       ],
@@ -4284,6 +4740,9 @@
       "courseCode": "ECON 201",
       "title": "Microeconomic Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 26,
       "instructors": [
         "Black, K"
       ],
@@ -4314,6 +4773,9 @@
       "courseCode": "ECON 201",
       "title": "Microeconomic Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": null,
       "instructors": [
         "An, G"
       ],
@@ -4344,6 +4806,9 @@
       "courseCode": "ECON 201",
       "title": "Microeconomic Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": null,
       "instructors": [
         "An, G"
       ],
@@ -4374,6 +4839,9 @@
       "courseCode": "ECON 205",
       "title": "Introduction to Econometrics",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 19,
       "instructors": [
         "Diethorn, H"
       ],
@@ -4404,6 +4872,9 @@
       "courseCode": "ECON 205",
       "title": "Introduction to Econometrics",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 15,
       "instructors": [
         "Diethorn, H"
       ],
@@ -4434,6 +4905,9 @@
       "courseCode": "ECON 337",
       "title": "Portfolio Allocation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 14,
       "instructors": [
         "Glandon, P"
       ],
@@ -4463,6 +4937,9 @@
       "courseCode": "ECON 338",
       "title": "International Trade",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 5,
       "instructors": [
         "An, G"
       ],
@@ -4492,6 +4969,9 @@
       "courseCode": "ECON 344",
       "title": "Labor Economics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 18,
       "instructors": [
         "Diethorn, H"
       ],
@@ -4522,6 +5002,9 @@
       "courseCode": "ECON 365",
       "title": "Economics of Education Policy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 10,
       "instructors": [
         "Rendell, L"
       ],
@@ -4551,6 +5034,9 @@
       "courseCode": "ECON 437",
       "title": "The Economics of Corporations",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Glandon, P"
       ],
@@ -4580,6 +5066,9 @@
       "courseCode": "ECON 471",
       "title": "Experimental & Behavioral Econ",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Corrigan, J"
       ],
@@ -4609,6 +5098,9 @@
       "courseCode": "ECON 476",
       "title": "Political Economy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Kolliner, D"
       ],
@@ -4638,6 +5130,9 @@
       "courseCode": "ENGL 103",
       "title": "Health and Healing",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 1,
       "instructors": [
         "Fernando, K"
       ],
@@ -4668,6 +5163,9 @@
       "courseCode": "ENGL 103",
       "title": "Health and Healing",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 1,
       "instructors": [
         "Fernando, K"
       ],
@@ -4698,6 +5196,9 @@
       "courseCode": "ENGL 103",
       "title": "Assault of Laughter",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 4,
       "instructors": [
         "Grace, A"
       ],
@@ -4728,6 +5229,9 @@
       "courseCode": "ENGL 103",
       "title": "Making a Life",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Heidt, S"
       ],
@@ -4758,6 +5262,9 @@
       "courseCode": "ENGL 103",
       "title": "Bodily Matters",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Lau, T"
       ],
@@ -4788,6 +5295,9 @@
       "courseCode": "ENGL 103",
       "title": "Seductions",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Lobanov-Rostovsky, S"
       ],
@@ -4818,6 +5328,9 @@
       "courseCode": "ENGL 103",
       "title": "Writing the Mind",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Matz, J"
       ],
@@ -4848,6 +5361,9 @@
       "courseCode": "ENGL 103",
       "title": "Writing the Mind",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 4,
       "instructors": [
         "Matz, J"
       ],
@@ -4878,6 +5394,9 @@
       "courseCode": "ENGL 103",
       "title": "Writing the Race",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Schoenfeld, J"
       ],
@@ -4908,6 +5427,9 @@
       "courseCode": "ENGL 103",
       "title": "Authorship",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Suazo, M"
       ],
@@ -4938,6 +5460,9 @@
       "courseCode": "ENGL 103",
       "title": "Disease, Feeling & Represent",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Nath, M"
       ],
@@ -4968,6 +5493,9 @@
       "courseCode": "ENGL 103",
       "title": "Words and Worlds",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Jha, J"
       ],
@@ -4998,6 +5526,9 @@
       "courseCode": "ENGL 201",
       "title": "Introduction to Poetry Writing",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 15,
       "instructors": [
         "Grace, A"
       ],
@@ -5024,6 +5555,9 @@
       "courseCode": "ENGL 205",
       "title": "Multi-Genre Creative Writing",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": 14,
       "instructors": [
         "Arocho Hernandez, N"
       ],
@@ -5050,6 +5584,9 @@
       "courseCode": "ENGL 206",
       "title": "Intro Science & Nature Writing",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 14,
       "instructors": [
         "Warren, H"
       ],
@@ -5078,6 +5615,9 @@
       "courseCode": "ENGL 207",
       "title": "Asian American Poetry",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 5,
       "instructors": [
         "Leong, M"
       ],
@@ -5106,6 +5646,9 @@
       "courseCode": "ENGL 217",
       "title": "Writing Center Colloquium",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 9,
       "instructors": [
         "Scanlon, A"
       ],
@@ -5133,6 +5676,9 @@
       "courseCode": "ENGL 251",
       "title": "Studies in British Romanticism",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Lau, T"
       ],
@@ -5162,6 +5708,9 @@
       "courseCode": "ENGL 255",
       "title": "Spectres of Empire",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 14,
       "instructors": [
         "Murthy, P"
       ],
@@ -5191,6 +5740,9 @@
       "courseCode": "ENGL 266",
       "title": "Decolonization and Violence",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 15,
       "instructors": [
         "Fernando, K"
       ],
@@ -5220,6 +5772,9 @@
       "courseCode": "ENGL 300",
       "title": "Intermediate Fiction Writing",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "Parssinen, K"
       ],
@@ -5249,6 +5804,9 @@
       "courseCode": "ENGL 301",
       "title": "Intermediate Poetry Writing",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 9,
       "instructors": [
         "Leong, M"
       ],
@@ -5277,6 +5835,9 @@
       "courseCode": "ENGL 320",
       "title": "Shakespeare",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Davidson, A"
       ],
@@ -5306,6 +5867,9 @@
       "courseCode": "ENGL 336",
       "title": "17th-Century Poetry",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 18,
+      "seatsEnrolled": 19,
       "instructors": [
         "Lobanov-Rostovsky, S"
       ],
@@ -5336,6 +5900,9 @@
       "courseCode": "ENGL 358",
       "title": "Victorian Ghosts",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Lau, T"
       ],
@@ -5366,6 +5933,9 @@
       "courseCode": "ENGL 367",
       "title": "The Global South Novel",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Nath, M"
       ],
@@ -5395,6 +5965,9 @@
       "courseCode": "ENGL 375",
       "title": "U.S. Fiction in 19th-cent.",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 19,
       "instructors": [
         "Suazo, M"
       ],
@@ -5425,6 +5998,9 @@
       "courseCode": "ENGL 385",
       "title": "Contemporary American Poetry",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Grace, A"
       ],
@@ -5455,6 +6031,9 @@
       "courseCode": "ENGL 386",
       "title": "Toni Morrison",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Schoenfeld, J"
       ],
@@ -5484,6 +6063,9 @@
       "courseCode": "ENGL 391",
       "title": "ST: Flash Prose Studio",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "Parssinen, K"
       ],
@@ -5510,6 +6092,9 @@
       "courseCode": "ENGL 391",
       "title": "ST:Feminist Fiction Since 1960",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 15,
       "instructors": [
         "Evans, C"
       ],
@@ -5536,6 +6121,9 @@
       "courseCode": "ENGL 391",
       "title": "ST: Modern Indian Literature",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Jha, J"
       ],
@@ -5564,6 +6152,9 @@
       "courseCode": "ENGL 404",
       "title": "Advanced Prose",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 10,
       "instructors": [
         "Parssinen, K"
       ],
@@ -5593,6 +6184,9 @@
       "courseCode": "ENGL 491",
       "title": "ST: Premodern Sexualities",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 11,
       "instructors": [
         "O'Neill, R"
       ],
@@ -5620,6 +6214,9 @@
       "courseCode": "ENGL 491",
       "title": "ST: Genres of the Contemporary",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 15,
       "instructors": [
         "Murthy, P"
       ],
@@ -5646,6 +6243,9 @@
       "courseCode": "ENGL 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Suazo, M"
       ],
@@ -5675,6 +6275,9 @@
       "courseCode": "ENVS 112",
       "title": "Intro to Environmental Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 35,
+      "seatsEnrolled": 14,
       "instructors": [
         "Shakya, K"
       ],
@@ -5705,6 +6308,9 @@
       "courseCode": "ENVS 112",
       "title": "Intro to Environmental Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 35,
+      "seatsEnrolled": 19,
       "instructors": [
         "Gray, R"
       ],
@@ -5735,6 +6341,9 @@
       "courseCode": "ENVS 210",
       "title": "Intro Environmental Lab",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 12,
       "instructors": [
         "Schmitt, L"
       ],
@@ -5763,6 +6372,9 @@
       "courseCode": "ENVS 220",
       "title": "Applied Environmental Analysis",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 13,
       "instructors": [
         "Shakya, K"
       ],
@@ -5792,6 +6404,9 @@
       "courseCode": "ENVS 253",
       "title": "Sustainable Agriculture",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 10,
       "instructors": [
         "Schmitt, L"
       ],
@@ -5820,6 +6435,9 @@
       "courseCode": "ENVS 261",
       "title": "Geographic Information Science",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 12,
       "instructors": [
         "Holdener, E"
       ],
@@ -5849,6 +6467,9 @@
       "courseCode": "ENVS 341",
       "title": "Science of Climate Change",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 13,
       "instructors": [
         "Gray, R"
       ],
@@ -5878,6 +6499,9 @@
       "courseCode": "ENVS 392",
       "title": "ST: Forest Ecology Lab",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 7,
       "instructors": [
         "Schmitt, L"
       ],
@@ -5904,6 +6528,9 @@
       "courseCode": "GSS 111",
       "title": "Intro to Gender & SexualitySt",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 11,
       "instructors": [
         "López, I"
       ],
@@ -5933,6 +6560,9 @@
       "courseCode": "GSS 291",
       "title": "ST: Gender, Sexuality, & Sci",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 7,
       "instructors": [
         "Bradner, A"
       ],
@@ -5960,6 +6590,9 @@
       "courseCode": "GSS 330",
       "title": "Feminist Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 7,
       "instructors": [
         "O'Neill, R"
       ],
@@ -5989,6 +6622,9 @@
       "courseCode": "GSS 497",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "O'Neill, R"
       ],
@@ -6008,6 +6644,9 @@
       "courseCode": "HIST 100",
       "title": "History First-Year Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Ehrenfreund, M"
       ],
@@ -6035,6 +6674,9 @@
       "courseCode": "HIST 120",
       "title": "Early Latin America",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Franco, R"
       ],
@@ -6065,6 +6707,9 @@
       "courseCode": "HIST 126",
       "title": "Early Middle Ages 300-1100",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 13,
       "instructors": [
         "Novikoff, A"
       ],
@@ -6094,6 +6739,9 @@
       "courseCode": "HIST 131",
       "title": "Early Modern Europe",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 22,
+      "seatsEnrolled": 10,
       "instructors": [
         "Rivest, J"
       ],
@@ -6123,6 +6771,9 @@
       "courseCode": "HIST 145",
       "title": "Early Africa",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 9,
       "instructors": [
         "Volz, S"
       ],
@@ -6153,6 +6804,9 @@
       "courseCode": "HIST 161",
       "title": "Early East Asia",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 13,
       "instructors": [
         "Li, L"
       ],
@@ -6183,6 +6837,9 @@
       "courseCode": "HIST 180",
       "title": "Hist of the N Amer Wilderness",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": 23,
       "instructors": [
         "Bottiger, P"
       ],
@@ -6213,6 +6870,9 @@
       "courseCode": "HIST 210",
       "title": "War for Black Freedom",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "McNair, G"
       ],
@@ -6242,6 +6902,9 @@
       "courseCode": "HIST 218",
       "title": "History of Mexico",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 25,
       "instructors": [
         "Franco, R"
       ],
@@ -6272,6 +6935,9 @@
       "courseCode": "HIST 226",
       "title": "The British Empire",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 20,
       "instructors": [
         "Buxton, H"
       ],
@@ -6302,6 +6968,9 @@
       "courseCode": "HIST 231",
       "title": "Habsburg Empire",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 11,
       "instructors": [
         "Ablovatski, E"
       ],
@@ -6331,6 +7000,9 @@
       "courseCode": "HIST 258",
       "title": "Ottoman Empire",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Kilic-Schubel, N"
       ],
@@ -6360,6 +7032,9 @@
       "courseCode": "HIST 291",
       "title": "ST: History of Korea",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 8,
       "instructors": [
         "Li, L"
       ],
@@ -6387,6 +7062,9 @@
       "courseCode": "HIST 291",
       "title": "ST: US Consumer Culture",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 4,
       "instructors": [
         "Coulibaly, S"
       ],
@@ -6414,6 +7092,9 @@
       "courseCode": "HIST 318",
       "title": "The North American Wests",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 15,
       "instructors": [
         "Bottiger, P"
       ],
@@ -6442,6 +7123,9 @@
       "courseCode": "HIST 328",
       "title": "Crusades:Relgn,Violnce,Med Eur",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 12,
       "instructors": [
         "Novikoff, A"
       ],
@@ -6470,6 +7154,9 @@
       "courseCode": "HIST 329",
       "title": "Alchemy, Astrology & Magic",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 13,
       "instructors": [
         "Rivest, J"
       ],
@@ -6498,6 +7185,9 @@
       "courseCode": "HIST 342",
       "title": "History of Public Health",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 12,
       "instructors": [
         "Buxton, H"
       ],
@@ -6526,6 +7216,9 @@
       "courseCode": "HIST 380",
       "title": "Black Hist thru Fiction & Film",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 7,
       "instructors": [
         "McNair, G"
       ],
@@ -6554,6 +7247,9 @@
       "courseCode": "HIST 387",
       "title": "Practice and Theory of History",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 2,
       "instructors": [
         "Coulibaly, S"
       ],
@@ -6582,6 +7278,9 @@
       "courseCode": "HIST 444",
       "title": "Faith and Power in Africa",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 1,
       "instructors": [
         "Volz, S"
       ],
@@ -6610,6 +7309,9 @@
       "courseCode": "HIST 490",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Buxton, H"
       ],
@@ -6638,6 +7340,9 @@
       "courseCode": "HIST 490",
       "title": "Senior Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kilic-Schubel, N"
       ],
@@ -6666,6 +7371,9 @@
       "courseCode": "HIST 491",
       "title": "ST: Women in Civil Rights Mvmt",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 3,
       "instructors": [
         "Gourrier, F"
       ],
@@ -6692,6 +7400,9 @@
       "courseCode": "HIST 497Y",
       "title": "Senior Honors Seminar",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Coulibaly, S"
       ],
@@ -6711,6 +7422,9 @@
       "courseCode": "INDS 191",
       "title": "ST: Comm Healthcare Sem TtoP",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 18,
       "instructors": [
         "Ferenbaugh, A",
         "Teall, A"
@@ -6738,6 +7452,9 @@
       "courseCode": "INDS 209",
       "title": "Sci & Nature Fiction Writing",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 11,
       "instructors": [
         "Slonczewski, J"
       ],
@@ -6767,6 +7484,9 @@
       "courseCode": "INDS 231",
       "title": "The Holocaust",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 6,
       "instructors": [
         "Ablovatski, E",
         "Riegert, L"
@@ -6795,6 +7515,9 @@
       "courseCode": "INST 201",
       "title": "Expansion of Intern'l Society",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 16,
       "instructors": [
         "Singer, W"
       ],
@@ -6824,6 +7547,9 @@
       "courseCode": "INST 401",
       "title": "Sr Sem International Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 11,
+      "seatsEnrolled": 9,
       "instructors": [
         "Rowe, D"
       ],
@@ -6852,6 +7578,9 @@
       "courseCode": "INST 401",
       "title": "Sr Sem International Studies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 6,
       "instructors": [
         "Villegas, C"
       ],
@@ -6880,6 +7609,9 @@
       "courseCode": "INST 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "McAllister, J"
       ],
@@ -6899,6 +7631,9 @@
       "courseCode": "IPHS 111Y",
       "title": "Odyssey:Wisdom & Understanding",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 1,
       "instructors": [
         "Leibowitz, L",
         "Novikoff, A"
@@ -6928,6 +7663,9 @@
       "courseCode": "IPHS 200",
       "title": "Programming Humanity",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 13,
       "instructors": [
         "Elkins, K"
       ],
@@ -6955,6 +7693,9 @@
       "courseCode": "IPHS 200",
       "title": "Programming Humanity",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 18,
       "instructors": [
         "Elkins, K"
       ],
@@ -6982,6 +7723,9 @@
       "courseCode": "IPHS 400",
       "title": "Frontiers in Generative AI",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 10,
       "instructors": [
         "Chun, J"
       ],
@@ -7011,6 +7755,9 @@
       "courseCode": "IPHS 484",
       "title": "Senior Research Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 4,
       "instructors": [
         "Elkins, K"
       ],
@@ -7030,6 +7777,9 @@
       "courseCode": "MATH 111",
       "title": "Calculus I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 14,
       "instructors": [
         "Milnikel, B"
       ],
@@ -7060,6 +7810,9 @@
       "courseCode": "MATH 111",
       "title": "Calculus I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 5,
       "instructors": [
         "Milnikel, B"
       ],
@@ -7090,6 +7843,9 @@
       "courseCode": "MATH 111",
       "title": "Calculus I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 5,
       "instructors": [
         "Milnikel, B"
       ],
@@ -7120,6 +7876,9 @@
       "courseCode": "MATH 112",
       "title": "Calculus II",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 8,
       "instructors": [
         "Snipes, M"
       ],
@@ -7150,6 +7909,9 @@
       "courseCode": "MATH 128",
       "title": "Hist of Math in Islamic World",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 10,
       "instructors": [
         "Aydin, N"
       ],
@@ -7180,6 +7942,9 @@
       "courseCode": "MATH 212",
       "title": "Sequences and Series",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 12,
       "instructors": [
         "Aydin, N"
       ],
@@ -7210,6 +7975,9 @@
       "courseCode": "MATH 213",
       "title": "Multivariable Calculus",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 9,
       "instructors": [
         "Weeks, E"
       ],
@@ -7240,6 +8008,9 @@
       "courseCode": "MATH 213",
       "title": "Multivariable Calculus",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 3,
       "instructors": [
         "Weeks, E"
       ],
@@ -7270,6 +8041,9 @@
       "courseCode": "MATH 222",
       "title": "Foundations",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 10,
       "instructors": [
         "Aydin, N"
       ],
@@ -7300,6 +8074,9 @@
       "courseCode": "MATH 224",
       "title": "Linear Algebra",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 10,
       "instructors": [
         "Edwards, D"
       ],
@@ -7330,6 +8107,9 @@
       "courseCode": "MATH 230",
       "title": "Euclidean & Non-Euclidean Geom",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 7,
       "instructors": [
         "Schumacher, C"
       ],
@@ -7360,6 +8140,9 @@
       "courseCode": "MATH 327",
       "title": "Number Theory Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 16,
+      "seatsEnrolled": 13,
       "instructors": [
         "Holdener, J"
       ],
@@ -7389,6 +8172,9 @@
       "courseCode": "MATH 333",
       "title": "Ordinary Differential Equation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 12,
       "instructors": [
         "Edwards, D"
       ],
@@ -7419,6 +8205,9 @@
       "courseCode": "MATH 336",
       "title": "Probability",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 18,
       "instructors": [
         "Hartlaub, B"
       ],
@@ -7449,6 +8238,9 @@
       "courseCode": "MATH 341",
       "title": "Real Analysis I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 21,
       "instructors": [
         "Schumacher, C"
       ],
@@ -7479,6 +8271,9 @@
       "courseCode": "MATH 347",
       "title": "Mathematical Models",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 11,
       "instructors": [
         "Gee, M"
       ],
@@ -7509,6 +8304,9 @@
       "courseCode": "MATH 480",
       "title": "Sr Seminar in Mathematics",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 36,
+      "seatsEnrolled": 27,
       "instructors": [
         "Holdener, J"
       ],
@@ -7539,6 +8337,9 @@
       "courseCode": "MATH 480",
       "title": "Sr Seminar in Mathematics",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Gee, M"
       ],
@@ -7569,6 +8370,9 @@
       "courseCode": "MATH 480",
       "title": "Sr Seminar in Mathematics",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Leatherman, E"
       ],
@@ -7599,6 +8403,9 @@
       "courseCode": "STAT 106",
       "title": "Elements of Statistics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 20,
       "instructors": [
         "Leatherman, E"
       ],
@@ -7629,6 +8436,9 @@
       "courseCode": "STAT 106",
       "title": "Elements of Statistics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 10,
       "instructors": [
         "Snipes, M"
       ],
@@ -7659,6 +8469,9 @@
       "courseCode": "STAT 106",
       "title": "Elements of Statistics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 8,
       "instructors": [
         "Jones, B"
       ],
@@ -7689,6 +8502,9 @@
       "courseCode": "STAT 206",
       "title": "Data Analysis",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 13,
       "instructors": [
         "Hartlaub, B"
       ],
@@ -7719,6 +8535,9 @@
       "courseCode": "STAT 226",
       "title": "Stat Computing with R",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 17,
       "instructors": [
         "Jones, B"
       ],
@@ -7749,6 +8568,9 @@
       "courseCode": "STAT 226",
       "title": "Stat Computing with R",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 6,
       "instructors": [
         "Jones, B"
       ],
@@ -7779,6 +8601,9 @@
       "courseCode": "ARBC 111Y",
       "title": "Intensive Intro Arabic",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 3,
       "instructors": [
         "Carter, P"
       ],
@@ -7817,6 +8642,9 @@
       "courseCode": "ARBC 213Y",
       "title": "Intermediate Arabic I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 12,
       "instructors": [
         "Sadek, R"
       ],
@@ -7847,6 +8675,9 @@
       "courseCode": "ARBC 321",
       "title": "Advanced Arabic I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 6,
+      "seatsEnrolled": 5,
       "instructors": [
         "Sadek, R"
       ],
@@ -7877,6 +8708,9 @@
       "courseCode": "ASL 111Y",
       "title": "American Sign Language 1",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 10,
       "instructors": [
         "Limas, C"
       ],
@@ -7915,6 +8749,9 @@
       "courseCode": "CHNS 111Y",
       "title": "Intensive Intro Chinese",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 3,
       "instructors": [
         "Wu, J"
       ],
@@ -7953,6 +8790,9 @@
       "courseCode": "CHNS 213Y",
       "title": "Intermediate Chinese",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 9,
       "instructors": [
         "Sun, C"
       ],
@@ -7983,6 +8823,9 @@
       "courseCode": "CHNS 321",
       "title": "Adv Conversation & Composition",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 4,
       "instructors": [
         "Sun, C"
       ],
@@ -8013,6 +8856,9 @@
       "courseCode": "CHNS 332",
       "title": "China in Ten Words",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 5,
       "instructors": [
         "Sun, C"
       ],
@@ -8042,6 +8888,9 @@
       "courseCode": "FREN 111Y",
       "title": "Intensive Intro French",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 8,
       "instructors": [
         "Guiney, M"
       ],
@@ -8080,6 +8929,9 @@
       "courseCode": "FREN 111Y",
       "title": "Intensive Intro French",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 2,
       "instructors": [
         "Malone, M"
       ],
@@ -8118,6 +8970,9 @@
       "courseCode": "FREN 213Y",
       "title": "Intermediate French",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 5,
       "instructors": [
         "Curtis, I"
       ],
@@ -8148,6 +9003,9 @@
       "courseCode": "FREN 213Y",
       "title": "Intermediate French",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 9,
       "instructors": [
         "Dairon, P"
       ],
@@ -8178,6 +9036,9 @@
       "courseCode": "FREN 250",
       "title": "The French Detective Novel",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 6,
       "instructors": [
         "Curtis, I"
       ],
@@ -8207,6 +9068,9 @@
       "courseCode": "FREN 321",
       "title": "Adv Composition & Conversation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 9,
       "instructors": [
         "Curtis, I"
       ],
@@ -8237,6 +9101,9 @@
       "courseCode": "FREN 321",
       "title": "Adv Composition & Conversation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 2,
       "instructors": [
         "Dairon, P"
       ],
@@ -8267,6 +9134,9 @@
       "courseCode": "FREN 323",
       "title": "French Lit Before 1800",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 5,
       "instructors": [
         "Dairon, P"
       ],
@@ -8297,6 +9167,9 @@
       "courseCode": "FREN 346",
       "title": "Romantics & Realists",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 9,
       "instructors": [
         "Guiney, M"
       ],
@@ -8326,6 +9199,9 @@
       "courseCode": "GERM 111Y",
       "title": "Intensive Intro German",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 6,
       "instructors": [
         "Riegert, L"
       ],
@@ -8365,6 +9241,9 @@
       "courseCode": "GERM 213Y",
       "title": "Intermediate German Language",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 7,
       "instructors": [
         "Gebhardt, P"
       ],
@@ -8395,6 +9274,9 @@
       "courseCode": "GERM 321",
       "title": "Adv Composition & Conversation",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 6,
       "instructors": [
         "Gebhardt, P"
       ],
@@ -8425,6 +9307,9 @@
       "courseCode": "GERM 363",
       "title": "From Nietzsche to Kafka",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Gebhardt, P"
       ],
@@ -8454,6 +9339,9 @@
       "courseCode": "ITAL 111Y",
       "title": "Intensive Intro Italian",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 4,
       "instructors": [
         "Dubrovic, S"
       ],
@@ -8493,6 +9381,9 @@
       "courseCode": "ITAL 213Y",
       "title": "Language and Culture",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 6,
       "instructors": [
         "Dubrovic, S"
       ],
@@ -8523,6 +9414,9 @@
       "courseCode": "ITAL 321",
       "title": "Advanced Italian",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 8,
       "instructors": [
         "Dubrovic, S"
       ],
@@ -8553,6 +9447,9 @@
       "courseCode": "JAPN 111Y",
       "title": "Intensive Intro Mod Japanese",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 3,
       "instructors": [
         "Steinhauer, M"
       ],
@@ -8591,6 +9488,9 @@
       "courseCode": "JAPN 213Y",
       "title": "Intermediate Mod Japanese",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hang, T"
       ],
@@ -8621,6 +9521,9 @@
       "courseCode": "JAPN 291",
       "title": "ST: Love & Loss Japan Lit",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": null,
       "instructors": [
         "Hang, T"
       ],
@@ -8648,6 +9551,9 @@
       "courseCode": "JAPN 321",
       "title": "Adv Japanese Lang & Culture",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 6,
       "instructors": [
         "Hang, T"
       ],
@@ -8678,6 +9584,9 @@
       "courseCode": "MLL 100",
       "title": "2nd Lang Acquisition & Teach",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 23,
       "instructors": [
         "Malone, M"
       ],
@@ -8704,6 +9613,9 @@
       "courseCode": "RUSS 111Y",
       "title": "Intensive Intro Russian",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 1,
       "instructors": [
         "McGavran, J"
       ],
@@ -8736,6 +9648,9 @@
       "courseCode": "RUSS 321",
       "title": "Advanced Russian",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 4,
       "instructors": [
         "Aydinyan, A"
       ],
@@ -8766,6 +9681,9 @@
       "courseCode": "RUSS 325",
       "title": "Russian Poetry & Poetics",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 8,
+      "seatsEnrolled": 6,
       "instructors": [
         "McGavran, J"
       ],
@@ -8795,6 +9713,9 @@
       "courseCode": "SPAN 111Y",
       "title": "Self & Society:Intensive Intro",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 7,
       "instructors": [
         "Sierra, M"
       ],
@@ -8833,6 +9754,9 @@
       "courseCode": "SPAN 111Y",
       "title": "Self & Society:Intensive Intro",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 7,
       "instructors": [
         "Hartnett, D"
       ],
@@ -8871,6 +9795,9 @@
       "courseCode": "SPAN 111Y",
       "title": "Self & Society:Intensive Intro",
       "credits": 6,
+      "permission": null,
+      "seatLimit": 17,
+      "seatsEnrolled": 6,
       "instructors": [
         "Couso Diaz, S"
       ],
@@ -8909,6 +9836,9 @@
       "courseCode": "SPAN 213Y",
       "title": "Lang & Culture: Int Span",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 3,
       "instructors": [
         "Karosaite, A"
       ],
@@ -8939,6 +9869,9 @@
       "courseCode": "SPAN 213Y",
       "title": "Lang & Culture: Int Span",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 16,
       "instructors": [
         "Hedeen, K"
       ],
@@ -8969,6 +9902,9 @@
       "courseCode": "SPAN 321",
       "title": "Lit & Film: Adv Writing Span",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 11,
       "instructors": [
         "del Río Arrillaga, D"
       ],
@@ -8999,6 +9935,9 @@
       "courseCode": "SPAN 321",
       "title": "Lit & Film: Adv Writing Span",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 10,
       "instructors": [
         "del Río Arrillaga, D"
       ],
@@ -9029,6 +9968,9 @@
       "courseCode": "SPAN 325",
       "title": "Intro to Spanish Amer Lit",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 7,
       "instructors": [
         "Sierra, M"
       ],
@@ -9059,6 +10001,9 @@
       "courseCode": "SPAN 357",
       "title": "Spanish Medieval Literature",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 7,
       "instructors": [
         "Hartnett, D"
       ],
@@ -9089,6 +10034,9 @@
       "courseCode": "SPAN 391",
       "title": "ST: Fighting Fascism in Spain",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 11,
       "instructors": [
         "del Río Arrillaga, D"
       ],
@@ -9117,6 +10065,9 @@
       "courseCode": "SPAN 391",
       "title": "ST: Env Catastroph L Amer Lit",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 12,
       "instructors": [
         "Couso Diaz, S"
       ],
@@ -9144,6 +10095,9 @@
       "courseCode": "MUSC 101",
       "title": "Basic Musicianship",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 27,
+      "seatsEnrolled": 16,
       "instructors": [
         "Locke, B"
       ],
@@ -9174,6 +10128,9 @@
       "courseCode": "MUSC 102",
       "title": "Musical Style",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 23,
+      "seatsEnrolled": 9,
       "instructors": [
         "Heuchemer, D"
       ],
@@ -9203,6 +10160,9 @@
       "courseCode": "MUSC 121Y",
       "title": "Music Theory",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 27,
+      "seatsEnrolled": 6,
       "instructors": [
         "Buehrer, T"
       ],
@@ -9241,6 +10201,9 @@
       "courseCode": "MUSC 124",
       "title": "Intro to Computer Music",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 18,
       "instructors": [
         "Feller, R"
       ],
@@ -9271,6 +10234,9 @@
       "courseCode": "MUSC 140",
       "title": "Level-I Organ",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -9290,6 +10256,9 @@
       "courseCode": "MUSC 141",
       "title": "Level-I Harpsichord",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -9309,6 +10278,9 @@
       "courseCode": "MUSC 142",
       "title": "Level-I Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Reitz, J"
       ],
@@ -9328,6 +10300,9 @@
       "courseCode": "MUSC 142",
       "title": "Level-I Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -9347,6 +10322,9 @@
       "courseCode": "MUSC 142",
       "title": "Level-I Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sun, W"
       ],
@@ -9366,6 +10344,9 @@
       "courseCode": "MUSC 143",
       "title": "Level-I Jazz Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hutslar, C"
       ],
@@ -9385,6 +10366,9 @@
       "courseCode": "MUSC 144",
       "title": "Level-I Harp",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -9404,6 +10388,9 @@
       "courseCode": "MUSC 145",
       "title": "Level-I Fiddle",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Litteral, M"
       ],
@@ -9423,6 +10410,9 @@
       "courseCode": "MUSC 146",
       "title": "Level-I Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -9442,6 +10432,9 @@
       "courseCode": "MUSC 146",
       "title": "Level-I Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sletner, A"
       ],
@@ -9461,6 +10454,9 @@
       "courseCode": "MUSC 147",
       "title": "Level-I Viola",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -9480,6 +10476,9 @@
       "courseCode": "MUSC 148",
       "title": "Level-I Cello",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Biava, L"
       ],
@@ -9499,6 +10498,9 @@
       "courseCode": "MUSC 150",
       "title": "Level-I Jazz Upright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -9518,6 +10520,9 @@
       "courseCode": "MUSC 150",
       "title": "Level-I Classical Upright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilburn, A"
       ],
@@ -9537,6 +10542,9 @@
       "courseCode": "MUSC 151",
       "title": "Level-I Bass Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -9556,6 +10564,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -9575,6 +10586,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -9594,6 +10608,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -9613,6 +10630,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -9632,6 +10652,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -9651,6 +10674,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -9670,6 +10696,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Mandolin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -9689,6 +10718,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Dobro",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -9708,6 +10740,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -9727,6 +10762,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -9746,6 +10784,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -9765,6 +10806,9 @@
       "courseCode": "MUSC 152",
       "title": "Level-I Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -9784,6 +10828,9 @@
       "courseCode": "MUSC 153",
       "title": "Level-I Classical Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -9803,6 +10850,9 @@
       "courseCode": "MUSC 154",
       "title": "Level-I French Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Grant-Gertel, A"
       ],
@@ -9822,6 +10872,9 @@
       "courseCode": "MUSC 155",
       "title": "Level-I Jazz Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -9841,6 +10894,9 @@
       "courseCode": "MUSC 155",
       "title": "Level-I Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Faulkner, H"
       ],
@@ -9860,6 +10916,9 @@
       "courseCode": "MUSC 156",
       "title": "Level-I Baritone Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -9879,6 +10938,9 @@
       "courseCode": "MUSC 157",
       "title": "Level-I Jazz Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -9898,6 +10960,9 @@
       "courseCode": "MUSC 157",
       "title": "Level-I Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -9917,6 +10982,9 @@
       "courseCode": "MUSC 158",
       "title": "Level-I Tuba",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -9936,6 +11004,9 @@
       "courseCode": "MUSC 159",
       "title": "Level-I Flute",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Packard, J"
       ],
@@ -9955,6 +11026,9 @@
       "courseCode": "MUSC 160",
       "title": "Level-I Recorder",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -9974,6 +11048,9 @@
       "courseCode": "MUSC 161",
       "title": "Level-I Oboe",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -9993,6 +11070,9 @@
       "courseCode": "MUSC 162",
       "title": "Level-I Bassoon",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -10012,6 +11092,9 @@
       "courseCode": "MUSC 163",
       "title": "Level-I Clarinet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -10031,6 +11114,9 @@
       "courseCode": "MUSC 164",
       "title": "Level-I Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -10050,6 +11136,9 @@
       "courseCode": "MUSC 164",
       "title": "Level-I Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Feller, R"
       ],
@@ -10069,6 +11158,9 @@
       "courseCode": "MUSC 164",
       "title": "Level-I Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -10088,6 +11180,9 @@
       "courseCode": "MUSC 165",
       "title": "Level-I Percussion",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Lindroth, J"
       ],
@@ -10107,6 +11202,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dingler, D"
       ],
@@ -10126,6 +11224,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gholston, K"
       ],
@@ -10145,6 +11246,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -10164,6 +11268,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Mahaney, C"
       ],
@@ -10183,6 +11290,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Marcellana, J"
       ],
@@ -10202,6 +11312,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -10221,6 +11334,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -10240,6 +11356,9 @@
       "courseCode": "MUSC 166",
       "title": "Level-I Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilson, C"
       ],
@@ -10259,6 +11378,9 @@
       "courseCode": "MUSC 204",
       "title": "Musc Hist: 19th Century",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 3,
       "instructors": [
         "Sanders, R"
       ],
@@ -10288,6 +11410,9 @@
       "courseCode": "MUSC 206D",
       "title": "Seminar in Ethnomusicology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 7,
       "instructors": [
         "Mendonca, M"
       ],
@@ -10317,6 +11442,9 @@
       "courseCode": "MUSC 207",
       "title": "Music & African American Exp",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Sanders, R"
       ],
@@ -10345,6 +11473,9 @@
       "courseCode": "MUSC 224",
       "title": "Songwriting",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 6,
       "instructors": [
         "Feller, R"
       ],
@@ -10375,6 +11506,9 @@
       "courseCode": "MUSC 240",
       "title": "Level-II Organ",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -10394,6 +11528,9 @@
       "courseCode": "MUSC 241",
       "title": "Level-II Harpsichord",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -10413,6 +11550,9 @@
       "courseCode": "MUSC 242",
       "title": "Level-II Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Reitz, J"
       ],
@@ -10432,6 +11572,9 @@
       "courseCode": "MUSC 242",
       "title": "Level-II Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -10451,6 +11594,9 @@
       "courseCode": "MUSC 242",
       "title": "Level-II Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sun, W"
       ],
@@ -10470,6 +11616,9 @@
       "courseCode": "MUSC 243",
       "title": "Level-II Jazz Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hutslar, C"
       ],
@@ -10489,6 +11638,9 @@
       "courseCode": "MUSC 244",
       "title": "Level-II Harp",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -10508,6 +11660,9 @@
       "courseCode": "MUSC 245",
       "title": "Level-II Fiddle",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Litteral, M"
       ],
@@ -10527,6 +11682,9 @@
       "courseCode": "MUSC 246",
       "title": "Level-II Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -10546,6 +11704,9 @@
       "courseCode": "MUSC 246",
       "title": "Level-II Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sletner, A"
       ],
@@ -10565,6 +11726,9 @@
       "courseCode": "MUSC 247",
       "title": "Level-II Viola",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -10584,6 +11748,9 @@
       "courseCode": "MUSC 248",
       "title": "Level-II Cello",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Biava, L"
       ],
@@ -10603,6 +11770,9 @@
       "courseCode": "MUSC 250",
       "title": "Level-II Jazz Upright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -10622,6 +11792,9 @@
       "courseCode": "MUSC 250",
       "title": "Level-II ClassicalUpright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilburn, A"
       ],
@@ -10641,6 +11814,9 @@
       "courseCode": "MUSC 251",
       "title": "Level-II Bass Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -10660,6 +11836,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -10679,6 +11858,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -10698,6 +11880,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -10717,6 +11902,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -10736,6 +11924,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -10755,6 +11946,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -10774,6 +11968,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Mandolin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -10793,6 +11990,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Dobro",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -10812,6 +12012,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -10831,6 +12034,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -10850,6 +12056,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -10869,6 +12078,9 @@
       "courseCode": "MUSC 252",
       "title": "Level-II Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -10888,6 +12100,9 @@
       "courseCode": "MUSC 253",
       "title": "Level-II Classical Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -10907,6 +12122,9 @@
       "courseCode": "MUSC 254",
       "title": "Level-II French Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Grant-Gertel, A"
       ],
@@ -10926,6 +12144,9 @@
       "courseCode": "MUSC 255",
       "title": "Level-II Jazz Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -10945,6 +12166,9 @@
       "courseCode": "MUSC 255",
       "title": "Level-II Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Faulkner, H"
       ],
@@ -10964,6 +12188,9 @@
       "courseCode": "MUSC 256",
       "title": "Level-II Baritone Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -10983,6 +12210,9 @@
       "courseCode": "MUSC 257",
       "title": "Level-II Jazz Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -11002,6 +12232,9 @@
       "courseCode": "MUSC 257",
       "title": "Level-II Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -11021,6 +12254,9 @@
       "courseCode": "MUSC 258",
       "title": "Level-II Tuba",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -11040,6 +12276,9 @@
       "courseCode": "MUSC 259",
       "title": "Level-II Flute",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Packard, J"
       ],
@@ -11059,6 +12298,9 @@
       "courseCode": "MUSC 260",
       "title": "Level-II Recorder",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -11078,6 +12320,9 @@
       "courseCode": "MUSC 261",
       "title": "Level-II Oboe",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -11097,6 +12342,9 @@
       "courseCode": "MUSC 262",
       "title": "Level-II Bassoon",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -11116,6 +12364,9 @@
       "courseCode": "MUSC 263",
       "title": "Level-II Clarinet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -11135,6 +12386,9 @@
       "courseCode": "MUSC 264",
       "title": "Level-II Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -11154,6 +12408,9 @@
       "courseCode": "MUSC 264",
       "title": "Level-II Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Feller, R"
       ],
@@ -11173,6 +12430,9 @@
       "courseCode": "MUSC 264",
       "title": "Level-II Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -11192,6 +12452,9 @@
       "courseCode": "MUSC 265",
       "title": "Level-II Percussion",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Lindroth, J"
       ],
@@ -11211,6 +12474,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dingler, D"
       ],
@@ -11230,6 +12496,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gholston, K"
       ],
@@ -11249,6 +12518,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -11268,6 +12540,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Mahaney, C"
       ],
@@ -11287,6 +12562,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Marcellana, J"
       ],
@@ -11306,6 +12584,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -11325,6 +12606,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -11344,6 +12628,9 @@
       "courseCode": "MUSC 266",
       "title": "Level-II Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilson, C"
       ],
@@ -11363,6 +12650,9 @@
       "courseCode": "MUSC 302D",
       "title": "History of Jazz",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 11,
+      "seatsEnrolled": 11,
       "instructors": [
         "Heuchemer, D"
       ],
@@ -11391,6 +12681,9 @@
       "courseCode": "MUSC 340",
       "title": "Level-III Organ",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -11410,6 +12703,9 @@
       "courseCode": "MUSC 341",
       "title": "Level-III Harpsichord",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -11429,6 +12725,9 @@
       "courseCode": "MUSC 342",
       "title": "Level-III Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Reitz, J"
       ],
@@ -11448,6 +12747,9 @@
       "courseCode": "MUSC 342",
       "title": "Level-III Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -11467,6 +12769,9 @@
       "courseCode": "MUSC 342",
       "title": "Level-III Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sun, W"
       ],
@@ -11486,6 +12791,9 @@
       "courseCode": "MUSC 343",
       "title": "Level-III Jazz Piano",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hutslar, C"
       ],
@@ -11505,6 +12813,9 @@
       "courseCode": "MUSC 344",
       "title": "Level-III Harp",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -11524,6 +12835,9 @@
       "courseCode": "MUSC 345",
       "title": "Level-III Fiddle",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Litteral, M"
       ],
@@ -11543,6 +12857,9 @@
       "courseCode": "MUSC 346",
       "title": "Level-III Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -11562,6 +12879,9 @@
       "courseCode": "MUSC 346",
       "title": "Level-III Violin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sletner, A"
       ],
@@ -11581,6 +12901,9 @@
       "courseCode": "MUSC 347",
       "title": "Level-III Viola",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -11600,6 +12923,9 @@
       "courseCode": "MUSC 348",
       "title": "Level-III Cello",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Biava, L"
       ],
@@ -11619,6 +12945,9 @@
       "courseCode": "MUSC 350",
       "title": "Level-III Jazz Upright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -11638,6 +12967,9 @@
       "courseCode": "MUSC 350",
       "title": "Level-III Class. Upright Bass",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilburn, A"
       ],
@@ -11657,6 +12989,9 @@
       "courseCode": "MUSC 351",
       "title": "Level-III Bass Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -11676,6 +13011,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -11695,6 +13033,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -11714,6 +13055,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -11733,6 +13077,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -11752,6 +13099,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Banjo",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -11771,6 +13121,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -11790,6 +13143,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Mandolin",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -11809,6 +13165,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Dobro",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -11828,6 +13187,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -11847,6 +13209,9 @@
       "courseCode": "MUSC 352",
       "title": "Level-III Electric Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -11866,6 +13231,9 @@
       "courseCode": "MUSC 353",
       "title": "Level-III Classical Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -11885,6 +13253,9 @@
       "courseCode": "MUSC 353",
       "title": "Level-III Classical Guitar",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -11904,6 +13275,9 @@
       "courseCode": "MUSC 354",
       "title": "Level-III French Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Grant-Gertel, A"
       ],
@@ -11923,6 +13297,9 @@
       "courseCode": "MUSC 355",
       "title": "Level-III Jazz Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -11942,6 +13319,9 @@
       "courseCode": "MUSC 355",
       "title": "Level-III Trumpet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Faulkner, H"
       ],
@@ -11961,6 +13341,9 @@
       "courseCode": "MUSC 356",
       "title": "Level-III Baritone Horn",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -11980,6 +13363,9 @@
       "courseCode": "MUSC 357",
       "title": "Level-III Jazz Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -11999,6 +13385,9 @@
       "courseCode": "MUSC 357",
       "title": "Level-III Trombone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -12018,6 +13407,9 @@
       "courseCode": "MUSC 358",
       "title": "Level-III Tuba",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -12037,6 +13429,9 @@
       "courseCode": "MUSC 359",
       "title": "Level-III Flute",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Packard, J"
       ],
@@ -12056,6 +13451,9 @@
       "courseCode": "MUSC 360",
       "title": "Level-III Recorder",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -12075,6 +13473,9 @@
       "courseCode": "MUSC 361",
       "title": "Level-III Oboe",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -12094,6 +13495,9 @@
       "courseCode": "MUSC 362",
       "title": "Level-III Bassoon",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -12113,6 +13517,9 @@
       "courseCode": "MUSC 363",
       "title": "Level-III Clarinet",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -12132,6 +13539,9 @@
       "courseCode": "MUSC 364",
       "title": "Level-III Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -12151,6 +13561,9 @@
       "courseCode": "MUSC 364",
       "title": "Level-III Jazz Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Feller, R"
       ],
@@ -12170,6 +13583,9 @@
       "courseCode": "MUSC 364",
       "title": "Level-III Saxophone",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -12189,6 +13605,9 @@
       "courseCode": "MUSC 365",
       "title": "Level-III Percussion",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Lindroth, J"
       ],
@@ -12208,6 +13627,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dingler, D"
       ],
@@ -12227,6 +13649,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gholston, K"
       ],
@@ -12246,6 +13671,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -12265,6 +13693,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Mahaney, C"
       ],
@@ -12284,6 +13715,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Marcellana, J"
       ],
@@ -12303,6 +13737,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -12322,6 +13759,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -12341,6 +13781,9 @@
       "courseCode": "MUSC 366",
       "title": "Level-III Voice",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilson, C"
       ],
@@ -12360,6 +13803,9 @@
       "courseCode": "MUSC 440",
       "title": "Level-IV Organ",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -12379,6 +13825,9 @@
       "courseCode": "MUSC 441",
       "title": "Level-IV Harpsichord",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "McCandless, T"
       ],
@@ -12398,6 +13847,9 @@
       "courseCode": "MUSC 442",
       "title": "Level-IV Piano",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Reitz, J"
       ],
@@ -12417,6 +13869,9 @@
       "courseCode": "MUSC 442",
       "title": "Level-IV Piano",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -12436,6 +13891,9 @@
       "courseCode": "MUSC 442",
       "title": "Level-IV Piano",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sun, W"
       ],
@@ -12455,6 +13913,9 @@
       "courseCode": "MUSC 443",
       "title": "Level-IV Jazz Piano",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hutslar, C"
       ],
@@ -12474,6 +13935,9 @@
       "courseCode": "MUSC 444",
       "title": "Level-IV Harp",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -12493,6 +13957,9 @@
       "courseCode": "MUSC 445",
       "title": "Level-IV Fiddle",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Litteral, M"
       ],
@@ -12512,6 +13979,9 @@
       "courseCode": "MUSC 446",
       "title": "Level-IV Violin",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -12531,6 +14001,9 @@
       "courseCode": "MUSC 446",
       "title": "Level-IV Violin",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Sletner, A"
       ],
@@ -12550,6 +14023,9 @@
       "courseCode": "MUSC 447",
       "title": "Level-IV Viola",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Ripley, V"
       ],
@@ -12569,6 +14045,9 @@
       "courseCode": "MUSC 448",
       "title": "Level-IV Cello",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Biava, L"
       ],
@@ -12588,6 +14067,9 @@
       "courseCode": "MUSC 450",
       "title": "Level-IV Jazz Upright Bass",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -12607,6 +14089,9 @@
       "courseCode": "MUSC 450",
       "title": "Level-IV Class. Upright Bass",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilburn, A"
       ],
@@ -12626,6 +14111,9 @@
       "courseCode": "MUSC 451",
       "title": "Level-IV Bass Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Paetsch, M"
       ],
@@ -12645,6 +14133,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -12664,6 +14155,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Electric Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -12683,6 +14177,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Banjo",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bachert, B"
       ],
@@ -12702,6 +14199,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -12721,6 +14221,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Banjo",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -12740,6 +14243,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Electric Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -12759,6 +14265,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Mandolin",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Powers, C"
       ],
@@ -12778,6 +14287,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Dobro",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -12797,6 +14309,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -12816,6 +14331,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -12835,6 +14353,9 @@
       "courseCode": "MUSC 452",
       "title": "Level-IV Electric Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -12854,6 +14375,9 @@
       "courseCode": "MUSC 453",
       "title": "Level-IV Classical Guitar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -12873,6 +14397,9 @@
       "courseCode": "MUSC 454",
       "title": "Level-IV French Horn",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Grant-Gertel, A"
       ],
@@ -12892,6 +14419,9 @@
       "courseCode": "MUSC 455",
       "title": "Level-IV Jazz Trumpet",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -12911,6 +14441,9 @@
       "courseCode": "MUSC 455",
       "title": "Level-IV Trumpet",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Faulkner, H"
       ],
@@ -12930,6 +14463,9 @@
       "courseCode": "MUSC 456",
       "title": "Level-IV Baritone Horn",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -12949,6 +14485,9 @@
       "courseCode": "MUSC 457",
       "title": "Level-IV Jazz Trombone",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -12968,6 +14507,9 @@
       "courseCode": "MUSC 457",
       "title": "Level-IV Trombone",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -12987,6 +14529,9 @@
       "courseCode": "MUSC 458",
       "title": "Level-IV Tuba",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -13006,6 +14551,9 @@
       "courseCode": "MUSC 459",
       "title": "Level-IV Flute",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Packard, J"
       ],
@@ -13025,6 +14573,9 @@
       "courseCode": "MUSC 460",
       "title": "Level-IV Recorder",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -13044,6 +14595,9 @@
       "courseCode": "MUSC 461",
       "title": "Level-IV Oboe",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -13063,6 +14617,9 @@
       "courseCode": "MUSC 462",
       "title": "Level-IV Bassoon",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Hobbs, H"
       ],
@@ -13082,6 +14639,9 @@
       "courseCode": "MUSC 463",
       "title": "Level-IV Clarinet",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13101,6 +14661,9 @@
       "courseCode": "MUSC 464",
       "title": "Level-IV Jazz Saxophone",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13120,6 +14683,9 @@
       "courseCode": "MUSC 464",
       "title": "Level-IV Jazz Saxophone",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Feller, R"
       ],
@@ -13139,6 +14705,9 @@
       "courseCode": "MUSC 464",
       "title": "Level-IV Saxophone",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13158,6 +14727,9 @@
       "courseCode": "MUSC 465",
       "title": "Level-IV Percussion",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Lindroth, J"
       ],
@@ -13177,6 +14749,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dingler, D"
       ],
@@ -13196,6 +14771,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Gholston, K"
       ],
@@ -13215,6 +14793,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -13234,6 +14815,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Mahaney, C"
       ],
@@ -13253,6 +14837,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Marcellana, J"
       ],
@@ -13272,6 +14859,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13291,6 +14881,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13310,6 +14903,9 @@
       "courseCode": "MUSC 466",
       "title": "Level-IV Voice",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Wilson, C"
       ],
@@ -13329,6 +14925,9 @@
       "courseCode": "MUSC 471",
       "title": "Kenyon Community Choir",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 50,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -13357,6 +14956,9 @@
       "courseCode": "MUSC 472",
       "title": "Knox County Symphony",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 30,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -13385,6 +14987,9 @@
       "courseCode": "MUSC 473",
       "title": "Kenyon College Chamber Singers",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 55,
+      "seatsEnrolled": null,
       "instructors": [
         "Locke, B"
       ],
@@ -13424,6 +15029,9 @@
       "courseCode": "MUSC 475",
       "title": "Flute Choir",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Packard, J"
       ],
@@ -13443,6 +15051,9 @@
       "courseCode": "MUSC 477",
       "title": "String Chamber Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Biava, L"
       ],
@@ -13462,6 +15073,9 @@
       "courseCode": "MUSC 478",
       "title": "Guitar Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Downs, K"
       ],
@@ -13481,6 +15095,9 @@
       "courseCode": "MUSC 479",
       "title": "Symphonic Wind Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 45,
+      "seatsEnrolled": null,
       "instructors": [
         "Heuchemer, D"
       ],
@@ -13517,6 +15134,9 @@
       "courseCode": "MUSC 480",
       "title": "Instrumental Jazz Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 30,
+      "seatsEnrolled": null,
       "instructors": [
         "Buehrer, T"
       ],
@@ -13553,6 +15173,9 @@
       "courseCode": "MUSC 482",
       "title": "Percussion Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Lindroth, J"
       ],
@@ -13572,6 +15195,9 @@
       "courseCode": "MUSC 483",
       "title": "Opera & Music Theater Wrkshp",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 25,
+      "seatsEnrolled": null,
       "instructors": [
         "Marcellana, J"
       ],
@@ -13601,6 +15227,9 @@
       "courseCode": "MUSC 485",
       "title": "Asian Music Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Mendonca, M"
       ],
@@ -13637,6 +15266,9 @@
       "courseCode": "MUSC 486",
       "title": "Harp Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Thompson, J"
       ],
@@ -13656,6 +15288,9 @@
       "courseCode": "MUSC 487",
       "title": "Saxophone Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Dr. Staff"
       ],
@@ -13675,6 +15310,9 @@
       "courseCode": "MUSC 488",
       "title": "Brass Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Bell, S"
       ],
@@ -13694,6 +15332,9 @@
       "courseCode": "MUSC 489",
       "title": "Bluegrass Ensemble",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": null,
       "instructors": [
         "Gonzalez, M"
       ],
@@ -13713,6 +15354,9 @@
       "courseCode": "MUSC 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Mendonca, M"
       ],
@@ -13732,6 +15376,9 @@
       "courseCode": "NEUR 212",
       "title": "Neuroscience",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 15,
       "instructors": [
         "Rudolph, L"
       ],
@@ -13762,6 +15409,9 @@
       "courseCode": "NEUR 250",
       "title": "Research Design & Analysis",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 16,
       "instructors": [
         "White, A"
       ],
@@ -13791,6 +15441,9 @@
       "courseCode": "NEUR 307",
       "title": "Sensory Processes",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 18,
       "instructors": [
         "Rudolph, L"
       ],
@@ -13820,6 +15473,9 @@
       "courseCode": "NEUR 385",
       "title": "Research in Neuroscience",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 12,
+      "seatsEnrolled": 4,
       "instructors": [
         "Rudolph, L"
       ],
@@ -13850,6 +15506,9 @@
       "courseCode": "NEUR 471",
       "title": "Current Topics in Neuroscience",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 6,
       "instructors": [
         "McFarlane, H"
       ],
@@ -13878,6 +15537,9 @@
       "courseCode": "NEUR 471",
       "title": "Current Topics in Neuroscience",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 8,
+      "seatsEnrolled": 8,
       "instructors": [
         "Petersen, S"
       ],
@@ -13907,6 +15569,9 @@
       "courseCode": "NEUR 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Petersen, S"
       ],
@@ -13926,6 +15591,9 @@
       "courseCode": "PHIL 100",
       "title": "Introduction to Philosophy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 16,
       "instructors": [
         "Bradner, A"
       ],
@@ -13955,6 +15623,9 @@
       "courseCode": "PHIL 200",
       "title": "Ancient Philosophy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 21,
       "instructors": [
         "Lottenbach, H"
       ],
@@ -13985,6 +15656,9 @@
       "courseCode": "PHIL 201",
       "title": "Symbolic Logic",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 19,
       "instructors": [
         "Richeimer, J"
       ],
@@ -14015,6 +15689,9 @@
       "courseCode": "PHIL 205",
       "title": "Faith & Reason Medieval Phil",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 7,
       "instructors": [
         "Waller, R"
       ],
@@ -14045,6 +15722,9 @@
       "courseCode": "PHIL 209",
       "title": "Feminist Philosophy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 12,
       "instructors": [
         "Waller, R"
       ],
@@ -14074,6 +15754,9 @@
       "courseCode": "PHIL 214",
       "title": "German Idealism",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 13,
       "instructors": [
         "Lottenbach, H"
       ],
@@ -14104,6 +15787,9 @@
       "courseCode": "PHIL 225",
       "title": "Existentialism",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 15,
       "instructors": [
         "DePascuale, J"
       ],
@@ -14133,6 +15819,9 @@
       "courseCode": "PHIL 340",
       "title": "Sartre & Merleau-Ponty",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 11,
       "instructors": [
         "Richeimer, J"
       ],
@@ -14163,6 +15852,9 @@
       "courseCode": "PHIL 405",
       "title": "Epistemology Seminar",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 6,
       "instructors": [
         "Richeimer, J"
       ],
@@ -14191,6 +15883,9 @@
       "courseCode": "PHIL 450",
       "title": "Senior Philosophy Workshop",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 7,
       "instructors": [
         "Bradner, A"
       ],
@@ -14217,6 +15912,9 @@
       "courseCode": "PHIL 497",
       "title": "Senior Honors",
       "credits": 2,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "DePascuale, J"
       ],
@@ -14234,6 +15932,9 @@
       "courseCode": "PHYS 107",
       "title": "Astronomy: Stars & Galaxies",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 48,
+      "seatsEnrolled": 46,
       "instructors": [
         "Turner, P",
         "Schumacher, B"
@@ -14265,6 +15966,9 @@
       "courseCode": "PHYS 130",
       "title": "General Physics I",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 48,
+      "seatsEnrolled": 26,
       "instructors": [
         "Peiris, F"
       ],
@@ -14295,6 +15999,9 @@
       "courseCode": "PHYS 131",
       "title": "Intro to Exp. Physics I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "Giblin, T"
       ],
@@ -14323,6 +16030,9 @@
       "courseCode": "PHYS 131",
       "title": "Intro to Exp. Physics I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 11,
       "instructors": [
         "Schumacher, B"
       ],
@@ -14351,6 +16061,9 @@
       "courseCode": "PHYS 131",
       "title": "Intro to Exp. Physics I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 12,
+      "seatsEnrolled": 5,
       "instructors": [
         "Reinhard, A"
       ],
@@ -14379,6 +16092,9 @@
       "courseCode": "PHYS 140",
       "title": "Classical Physics",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 48,
+      "seatsEnrolled": 3,
       "instructors": [
         "Reinhard, A"
       ],
@@ -14409,6 +16125,9 @@
       "courseCode": "PHYS 141",
       "title": "First-Year Seminar in Physics",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": null,
       "instructors": [
         "Peiris, F"
       ],
@@ -14437,6 +16156,9 @@
       "courseCode": "PHYS 141",
       "title": "First-Year Seminar in Physics",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 14,
+      "seatsEnrolled": null,
       "instructors": [
         "Peiris, F"
       ],
@@ -14465,6 +16187,9 @@
       "courseCode": "PHYS 240",
       "title": "Fields and Spacetime",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 24,
+      "seatsEnrolled": 14,
       "instructors": [
         "Wade, L"
       ],
@@ -14495,6 +16220,9 @@
       "courseCode": "PHYS 241",
       "title": "Fields & Spacetime Lab",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 10,
       "instructors": [
         "Sullivan, T"
       ],
@@ -14523,6 +16251,9 @@
       "courseCode": "PHYS 241",
       "title": "Fields & Spacetime Lab",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 6,
       "instructors": [
         "Loveland, G"
       ],
@@ -14551,6 +16282,9 @@
       "courseCode": "PHYS 310",
       "title": "Research in Physics",
       "credits": 2,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Turner, P"
       ],
@@ -14570,6 +16304,9 @@
       "courseCode": "PHYS 311",
       "title": "Research in Physics",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": null,
       "instructors": [
         "Turner, P"
       ],
@@ -14589,6 +16326,9 @@
       "courseCode": "PHYS 340",
       "title": "Classical Mechanics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 16,
+      "seatsEnrolled": 10,
       "instructors": [
         "Wade, L"
       ],
@@ -14619,6 +16359,9 @@
       "courseCode": "PHYS 360",
       "title": "Quantum Mechanics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 11,
       "instructors": [
         "Wade, M"
       ],
@@ -14649,6 +16392,9 @@
       "courseCode": "PHYS 360",
       "title": "Quantum Mechanics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 10,
+      "seatsEnrolled": 7,
       "instructors": [
         "Wade, M"
       ],
@@ -14679,6 +16425,9 @@
       "courseCode": "PHYS 380",
       "title": "Electronics I",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 19,
+      "seatsEnrolled": 16,
       "instructors": [
         "Turner, P",
         "Sullivan, T"
@@ -14708,6 +16457,9 @@
       "courseCode": "PHYS 381",
       "title": "Electronics II",
       "credits": 2,
+      "permission": null,
+      "seatLimit": 19,
+      "seatsEnrolled": 15,
       "instructors": [
         "Turner, P",
         "Sullivan, T"
@@ -14735,6 +16487,9 @@
       "courseCode": "PHYS 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Reinhard, A"
       ],
@@ -14754,6 +16509,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 2,
       "instructors": [
         "Leibowitz, L"
       ],
@@ -14782,6 +16540,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": null,
       "instructors": [
         "Leibowitz, D"
       ],
@@ -14810,6 +16571,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": null,
       "instructors": [
         "Baumann, F"
       ],
@@ -14837,6 +16601,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": null,
       "instructors": [
         "Baumann, F"
       ],
@@ -14864,6 +16631,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": 1,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -14891,6 +16661,9 @@
       "courseCode": "PSCI 101Y",
       "title": "The Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 18,
+      "seatsEnrolled": null,
       "instructors": [
         "Puerzer, C"
       ],
@@ -14919,6 +16692,9 @@
       "courseCode": "PSCI 200",
       "title": "Liberal Democracy in America",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 24,
       "instructors": [
         "McGee, Z"
       ],
@@ -14949,6 +16725,9 @@
       "courseCode": "PSCI 220",
       "title": "Classical Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 22,
       "instructors": [
         "Leibowitz, D"
       ],
@@ -14979,6 +16758,9 @@
       "courseCode": "PSCI 220",
       "title": "Classical Quest for Justice",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 30,
+      "seatsEnrolled": 22,
       "instructors": [
         "Leibowitz, D"
       ],
@@ -15009,6 +16791,9 @@
       "courseCode": "PSCI 240",
       "title": "Modern Democracy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 14,
       "instructors": [
         "Camerra-Rowe, P"
       ],
@@ -15038,6 +16823,9 @@
       "courseCode": "PSCI 260",
       "title": "International Relations",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 16,
       "instructors": [
         "Rowe, D"
       ],
@@ -15067,6 +16855,9 @@
       "courseCode": "PSCI 260",
       "title": "International Relations",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 26,
       "instructors": [
         "McAllister, J"
       ],
@@ -15096,6 +16887,9 @@
       "courseCode": "PSCI 303",
       "title": "Campaigns and Elections",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 19,
       "instructors": [
         "McGee, Z"
       ],
@@ -15125,6 +16919,9 @@
       "courseCode": "PSCI 310",
       "title": "Public Policy",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 25,
+      "seatsEnrolled": 23,
       "instructors": [
         "McGee, Z"
       ],
@@ -15155,6 +16952,9 @@
       "courseCode": "PSCI 314",
       "title": "American Constitutional Law",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 11,
       "instructors": [
         "Puerzer, C"
       ],
@@ -15184,6 +16984,9 @@
       "courseCode": "PSCI 345",
       "title": "European Union Politics",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 12,
       "instructors": [
         "Camerra-Rowe, P"
       ],
@@ -15213,6 +17016,9 @@
       "courseCode": "PSCI 432",
       "title": "The Idea of Community",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 15,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -15241,6 +17047,9 @@
       "courseCode": "PSCI 441",
       "title": "Latin Am Politics Film & Fic",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 7,
       "instructors": [
         "Powers, N"
       ],
@@ -15269,6 +17078,9 @@
       "courseCode": "PSCI 470",
       "title": "Power, States and Markets",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 13,
       "instructors": [
         "Rowe, D"
       ],
@@ -15297,6 +17109,9 @@
       "courseCode": "PSCI 476",
       "title": "Rules for the World",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 19,
       "instructors": [
         "McAllister, J"
       ],
@@ -15326,6 +17141,9 @@
       "courseCode": "PSCI 497Y",
       "title": "Senior Honors",
       "credits": 4,
+      "permission": "GP",
+      "seatLimit": 5,
+      "seatsEnrolled": null,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -15345,6 +17163,9 @@
       "courseCode": "PSYC 100",
       "title": "Introduction to Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 35,
+      "seatsEnrolled": 24,
       "instructors": [
         "Stevenson, M"
       ],
@@ -15375,6 +17196,9 @@
       "courseCode": "PSYC 100",
       "title": "Introduction to Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 35,
+      "seatsEnrolled": 20,
       "instructors": [
         "Engell, A"
       ],
@@ -15404,6 +17228,9 @@
       "courseCode": "PSYC 100",
       "title": "Introduction to Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 35,
+      "seatsEnrolled": 15,
       "instructors": [
         "Engell, A"
       ],
@@ -15433,6 +17260,9 @@
       "courseCode": "PSYC 100",
       "title": "Introduction to Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 28,
+      "seatsEnrolled": null,
       "instructors": [
         "Stevenson, M"
       ],
@@ -15463,6 +17293,9 @@
       "courseCode": "PSYC 200",
       "title": "Stat Analysis in Psychology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 16,
       "instructors": [
         "Murnen, S"
       ],
@@ -15492,6 +17325,9 @@
       "courseCode": "PSYC 200",
       "title": "Stat Analysis in Psychology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 15,
+      "seatsEnrolled": 16,
       "instructors": [
         "Krieg, D"
       ],
@@ -15521,6 +17357,9 @@
       "courseCode": "PSYC 206",
       "title": "Psychology of Language",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 22,
       "instructors": [
         "Payne, T"
       ],
@@ -15551,6 +17390,9 @@
       "courseCode": "PSYC 206",
       "title": "Psychology of Language",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": null,
       "instructors": [
         "Payne, T"
       ],
@@ -15581,6 +17423,9 @@
       "courseCode": "PSYC 208",
       "title": "Drugs and Behavior",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 21,
       "instructors": [
         "Millin-Lipnos, P"
       ],
@@ -15610,6 +17455,9 @@
       "courseCode": "PSYC 210",
       "title": "Social Mind, Social Brain",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Engell, A"
       ],
@@ -15639,6 +17487,9 @@
       "courseCode": "PSYC 221",
       "title": "Adult Psychopath & Soc Suffrng",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "López, I"
       ],
@@ -15668,6 +17519,9 @@
       "courseCode": "PSYC 223",
       "title": "Child Development",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Jones, C"
       ],
@@ -15698,6 +17552,9 @@
       "courseCode": "PSYC 224",
       "title": "Educational Psychology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 20,
       "instructors": [
         "Krieg, D"
       ],
@@ -15727,6 +17584,9 @@
       "courseCode": "PSYC 225",
       "title": "Social Psychology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 19,
       "instructors": [
         "Stevenson, M"
       ],
@@ -15756,6 +17616,9 @@
       "courseCode": "PSYC 231",
       "title": "Positive Psychology",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 20,
+      "seatsEnrolled": 18,
       "instructors": [
         "Dickens, L"
       ],
@@ -15786,6 +17649,9 @@
       "courseCode": "PSYC 250",
       "title": "Research Methods in Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 6,
       "instructors": [
         "Ewell, P"
       ],
@@ -15816,6 +17682,9 @@
       "courseCode": "PSYC 333",
       "title": "Media Psychology",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 4,
       "instructors": [
         "Ewell, P"
       ],
@@ -15846,6 +17715,9 @@
       "courseCode": "PSYC 350",
       "title": "Psychology in Context",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 8,
+      "seatsEnrolled": 4,
       "instructors": [
         "Krieg, D"
       ],
@@ -15874,6 +17746,9 @@
       "courseCode": "PSYC 360",
       "title": "Multicultural Identities",
       "credits": 4,
+      "permission": null,
+      "seatLimit": 15,
+      "seatsEnrolled": 13,
       "instructors": [
         "Jones, C"
       ],
@@ -15903,6 +17778,9 @@
       "courseCode": "PSYC 450",
       "title": "Adv Research Psychology Lab",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 0,
+      "seatsEnrolled": null,
       "instructors": [
         "Millin-Lipnos, P"
       ],
@@ -15922,6 +17800,9 @@
       "courseCode": "PSYC 475",
       "title": "Psychology Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 5,
       "instructors": [
         "López, I"
       ],
@@ -15950,6 +17831,9 @@
       "courseCode": "PSYC 475",
       "title": "Psychology Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 7,
       "instructors": [
         "Dickens, L"
       ],
@@ -15978,6 +17862,9 @@
       "courseCode": "PSYC 475",
       "title": "Psychology Senior Seminar",
       "credits": 4,
+      "permission": "PI",
+      "seatLimit": 10,
+      "seatsEnrolled": 9,
       "instructors": [
         "Murnen, S"
       ],
