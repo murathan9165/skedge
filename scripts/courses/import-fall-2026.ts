@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -20,6 +21,7 @@ import {
   assertFall2026ScheduleCompleteness,
   FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
   parseScheduleHtml,
+  sectionCountTolerance,
 } from "./parse-schedule";
 
 export const SCHEDULE_URL = "https://registrar.kenyon.edu/sep26_dept.htm";
@@ -29,6 +31,17 @@ const DEFAULT_SOURCE_REQUEST_TIMEOUT_MS = 60_000;
 const DEFAULT_MAXIMUM_CATALOG_DEPTH = 4;
 const DEFAULT_MAXIMUM_CATALOG_PAGES = 100;
 const MAXIMUM_SOURCE_REDIRECTS = 5;
+const DEFAULT_MAXIMUM_ATTEMPTS = 3;
+const DEFAULT_RETRY_BASE_DELAY_MS = 500;
+const DEFAULT_CATALOG_CONCURRENCY = 4;
+
+/**
+ * Identifies the importer to Kenyon's servers. A scheduled job that scrapes
+ * anonymously and in bursts is indistinguishable from abuse; naming ourselves
+ * and linking the project makes the traffic accountable.
+ */
+const SOURCE_USER_AGENT =
+  "kenyon-class-schedule-planner/0.1 (+https://github.com/murathan9165/skedge)";
 
 interface ImportOptions {
   fetchImpl?: typeof fetch;
@@ -40,6 +53,55 @@ interface ImportOptions {
   maximumCatalogDepth?: number;
   maximumCatalogPages?: number;
   requestTimeoutMs?: number;
+  maximumAttempts?: number;
+  retryBaseDelayMs?: number;
+  catalogConcurrency?: number;
+  sleep?: (milliseconds: number) => Promise<void>;
+}
+
+/** A failure worth another attempt: timeouts, connection errors, 429, and 5xx. */
+class TransientSourceError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "TransientSourceError";
+  }
+}
+
+function isRetryableStatus(status: number): boolean {
+  return status === 429 || (status >= 500 && status < 600);
+}
+
+/**
+ * Caps requests in flight. Gating the request itself rather than the traversal
+ * keeps the cap global no matter how the recursive catalog discovery fans out.
+ */
+function createRequestLimiter(
+  limit: number,
+): <T>(task: () => Promise<T>) => Promise<T> {
+  let active = 0;
+  const waiting: Array<() => void> = [];
+
+  return async function run<T>(task: () => Promise<T>): Promise<T> {
+    if (active >= limit) {
+      await new Promise<void>((resolve) => waiting.push(resolve));
+    }
+    active += 1;
+    try {
+      return await task();
+    } finally {
+      active -= 1;
+      waiting.shift()?.();
+    }
+  };
+}
+
+interface FetchPolicy {
+  fetchImpl: typeof fetch;
+  requestTimeoutMs: number;
+  maximumAttempts: number;
+  retryBaseDelayMs: number;
+  sleep: (milliseconds: number) => Promise<void>;
+  runRequest: <T>(task: () => Promise<T>) => Promise<T>;
 }
 
 type SourceKind = "schedule" | "catalog";
@@ -113,6 +175,52 @@ function assertApprovedSourceUrl(
   }
   url.hash = "";
   return url.href;
+}
+
+const FALLBACK_SOURCE_CHARSET = "windows-1252";
+const CHARSET_SNIFF_BYTES = 2048;
+
+function charsetFromContentType(header: string | null): string | null {
+  if (!header) return null;
+  const match = /charset=["']?([^"';,\s]+)/i.exec(header);
+  return match ? match[1].toLowerCase() : null;
+}
+
+function charsetFromMetaTag(bytes: Uint8Array): string | null {
+  // Charset declarations are ASCII-safe, so sniffing the head as ASCII is
+  // sufficient to find one without knowing the encoding yet.
+  const head = new TextDecoder("ascii").decode(bytes.subarray(0, CHARSET_SNIFF_BYTES));
+  const match = /<meta[^>]*charset=["']?([^"'>\s;/]+)/i.exec(head);
+  return match ? match[1].toLowerCase() : null;
+}
+
+function decodeWith(bytes: Uint8Array, charset: string): string | null {
+  try {
+    return new TextDecoder(charset, { fatal: true }).decode(bytes);
+  } catch {
+    // An unsupported label or a mismatched declaration is worth surviving.
+    return null;
+  }
+}
+
+/**
+ * Kenyon's registrar serves the schedule as bare `text/html` with windows-1252
+ * bytes, so assuming UTF-8 corrupts accented instructor names. Prefer a
+ * declared charset, then well-formed UTF-8, and fall back to windows-1252 --
+ * which decodes any byte sequence and so always terminates the chain.
+ */
+export function decodeSourceBytes(
+  bytes: Uint8Array,
+  contentType: string | null,
+): string {
+  const declared = charsetFromContentType(contentType) ?? charsetFromMetaTag(bytes);
+  const declaredText = declared === null ? null : decodeWith(bytes, declared);
+  if (declaredText !== null) return declaredText;
+
+  return (
+    decodeWith(bytes, "utf-8") ??
+    new TextDecoder(FALLBACK_SOURCE_CHARSET).decode(bytes)
+  );
 }
 
 function clockMinutes(value: unknown): number | null {
@@ -206,9 +314,30 @@ export function validateImportReport(
   assertion(classified === rowCounts.total, "Not every source schedule row was classified");
   assertion(rowCounts.section === snapshot.sections.length, "Schedule section row count differs from snapshot");
   assertion(value.counts.sections === snapshot.sections.length, "Report section count differs from snapshot");
+  assertion(isObject(value.completeness), "Completeness metadata is missing");
+  const completeness = value.completeness;
+  for (const key of ["baseline", "actual", "delta", "tolerance"] as const) {
+    assertion(Number.isInteger(completeness[key]), `Invalid completeness ${key}`);
+  }
   assertion(
-    snapshot.sections.length >= minimumSectionCount,
-    `Fall 2026 snapshot contains ${snapshot.sections.length} sections, below the reviewed minimum of ${minimumSectionCount}`,
+    completeness.baseline === minimumSectionCount,
+    "Completeness baseline differs from the reviewed baseline",
+  );
+  assertion(
+    completeness.actual === snapshot.sections.length,
+    "Completeness section count differs from snapshot",
+  );
+  assertion(
+    completeness.tolerance === sectionCountTolerance(minimumSectionCount),
+    "Completeness tolerance differs from the reviewed tolerance",
+  );
+  assertion(
+    completeness.delta === (completeness.actual as number) - (completeness.baseline as number),
+    "Completeness delta is inconsistent with its baseline and count",
+  );
+  assertion(
+    (completeness.delta as number) >= -(completeness.tolerance as number),
+    `Fall 2026 snapshot contains ${snapshot.sections.length} sections, below the reviewed baseline of ${minimumSectionCount} and beyond the accepted tolerance of ${completeness.tolerance}`,
   );
   assertion(value.counts.catalogPages === sources.catalogPages.length, "Catalog page count differs from source records");
   const catalogCourseCount = sources.catalogPages.reduce(
@@ -258,12 +387,12 @@ export function validateImportReport(
   }
 }
 
-async function fetchText(
-  fetchImpl: typeof fetch,
+async function fetchTextOnce(
+  policy: FetchPolicy,
   url: string,
   kind: SourceKind,
-  requestTimeoutMs: number,
 ): Promise<string> {
+  const { fetchImpl, requestTimeoutMs } = policy;
   const approvedUrl = assertApprovedSourceUrl(url, kind);
   const controller = new AbortController();
   let timedOut = false;
@@ -272,7 +401,11 @@ async function fetchText(
     timeout = setTimeout(() => {
       timedOut = true;
       controller.abort();
-      reject(new Error(`Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`));
+      reject(
+        new TransientSourceError(
+          `Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`,
+        ),
+      );
     }, requestTimeoutMs);
   });
 
@@ -280,7 +413,11 @@ async function fetchText(
     let requestUrl = approvedUrl;
     for (let redirectCount = 0; ; redirectCount += 1) {
       const response = await Promise.race([
-        fetchImpl(requestUrl, { redirect: "manual", signal: controller.signal }),
+        fetchImpl(requestUrl, {
+          redirect: "manual",
+          signal: controller.signal,
+          headers: { "user-agent": SOURCE_USER_AGENT },
+        }),
         timeoutPromise,
       ]);
       if (response.status >= 300 && response.status < 400) {
@@ -300,22 +437,59 @@ async function fetchText(
         continue;
       }
       if (!response.ok) {
-        throw new Error(`Failed to fetch ${requestUrl}: HTTP ${response.status}`);
+        const failure = `Failed to fetch ${requestUrl}: HTTP ${response.status}`;
+        // A 404 or 403 is a structural signal the pipeline should surface, not
+        // paper over with retries. Only 429 and 5xx are worth another attempt.
+        throw isRetryableStatus(response.status)
+          ? new TransientSourceError(failure)
+          : new Error(failure);
       }
       assertApprovedSourceUrl(response.url, kind, true);
-      return await response.text();
+      const bytes = new Uint8Array(await response.arrayBuffer());
+      return decodeSourceBytes(bytes, response.headers.get("content-type"));
     }
   } catch (error) {
     if (
       timedOut ||
       (error instanceof DOMException && error.name === "AbortError")
     ) {
-      throw new Error(`Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`);
+      throw new TransientSourceError(
+        `Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`,
+      );
+    }
+    if (error instanceof TypeError) {
+      // `fetch` reports connection-level failures as TypeError.
+      throw new TransientSourceError(
+        `Source request failed to connect: ${approvedUrl} (${error.message})`,
+      );
     }
     throw error;
   } finally {
     if (timeout !== undefined) clearTimeout(timeout);
   }
+}
+
+async function fetchText(
+  policy: FetchPolicy,
+  url: string,
+  kind: SourceKind,
+): Promise<string> {
+  let lastTransient: TransientSourceError | undefined;
+
+  for (let attempt = 1; attempt <= policy.maximumAttempts; attempt += 1) {
+    try {
+      return await policy.runRequest(() => fetchTextOnce(policy, url, kind));
+    } catch (error) {
+      if (!(error instanceof TransientSourceError)) throw error;
+      lastTransient = error;
+      if (attempt >= policy.maximumAttempts) break;
+      await policy.sleep(policy.retryBaseDelayMs * 2 ** (attempt - 1));
+    }
+  }
+
+  throw new Error(
+    `${lastTransient?.message ?? "Source request failed"} (after ${policy.maximumAttempts} attempts)`,
+  );
 }
 
 function buildCatalogMap(courses: CatalogCourse[]): Map<string, CatalogCourse> {
@@ -346,11 +520,10 @@ interface CatalogTraversal {
   visited: Set<string>;
   maximumDepth: number;
   maximumPages: number;
-  requestTimeoutMs: number;
+  policy: FetchPolicy;
 }
 
 async function fetchCatalogBranch(
-  fetchImpl: typeof fetch,
   url: string,
   now: () => Date,
   traversal: CatalogTraversal,
@@ -374,12 +547,7 @@ async function fetchCatalogBranch(
   }
   traversal.visited.add(approvedUrl);
 
-  const html = await fetchText(
-    fetchImpl,
-    approvedUrl,
-    "catalog",
-    traversal.requestTimeoutMs,
-  );
+  const html = await fetchText(traversal.policy, approvedUrl, "catalog");
   const retrievedAt = now().toISOString();
   try {
     return [
@@ -396,14 +564,7 @@ async function fetchCatalogBranch(
     const nextAncestors = new Set(ancestors).add(approvedUrl);
     const children = await Promise.all(
       subpageUrls.map((subpageUrl) =>
-        fetchCatalogBranch(
-          fetchImpl,
-          subpageUrl,
-          now,
-          traversal,
-          depth + 1,
-          nextAncestors,
-        ),
+        fetchCatalogBranch(subpageUrl, now, traversal, depth + 1, nextAncestors),
       ),
     );
     return [{ url: approvedUrl, retrievedAt, courses: [] }, ...children.flat()];
@@ -425,6 +586,57 @@ function classifyPrerequisite(
     return { prerequisite: course.prerequisite, reason: "catalog-prerequisite-unavailable" };
   }
   return { prerequisite: course.prerequisite };
+}
+
+function canonicalize(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonicalize);
+  if (isObject(value)) {
+    return Object.fromEntries(
+      Object.keys(value)
+        .sort()
+        .map((key) => [key, canonicalize(value[key])]),
+    );
+  }
+  return value;
+}
+
+/**
+ * Fingerprints the section data alone. Timestamps are deliberately excluded so
+ * that a run which scrapes identical data hashes identically -- otherwise
+ * `importedAt` would churn the snapshot on every scheduled run. Section order
+ * is significant: it mirrors the registrar's own ordering.
+ */
+export function hashSections(sections: readonly CourseSection[]): string {
+  return createHash("sha256")
+    .update(JSON.stringify(canonicalize(sections)))
+    .digest("hex");
+}
+
+interface CommittedArtifacts {
+  snapshot: CourseSnapshot;
+  report: ImportReport;
+}
+
+/** Returns the committed pair only when both parse and validate together. */
+async function readCommittedArtifacts(
+  snapshotPath: string,
+  reportPath: string,
+  minimumSectionCount: number,
+): Promise<CommittedArtifacts | null> {
+  try {
+    const [snapshotText, reportText] = await Promise.all([
+      readFile(snapshotPath, "utf8"),
+      readFile(reportPath, "utf8"),
+    ]);
+    const snapshot: unknown = JSON.parse(snapshotText);
+    const report: unknown = JSON.parse(reportText);
+    validateCourseSnapshot(snapshot);
+    validateImportReport(report, snapshot, minimumSectionCount);
+    return { snapshot, report };
+  } catch {
+    // Missing, unreadable, or stale artifacts simply mean "treat as changed".
+    return null;
+  }
 }
 
 async function replaceArtifacts(
@@ -495,7 +707,15 @@ async function replaceArtifacts(
   }
 }
 
-export async function importFall2026(options: ImportOptions = {}): Promise<{ snapshot: CourseSnapshot; report: ImportReport }> {
+export type ImportOutcome = "changed" | "unchanged";
+
+export interface ImportResult {
+  snapshot: CourseSnapshot;
+  report: ImportReport;
+  outcome: ImportOutcome;
+}
+
+export async function importFall2026(options: ImportOptions = {}): Promise<ImportResult> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const now = options.now ?? (() => new Date());
   const snapshotPath = options.snapshotPath ?? path.join(process.cwd(), "src/data/fall-2026.json");
@@ -516,33 +736,47 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     options.requestTimeoutMs ?? DEFAULT_SOURCE_REQUEST_TIMEOUT_MS,
     "Source request timeout",
   );
-
-  const scheduleHtml = await fetchText(
+  const policy: FetchPolicy = {
     fetchImpl,
-    SCHEDULE_URL,
-    "schedule",
     requestTimeoutMs,
-  );
+    maximumAttempts: positiveInteger(
+      options.maximumAttempts ?? DEFAULT_MAXIMUM_ATTEMPTS,
+      "Maximum source request attempts",
+    ),
+    retryBaseDelayMs: positiveInteger(
+      options.retryBaseDelayMs ?? DEFAULT_RETRY_BASE_DELAY_MS,
+      "Retry base delay",
+    ),
+    sleep:
+      options.sleep ??
+      ((milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))),
+    runRequest: createRequestLimiter(
+      positiveInteger(
+        options.catalogConcurrency ?? DEFAULT_CATALOG_CONCURRENCY,
+        "Catalog concurrency",
+      ),
+    ),
+  };
+
+  const scheduleHtml = await fetchText(policy, SCHEDULE_URL, "schedule");
   const scheduleRetrievedAt = now().toISOString();
   const parsedSchedule = parseScheduleHtml(scheduleHtml);
-  assertFall2026ScheduleCompleteness(parsedSchedule, minimumSectionCount);
-  const catalogIndexHtml = await fetchText(
-    fetchImpl,
-    CATALOG_INDEX_URL,
-    "catalog",
-    requestTimeoutMs,
+  const completeness = assertFall2026ScheduleCompleteness(
+    parsedSchedule,
+    minimumSectionCount,
   );
+  const catalogIndexHtml = await fetchText(policy, CATALOG_INDEX_URL, "catalog");
   const catalogIndexRetrievedAt = now().toISOString();
   const catalogUrls = parseCatalogIndexHtml(catalogIndexHtml, CATALOG_INDEX_URL);
   const traversal: CatalogTraversal = {
     visited: new Set(),
     maximumDepth: maximumCatalogDepth,
     maximumPages: maximumCatalogPages,
-    requestTimeoutMs,
+    policy,
   };
   const catalogPages = (
     await Promise.all(
-      catalogUrls.map((url) => fetchCatalogBranch(fetchImpl, url, now, traversal)),
+      catalogUrls.map((url) => fetchCatalogBranch(url, now, traversal)),
     )
   ).flat();
   const catalogCourses = catalogPages.flatMap(({ courses }) => courses);
@@ -561,6 +795,18 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     }
     return { ...scheduleSection, prerequisite: classification.prerequisite };
   });
+  // Short-circuit before stamping a new `importedAt`: a scheduled run that
+  // scrapes identical data must produce no write, no commit, and no deploy.
+  const sectionHash = hashSections(sections);
+  const committed = await readCommittedArtifacts(
+    snapshotPath,
+    reportPath,
+    minimumSectionCount,
+  );
+  if (committed && hashSections(committed.snapshot.sections) === sectionHash) {
+    return { ...committed, outcome: "unchanged" };
+  }
+
   const importedAt = now().toISOString();
   const snapshot: CourseSnapshot = {
     schemaVersion: 1,
@@ -592,6 +838,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
       sections: sections.length,
       prerequisites: prerequisiteCounts,
     },
+    completeness,
     unmatchedPrerequisites,
   };
 
@@ -605,18 +852,72 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     options.renameFile ?? rename,
     minimumSectionCount,
   );
-  return { snapshot, report };
+  return { snapshot, report, outcome: "changed" };
+}
+
+/**
+ * Distinct codes let a scheduled job route without parsing output. `unchanged`
+ * is a success, not a failure -- callers must treat it as such.
+ */
+export const IMPORT_EXIT_CODES = {
+  changed: 0,
+  unchanged: 3,
+  failed: 1,
+} as const;
+
+export function exitCodeForOutcome(outcome: ImportOutcome): number {
+  return IMPORT_EXIT_CODES[outcome];
+}
+
+export interface RunSummary {
+  outcome: ImportOutcome;
+  importedAt: string;
+  sections: number;
+  baseline: number;
+  delta: number;
+  tolerance: number;
+  prerequisites: { known: number; none: number; unavailable: number };
+  unmatchedPrerequisites: number;
+}
+
+export function buildRunSummary({ report, outcome }: ImportResult): RunSummary {
+  return {
+    outcome,
+    importedAt: report.importedAt,
+    sections: report.counts.sections,
+    baseline: report.completeness.baseline,
+    delta: report.completeness.delta,
+    tolerance: report.completeness.tolerance,
+    prerequisites: report.counts.prerequisites,
+    unmatchedPrerequisites: report.unmatchedPrerequisites.length,
+  };
+}
+
+export function describeRunSummary(summary: RunSummary): string {
+  if (summary.outcome === "unchanged") {
+    return `No change: ${summary.sections} Fall 2026 sections match the committed snapshot from ${summary.importedAt}.`;
+  }
+  const drift =
+    summary.delta === 0
+      ? "matching the reviewed baseline"
+      : `${summary.delta > 0 ? "+" : ""}${summary.delta} against the reviewed baseline of ${summary.baseline} (tolerance ${summary.tolerance})`;
+  return `Imported ${summary.sections} Fall 2026 sections, ${drift}.`;
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
   importFall2026()
-    .then(({ report }) => {
-      console.log(
-        `Imported ${report.counts.sections} Fall 2026 sections from ${report.counts.scheduleRows.total} classified schedule rows.`,
-      );
+    .then((result) => {
+      const summary = buildRunSummary(result);
+      // Human-readable narration on stderr, machine-readable summary on stdout,
+      // so a scheduled job can capture one without parsing around the other.
+      console.error(describeRunSummary(summary));
+      console.log(JSON.stringify(summary));
+      process.exitCode = exitCodeForOutcome(summary.outcome);
     })
     .catch((error: unknown) => {
-      console.error(error instanceof Error ? error.message : error);
-      process.exitCode = 1;
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(message);
+      console.log(JSON.stringify({ outcome: "failed", error: message }));
+      process.exitCode = IMPORT_EXIT_CODES.failed;
     });
 }

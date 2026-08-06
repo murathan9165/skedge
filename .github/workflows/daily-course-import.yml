@@ -1,0 +1,114 @@
+name: Daily course import
+
+# Refreshes the committed Fall 2026 snapshot from Kenyon's registrar. A change
+# is committed straight to main, which Vercel deploys to production, so every
+# gate in this file is load-bearing. Do not add `continue-on-error` to any step:
+# the importer's validators are the only thing standing between the registrar
+# and production.
+on:
+  schedule:
+    # GitHub cron is UTC and has no DST awareness: this is 08:00 America/New_York
+    # during EDT and 07:00 during EST. The one-hour winter drift is accepted.
+    # Scheduled runs are also best-effort -- GitHub delays or drops them under
+    # platform load -- so a missed morning is expected, not a failure.
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+# Never let two imports race for the same commit.
+concurrency:
+  group: daily-course-import
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Matches the `engines` range in package.json.
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Import Fall 2026 course data
+        id: import
+        run: |
+          set -uo pipefail
+          npx tsx scripts/courses/import-fall-2026.ts > "$RUNNER_TEMP/summary.json"
+          code=$?
+
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/summary.json"
+
+          # 0 = data changed, 3 = data unchanged. Anything else is a real failure.
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then
+            echo "::error::Course import failed (exit $code)"
+            exit "$code"
+          fi
+
+      - name: Summarize the run
+        run: |
+          set -euo pipefail
+          node -e '
+            const s = require(process.env.RUNNER_TEMP + "/summary.json");
+            const drift = s.delta === 0 ? "no drift" : `${s.delta} vs baseline ${s.baseline}`;
+            console.log(`## Course import: ${s.outcome}\n`);
+            console.log(`- Sections: ${s.sections} (${drift}, tolerance ${s.tolerance})`);
+            console.log(`- Prerequisites: ${s.prerequisites.known} known, ${s.prerequisites.none} none, ${s.prerequisites.unavailable} unavailable`);
+            console.log(`- Data last changed: ${s.importedAt}`);
+          ' >> "$GITHUB_STEP_SUMMARY"
+
+      # The snapshot is about to reach production unreviewed, so prove it both
+      # validates and builds before it is committed.
+      - name: Verify and build with the refreshed data
+        if: steps.import.outputs.exit_code == '0'
+        run: npm run build
+
+      - name: Commit the refreshed snapshot
+        if: steps.import.outputs.exit_code == '0'
+        run: |
+          set -euo pipefail
+          message=$(node -e '
+            const s = require(process.env.RUNNER_TEMP + "/summary.json");
+            const drift = s.delta === 0 ? "no section change" : `${s.delta > 0 ? "+" : ""}${s.delta} sections`;
+            console.log(`data: refresh Fall 2026 snapshot (${s.sections} sections, ${drift})`);
+          ')
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/fall-2026.json src/data/fall-2026.import-report.json
+          git commit -m "$message"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      # GitHub disables scheduled workflows after 60 days without repository
+      # activity. An unchanged import commits nothing, so a quiet term would
+      # silently switch this job off -- the exact failure it exists to prevent.
+      - name: Refresh inactivity keepalive
+        if: steps.import.outputs.exit_code == '3'
+        run: |
+          set -euo pipefail
+          heartbeat=.github/last-successful-import
+          previous=$(cat "$heartbeat" 2>/dev/null || echo "1970-01-01T00:00:00Z")
+          age_days=$(( ( $(date -u +%s) - $(date -u -d "$previous" +%s) ) / 86400 ))
+
+          if [ "$age_days" -lt 45 ]; then
+            echo "Keepalive is $age_days days old; no refresh needed."
+            exit 0
+          fi
+
+          date -u +%Y-%m-%dT%H:%M:%SZ > "$heartbeat"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$heartbeat"
+          git commit -m "chore: refresh scheduled-import keepalive"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

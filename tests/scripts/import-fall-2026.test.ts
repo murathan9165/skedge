@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
@@ -6,7 +6,11 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import {
   CATALOG_INDEX_URL,
+  IMPORT_EXIT_CODES,
   SCHEDULE_URL,
+  buildRunSummary,
+  describeRunSummary,
+  exitCodeForOutcome,
   importFall2026,
 } from "../../scripts/courses/import-fall-2026";
 import { verifyFall2026Data } from "../../scripts/courses/verify-fall-2026";
@@ -24,6 +28,10 @@ async function fixtures() {
   };
 }
 
+async function windows1252ScheduleBytes(): Promise<Buffer> {
+  return readFile(path.join(fixtureDirectory, "fall-2026-schedule-windows-1252.html"));
+}
+
 function catalogIndex(): string {
   return `<li class="reference_nav_item"><div class="reference_nav_item_inner"><a href="${CATALOG_INDEX_URL}">Course Offerings</a></div><ul class="reference_nav_children"><li><a class="reference_nav_child_link" href="${catalogUrl}">American Studies</a></li></ul></li>`;
 }
@@ -37,6 +45,39 @@ function responseFrom(
   const response = new Response(body, { status, headers });
   Object.defineProperty(response, "url", { value: url });
   return response;
+}
+
+function bytesResponseFrom(
+  body: Uint8Array,
+  url: string,
+  headers?: HeadersInit,
+): Response {
+  // Copy into a plain ArrayBuffer so the body is a valid BodyInit regardless of
+  // whether the caller passed a Buffer or a Uint8Array view.
+  const buffer = new ArrayBuffer(body.byteLength);
+  new Uint8Array(buffer).set(body);
+  const response = new Response(buffer, { status: 200, headers });
+  Object.defineProperty(response, "url", { value: url });
+  return response;
+}
+
+/**
+ * Serves the schedule URL as raw bytes so the importer's decoding path is
+ * exercised. Every other URL falls through to the string-bodied fixtures.
+ */
+function fetchWithRawSchedule(
+  scheduleBody: Uint8Array,
+  rest: Record<string, string>,
+  scheduleHeaders?: HeadersInit,
+): typeof fetch {
+  const fallback = fetchFrom(rest);
+  return (async (input: string | URL | Request, init?: RequestInit) => {
+    const url = input instanceof Request ? input.url : input.toString();
+    if (url === SCHEDULE_URL) {
+      return bytesResponseFrom(scheduleBody, url, scheduleHeaders);
+    }
+    return fallback(input, init);
+  }) as typeof fetch;
 }
 
 function fetchFrom(values: Record<string, string>): typeof fetch {
@@ -135,6 +176,12 @@ describe("importFall2026", () => {
       counts: {
         sections: 4,
         prerequisites: { known: 0, none: 1, unavailable: 3 },
+      },
+      completeness: {
+        baseline: FIXTURE_SECTION_COUNT,
+        actual: 4,
+        delta: 0,
+        tolerance: 15,
       },
     });
     expect(report.unmatchedPrerequisites).toHaveLength(3);
@@ -606,5 +653,466 @@ describe("importFall2026", () => {
     await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /prerequisite source.*fetched catalog pages/i,
     );
+  });
+});
+
+describe("run summary", () => {
+  async function runImport(paths: Awaited<ReturnType<typeof outputPaths>>, schedule?: string) {
+    const source = await fixtures();
+    return importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchFrom({
+        [SCHEDULE_URL]: schedule ?? source.schedule,
+        [CATALOG_INDEX_URL]: catalogIndex(),
+        [catalogUrl]: source.catalog,
+      }),
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+  }
+
+  it("summarizes a changed run with counts drawn from the report", async () => {
+    const paths = await outputPaths();
+    const result = await runImport(paths);
+
+    expect(buildRunSummary(result)).toEqual({
+      outcome: "changed",
+      importedAt: "2026-08-04T19:00:00.000Z",
+      sections: FIXTURE_SECTION_COUNT,
+      baseline: FIXTURE_SECTION_COUNT,
+      delta: 0,
+      tolerance: 15,
+      prerequisites: { known: 0, none: 1, unavailable: 3 },
+      unmatchedPrerequisites: result.report.unmatchedPrerequisites.length,
+    });
+  });
+
+  it("summarizes an unchanged run without advancing importedAt", async () => {
+    const paths = await outputPaths();
+    await runImport(paths);
+    const summary = buildRunSummary(await runImport(paths));
+
+    expect(summary.outcome).toBe("unchanged");
+    expect(summary.importedAt).toBe("2026-08-04T19:00:00.000Z");
+    expect(describeRunSummary(summary)).toMatch(/no change/i);
+  });
+
+  it("maps each outcome to a distinct exit code, with unchanged still a success", () => {
+    expect(exitCodeForOutcome("changed")).toBe(0);
+    expect(exitCodeForOutcome("unchanged")).toBe(3);
+    expect(IMPORT_EXIT_CODES.failed).toBe(1);
+    expect(exitCodeForOutcome("unchanged")).not.toBe(IMPORT_EXIT_CODES.failed);
+  });
+
+  it("narrates a within-tolerance drop with its delta", () => {
+    expect(
+      describeRunSummary({
+        outcome: "changed",
+        importedAt: "2026-08-05T19:00:00.000Z",
+        sections: 627,
+        baseline: 629,
+        delta: -2,
+        tolerance: 15,
+        prerequisites: { known: 1, none: 1, unavailable: 1 },
+        unmatchedPrerequisites: 1,
+      }),
+    ).toMatch(/-2 against the reviewed baseline of 629 \(tolerance 15\)/);
+  });
+});
+
+describe("change detection", () => {
+  async function importInto(
+    paths: Awaited<ReturnType<typeof outputPaths>>,
+    schedule: string,
+    importedAt: string,
+  ) {
+    const source = await fixtures();
+    return importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchFrom({
+        [SCHEDULE_URL]: schedule,
+        [CATALOG_INDEX_URL]: catalogIndex(),
+        [catalogUrl]: source.catalog,
+      }),
+      now: () => new Date(importedAt),
+    });
+  }
+
+  it("writes nothing when a re-import scrapes identical data", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const first = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+    const writtenAt = await Promise.all([
+      stat(paths.snapshotPath),
+      stat(paths.reportPath),
+    ]);
+
+    const second = await importInto(paths, source.schedule, "2026-08-05T19:00:00.000Z");
+    const reReadAt = await Promise.all([
+      stat(paths.snapshotPath),
+      stat(paths.reportPath),
+    ]);
+
+    expect(first.outcome).toBe("changed");
+    expect(second.outcome).toBe("unchanged");
+    // `importedAt` must stay the moment the data last changed, not the moment
+    // the job last ran -- otherwise every scheduled run churns the snapshot.
+    expect(second.snapshot.importedAt).toBe("2026-08-04T19:00:00.000Z");
+    expect(reReadAt.map(({ mtimeMs }) => mtimeMs)).toEqual(
+      writtenAt.map(({ mtimeMs }) => mtimeMs),
+    );
+  });
+
+  it("rewrites both artifacts when a single meeting room changes", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    const moved = source.schedule.replace("CHL300", "CHL301");
+    const second = await importInto(paths, moved, "2026-08-05T19:00:00.000Z");
+
+    expect(second.outcome).toBe("changed");
+    expect(second.snapshot.importedAt).toBe("2026-08-05T19:00:00.000Z");
+    expect(second.snapshot.sections[0].meetings[0].room).toBe("CHL301");
+  });
+
+  it("treats a differing importedAt alone as unchanged", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    const shifted = "2026-01-01T00:00:00.000Z";
+    const snapshot = JSON.parse(await readFile(paths.snapshotPath, "utf8")) as CourseSnapshot;
+    const report = JSON.parse(await readFile(paths.reportPath, "utf8")) as ImportReport;
+    snapshot.importedAt = shifted;
+    report.importedAt = shifted;
+    await writeFile(paths.snapshotPath, JSON.stringify(snapshot));
+    await writeFile(paths.reportPath, JSON.stringify(report));
+
+    const second = await importInto(paths, source.schedule, "2026-08-05T19:00:00.000Z");
+
+    expect(second.outcome).toBe("unchanged");
+    expect(second.snapshot.importedAt).toBe(shifted);
+  });
+
+  it("writes normally on a first run with no committed artifacts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+
+    const result = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    expect(result.outcome).toBe("changed");
+    expect(result.snapshot.sections).toHaveLength(FIXTURE_SECTION_COUNT);
+  });
+
+  it("treats unreadable committed artifacts as changed rather than failing", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await seedPreviousArtifacts(paths);
+
+    const result = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    expect(result.outcome).toBe("changed");
+  });
+});
+
+describe("source request resilience", () => {
+  const noSleep = async () => {};
+
+  /** Fails the schedule URL `failures` times with `status`, then serves it. */
+  function flakyScheduleFetch(
+    schedule: string,
+    catalog: string,
+    failures: number,
+    status: number,
+  ): { fetchImpl: typeof fetch; scheduleAttempts: () => number } {
+    const fallback = fetchFrom({
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: catalog,
+    });
+    let attempts = 0;
+    const fetchImpl = (async (input: string | URL | Request, init?: RequestInit) => {
+      const url = input instanceof Request ? input.url : input.toString();
+      if (url !== SCHEDULE_URL) return fallback(input, init);
+      attempts += 1;
+      return attempts <= failures
+        ? responseFrom("upstream unavailable", url, status)
+        : responseFrom(schedule, url);
+    }) as typeof fetch;
+    return { fetchImpl, scheduleAttempts: () => attempts };
+  }
+
+  it("retries a transient 503 and succeeds on the third attempt", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      2,
+      503,
+    );
+
+    const { report } = await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      sleep: noSleep,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(scheduleAttempts()).toBe(3);
+    expect(report.counts.sections).toBe(FIXTURE_SECTION_COUNT);
+  });
+
+  it("retries a 429 rate-limit response", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      1,
+      429,
+    );
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      sleep: noSleep,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(scheduleAttempts()).toBe(2);
+  });
+
+  it("gives up after the configured attempt count and preserves artifacts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await seedPreviousArtifacts(paths);
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      Number.POSITIVE_INFINITY,
+      503,
+    );
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/HTTP 503.*after 3 attempts/i);
+    expect(scheduleAttempts()).toBe(3);
+    await expectPreviousArtifacts(paths);
+  });
+
+  it("does not retry a 404, which signals a real structural change", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      Number.POSITIVE_INFINITY,
+      404,
+    );
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/failed to fetch.*HTTP 404/i);
+    expect(scheduleAttempts()).toBe(1);
+  });
+
+  it("backs off for increasing delays between attempts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const delays: number[] = [];
+    const { fetchImpl } = flakyScheduleFetch(source.schedule, source.catalog, 2, 503);
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      retryBaseDelayMs: 100,
+      sleep: async (milliseconds) => {
+        delays.push(milliseconds);
+      },
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(delays).toEqual([100, 200]);
+  });
+
+  it("does not retry an allowlist rejection", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    let scheduleAttempts = 0;
+    const fallback = fetchFrom({
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: source.catalog,
+    });
+    const offOriginFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      const url = input instanceof Request ? input.url : input.toString();
+      if (url !== SCHEDULE_URL) return fallback(input, init);
+      scheduleAttempts += 1;
+      return responseFrom(source.schedule, "https://attacker.example/fall-2026.html");
+    }) as typeof fetch;
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl: offOriginFetch,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/final.*approved.*registrar\.kenyon\.edu/i);
+    expect(scheduleAttempts).toBe(1);
+  });
+
+  it("sends an identifying user-agent on every request", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const agents: Array<string | undefined> = [];
+    const fixtureFetch = fetchFrom({
+      [SCHEDULE_URL]: source.schedule,
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: source.catalog,
+    });
+    const recordingFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      agents.push(new Headers(init?.headers).get("user-agent") ?? undefined);
+      return fixtureFetch(input, init);
+    }) as typeof fetch;
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: recordingFetch,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(agents.length).toBeGreaterThan(0);
+    expect(agents.every((agent) => agent?.includes("kenyon-class-schedule-planner"))).toBe(true);
+  });
+
+  it("never exceeds the configured catalog request concurrency", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const pageUrls = Array.from(
+      { length: 20 },
+      (_, index) => `https://www.kenyon.edu/catalog/dept-${index}/`,
+    );
+    const indexHtml = catalogIndex().replace(
+      `<li><a class="reference_nav_child_link" href="${catalogUrl}">American Studies</a></li>`,
+      pageUrls
+        .map((url, index) => `<li><a class="reference_nav_child_link" href="${url}">Dept ${index}</a></li>`)
+        .join(""),
+    );
+    const values: Record<string, string> = {
+      [SCHEDULE_URL]: source.schedule,
+      [CATALOG_INDEX_URL]: indexHtml,
+    };
+    for (const url of pageUrls) values[url] = source.catalog;
+
+    const fixtureFetch = fetchFrom(values);
+    let inFlight = 0;
+    let peakInFlight = 0;
+    const observedFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      inFlight += 1;
+      peakInFlight = Math.max(peakInFlight, inFlight);
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1));
+        return await fixtureFetch(input, init);
+      } finally {
+        inFlight -= 1;
+      }
+    }) as typeof fetch;
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      maximumCatalogPages: 30,
+      catalogConcurrency: 4,
+      fetchImpl: observedFetch,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(peakInFlight).toBeGreaterThan(1);
+    expect(peakInFlight).toBeLessThanOrEqual(4);
+  });
+});
+
+describe("source character decoding", () => {
+  async function importSchedule(
+    scheduleBody: Uint8Array,
+    scheduleHeaders?: HeadersInit,
+  ): Promise<CourseSnapshot> {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchWithRawSchedule(
+        scheduleBody,
+        {
+          [CATALOG_INDEX_URL]: catalogIndex(),
+          [catalogUrl]: source.catalog,
+        },
+        scheduleHeaders,
+      ),
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+    return JSON.parse(await readFile(paths.snapshotPath, "utf8")) as CourseSnapshot;
+  }
+
+  function instructors(snapshot: CourseSnapshot): string[] {
+    return snapshot.sections.flatMap((section) => section.instructors);
+  }
+
+  it("decodes a windows-1252 schedule that declares no charset", async () => {
+    // The live registrar page is served as bare `text/html` with windows-1252
+    // bytes, so a UTF-8 assumption corrupts accented instructor names.
+    const snapshot = await importSchedule(await windows1252ScheduleBytes());
+
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(instructors(snapshot)).toContain("del Río Arrillaga, D");
+    expect(JSON.stringify(snapshot)).not.toContain("�");
+  });
+
+  it("honors an explicit utf-8 charset in the Content-Type header", async () => {
+    const utf8Schedule = (await windows1252ScheduleBytes()).toString("latin1");
+    const snapshot = await importSchedule(
+      Buffer.from(utf8Schedule, "utf8"),
+      { "content-type": "text/html; charset=utf-8" },
+    );
+
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(JSON.stringify(snapshot)).not.toContain("�");
+  });
+
+  it("honors a meta charset declaration when the header omits one", async () => {
+    const windows1252 = await windows1252ScheduleBytes();
+    const declared = Buffer.concat([
+      Buffer.from('<meta charset="windows-1252">', "ascii"),
+      windows1252,
+    ]);
+    const snapshot = await importSchedule(declared);
+
+    expect(instructors(snapshot)).toContain("López, I");
+  });
+
+  it("does not re-decode valid utf-8 bytes as windows-1252", async () => {
+    const utf8Schedule = (await windows1252ScheduleBytes()).toString("latin1");
+    const snapshot = await importSchedule(Buffer.from(utf8Schedule, "utf8"));
+
+    // Mis-decoding valid UTF-8 as windows-1252 yields mojibake ("LÃ³pez").
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(JSON.stringify(snapshot)).not.toContain("Ã");
   });
 });

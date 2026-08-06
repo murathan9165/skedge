@@ -4,7 +4,7 @@
     "id": "fall-2026",
     "label": "Fall 2026"
   },
-  "importedAt": "2026-08-05T00:47:12.489Z",
+  "importedAt": "2026-08-06T17:02:46.052Z",
   "sections": [
     {
       "crn": "80565",
@@ -211,7 +211,7 @@
       "title": "Senior Honors",
       "credits": 4,
       "instructors": [
-        "Powers, N"
+        "Gourrier, F"
       ],
       "meetingStatus": "time-unavailable",
       "meetings": [],
@@ -5905,7 +5905,7 @@
       "title": "Intro to Gender & SexualitySt",
       "credits": 4,
       "instructors": [
-        "L�pez, I"
+        "López, I"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -8970,7 +8970,7 @@
       "title": "Lit & Film: Adv Writing Span",
       "credits": 4,
       "instructors": [
-        "del R�o Arrillaga, D"
+        "del Río Arrillaga, D"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -9000,7 +9000,7 @@
       "title": "Lit & Film: Adv Writing Span",
       "credits": 4,
       "instructors": [
-        "del R�o Arrillaga, D"
+        "del Río Arrillaga, D"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -9090,7 +9090,7 @@
       "title": "ST: Fighting Fascism in Spain",
       "credits": 4,
       "instructors": [
-        "del R�o Arrillaga, D"
+        "del Río Arrillaga, D"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -15319,35 +15319,6 @@
       }
     },
     {
-      "crn": "80406",
-      "subject": "PSCI",
-      "catalogNumber": "495",
-      "sectionNumber": "00",
-      "courseCode": "PSCI 495",
-      "title": "Issues in Policy & Politics",
-      "credits": 4,
-      "instructors": [
-        "Powers, N"
-      ],
-      "meetingStatus": "scheduled",
-      "meetings": [
-        {
-          "days": [
-            "T",
-            "R"
-          ],
-          "startTime": "13:10",
-          "endTime": "14:30",
-          "room": "OCOSEM"
-        }
-      ],
-      "prerequisite": {
-        "status": "known",
-        "text": "Junior standing. Permission of the instructor.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/political-science/academic-program-requirements/courses-in-political-science/"
-      }
-    },
-    {
       "crn": "80066",
       "subject": "PSCI",
       "catalogNumber": "497Y",
@@ -15669,7 +15640,7 @@
       "title": "Adult Psychopath & Soc Suffrng",
       "credits": 4,
       "instructors": [
-        "L�pez, I"
+        "López, I"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -15952,7 +15923,7 @@
       "title": "Psychology Senior Seminar",
       "credits": 4,
       "instructors": [
-        "L�pez, I"
+        "López, I"
       ],
       "meetingStatus": "scheduled",
       "meetings": [
@@ -15991,6 +15962,35 @@
           "startTime": "13:10",
           "endTime": "16:00",
           "room": "SMA306"
+        }
+      ],
+      "prerequisite": {
+        "status": "known",
+        "text": "Senior standing and psychology major.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/psychology/academic-program-requirements/courses-in-psychology/"
+      }
+    },
+    {
+      "crn": "80369",
+      "subject": "PSYC",
+      "catalogNumber": "475",
+      "sectionNumber": "03",
+      "courseCode": "PSYC 475",
+      "title": "Psychology Senior Seminar",
+      "credits": 4,
+      "instructors": [
+        "Murnen, S"
+      ],
+      "meetingStatus": "scheduled",
+      "meetings": [
+        {
+          "days": [
+            "T",
+            "R"
+          ],
+          "startTime": "09:40",
+          "endTime": "11:00",
+          "room": "SMA308"
         }
       ],
       "prerequisite": {

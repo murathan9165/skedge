@@ -44,8 +44,19 @@ const subjectAliases: Record<string, string> = {
   STAT: "Statistics",
 };
 
+/**
+ * Folds case and diacritics so a student typing "lopez" on a US keyboard finds
+ * "López". Decomposing to NFD splits an accented letter into its base letter
+ * plus a combining mark, which the range below then strips. Applied to both the
+ * query and the searchable text, so either spelling matches the other.
+ */
 function normalizeSearchText(value: string) {
-  return value.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function compareSections(left: CourseSection, right: CourseSection) {

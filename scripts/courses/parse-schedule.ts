@@ -14,18 +14,48 @@ export interface ParsedSchedule {
 
 export const FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT = 629;
 
+/**
+ * Sections are genuinely cancelled between imports, so an exact floor breaks on
+ * the first ordinary change. A large drop is a different animal -- far more
+ * likely a truncated response or a format change than mass cancellation -- so
+ * only that hard-fails.
+ */
+export const SECTION_COUNT_TOLERANCE_FLOOR = 15;
+export const SECTION_COUNT_TOLERANCE_RATIO = 0.02;
+
+export interface ScheduleCompleteness {
+  baseline: number;
+  actual: number;
+  delta: number;
+  tolerance: number;
+}
+
+export function sectionCountTolerance(baseline: number): number {
+  return Math.max(
+    SECTION_COUNT_TOLERANCE_FLOOR,
+    Math.ceil(baseline * SECTION_COUNT_TOLERANCE_RATIO),
+  );
+}
+
 export function assertFall2026ScheduleCompleteness(
   parsed: ParsedSchedule,
-  minimumSectionCount = FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
-): void {
-  if (!Number.isInteger(minimumSectionCount) || minimumSectionCount < 1) {
+  baseline = FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
+): ScheduleCompleteness {
+  if (!Number.isInteger(baseline) || baseline < 1) {
     throw new Error("Fall 2026 minimum section count must be a positive integer");
   }
-  if (parsed.sections.length < minimumSectionCount) {
+
+  const actual = parsed.sections.length;
+  const tolerance = sectionCountTolerance(baseline);
+  const delta = actual - baseline;
+
+  if (delta < -tolerance) {
     throw new Error(
-      `Fall 2026 schedule contained ${parsed.sections.length} sections, below the reviewed minimum of ${minimumSectionCount}`,
+      `Fall 2026 schedule contained ${actual} sections, ${-delta} below the reviewed baseline of ${baseline} and beyond the accepted tolerance of ${tolerance}`,
     );
   }
+
+  return { baseline, actual, delta, tolerance };
 }
 
 const validDays = new Set<MeetingDay>(["M", "T", "W", "R", "F"]);
