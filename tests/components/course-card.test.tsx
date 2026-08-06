@@ -40,6 +40,17 @@ describe("CourseCard", () => {
     expect(screen.getByRole("article")).toHaveAttribute("data-drag-enabled", "true");
   });
 
+  it("keeps seat availability and PI metadata visible when enrollment is unavailable", () => {
+    render(
+      <CourseCard
+        section={{ ...scheduledSection, permission: "PI", seatLimit: 15, seatsEnrolled: null }}
+        onAdd={() => {}}
+      />,
+    );
+
+    expect(screen.getByText("4 credits · seats: no info. (PI)")).toBeInTheDocument();
+  });
+
   it("keeps Add and Prerequisites controls interactive on a draggable card", () => {
     const onAdd = vi.fn();
     render(<CourseCard section={scheduledSection} onAdd={onAdd} />);

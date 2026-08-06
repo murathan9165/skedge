@@ -44,8 +44,10 @@ function formatTimeSummary(meetings: MeetingInterval[]) {
 
 function formatSeatSummary(section: CourseSection) {
   const credits = `${section.credits} credits`;
-  if (section.seatLimit === null || section.seatsEnrolled === null) return credits;
   const permission = section.permission === "PI" ? " (PI)" : "";
+  if (section.seatLimit === null || section.seatsEnrolled === null) {
+    return `${credits} · seats: no info.${permission}`;
+  }
   return `${credits} · seats: ${section.seatsEnrolled} of ${section.seatLimit} filled.${permission}`;
 }
 
