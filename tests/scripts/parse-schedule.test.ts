@@ -31,6 +31,9 @@ describe("parseScheduleHtml", () => {
       courseCode: "AMST 140",
       title: "Prisons, Policing, & Amer Cult",
       credits: 4,
+      permission: null,
+      seatLimit: 20,
+      seatsEnrolled: 21,
       instructors: ["Dr. Staff"],
       meetingStatus: "scheduled",
       meetings: [

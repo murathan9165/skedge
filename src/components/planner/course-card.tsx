@@ -42,6 +42,12 @@ function formatTimeSummary(meetings: MeetingInterval[]) {
   return [...new Set(meetings.map(formatTimeRange))].join(" / ");
 }
 
+function formatSeatSummary(section: CourseSection) {
+  if (section.seatLimit === null || section.seatsEnrolled === null) return null;
+  const permission = section.permission === "PI" ? " (PI)" : "";
+  return `${section.credits} credits · seats: ${section.seatsEnrolled} of ${section.seatLimit} filled.${permission}`;
+}
+
 export function CourseCard({
   section,
   onAdd,
@@ -52,6 +58,7 @@ export function CourseCard({
   const prerequisiteTriggerRef = useRef<HTMLButtonElement>(null);
   const isUntimed = section.meetingStatus === "time-unavailable";
   const isAddDisabled = isUntimed || selected || addDisabled || !onAdd;
+  const seatSummary = formatSeatSummary(section);
   const {
     ref: draggableRef,
     handleRef,
@@ -89,6 +96,7 @@ export function CourseCard({
           <p className="course-card__title">{section.title}</p>
         </div>
         <p className="course-card__instructor">{section.instructors.join(", ") || "Instructor unavailable"}</p>
+        {seatSummary ? <p className="course-card__availability">{seatSummary}</p> : null}
         {isUntimed ? (
           <p className="course-card__unavailable">Time unavailable</p>
         ) : (

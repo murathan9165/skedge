@@ -15,6 +15,9 @@ export interface ImportedScheduleSection {
   courseCode: string;
   title: string;
   credits: number;
+  permission?: string | null;
+  seatLimit?: number | null;
+  seatsEnrolled?: number | null;
   instructors: string[];
   meetingStatus: "scheduled" | "time-unavailable";
   meetings: MeetingInterval[];

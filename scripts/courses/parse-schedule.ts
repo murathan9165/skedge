@@ -119,6 +119,11 @@ function parseMeeting(
   return { days, startTime, endTime, room: room.trim() };
 }
 
+function parseOptionalInteger(value: string): number | null {
+  const trimmed = value.trim();
+  return trimmed === "" ? null : Number(trimmed);
+}
+
 function parseSection(line: string): ImportedScheduleSection {
   const crn = line.slice(0, 5);
   const subject = line.slice(6, 10).trim();
@@ -141,6 +146,9 @@ function parseSection(line: string): ImportedScheduleSection {
     courseCode: `${subject} ${catalogNumber}`,
     title: line.slice(19, 62).trim(),
     credits: Number(line.slice(73, 78).trim()),
+    permission: line.slice(165, 168).trim() || null,
+    seatLimit: parseOptionalInteger(line.slice(168, 173)),
+    seatsEnrolled: parseOptionalInteger(line.slice(173, 177)),
     instructors: parseInstructors(line.slice(183).trim()),
     meetingStatus: meetings.length > 0 ? "scheduled" : "time-unavailable",
     meetings,

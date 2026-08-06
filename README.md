@@ -36,6 +36,22 @@ An unchanged scrape writes nothing and produces no commit or deploy: the importe
 
 Trigger a run by hand from the Actions tab via **Run workflow** — the schedule is best-effort, and GitHub delays or drops scheduled runs under load.
 
+### Local scheduled import (macOS)
+
+A launchd agent runs the same importer at 08:00 local time, as a peer to the workflow rather than a replacement. Either may win on a given day: whichever imports first commits, and the other sees identical section data, exits `3`, and does nothing. Content hashing is what makes the duplicate harmless.
+
+```bash
+npm run schedule:install     # install or update the agent
+npm run schedule:status      # agent state and recent log
+npm run schedule:uninstall   # remove it
+```
+
+It works on its own clone under `~/.local/share/skedge-import`, never the working checkout, so a scheduled run cannot commit or reset beneath you mid-edit. Logs land in that directory, and a failure raises a macOS notification. Like the workflow, it runs a full build before committing.
+
+Because launchd tracks wall-clock time, the local run follows DST correctly — unlike the UTC-only GitHub cron. It only runs while the Mac is awake, which is exactly why the workflow stays in place.
+
+The installer copies the runner to `~/.local/bin`; edit `scripts/courses/daily-import.sh` and re-run `npm run schedule:install` to update it.
+
 The CLI exits `0` when data changed, `3` when it was unchanged, and `1` on failure. It narrates on stderr and writes a JSON summary to stdout:
 
 ```bash
