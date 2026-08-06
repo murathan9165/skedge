@@ -114,4 +114,53 @@ describe("searchSections", () => {
     expect(searchSections(aliasSections, "art history").map((section) => section.crn)).toEqual(["4"]);
     expect(searchSections(aliasSections, "art physics")).toEqual([]);
   });
+
+  describe("diacritic-insensitive instructor search", () => {
+    // Real Kenyon instructors whose names carry diacritics. A student on a US
+    // keyboard types the unaccented spelling, and must still find them.
+    const accentedSections: CourseSection[] = [
+      {
+        crn: "80355",
+        subject: "PSYC",
+        catalogNumber: "221",
+        sectionNumber: "00",
+        courseCode: "PSYC 221",
+        title: "Adult Psychopath & Soc Suffrng",
+        credits: 4,
+        instructors: ["López, I"],
+        meetingStatus: "scheduled",
+        meetings: [],
+        prerequisite: { status: "unavailable" },
+      },
+      {
+        crn: "80668",
+        subject: "SPAN",
+        catalogNumber: "321",
+        sectionNumber: "01",
+        courseCode: "SPAN 321",
+        title: "Lit & Film: Adv Writing Span",
+        credits: 4,
+        instructors: ["del Río Arrillaga, D"],
+        meetingStatus: "scheduled",
+        meetings: [],
+        prerequisite: { status: "unavailable" },
+      },
+    ];
+
+    it.each([
+      ["lopez", ["80355"]],
+      ["Lopez", ["80355"]],
+      ["López", ["80355"]],
+      ["lópez", ["80355"]],
+      ["rio", ["80668"]],
+      ["Río", ["80668"]],
+      ["del rio arrillaga", ["80668"]],
+    ])("matches %s regardless of diacritics", (query, crns) => {
+      expect(searchSections(accentedSections, query).map((section) => section.crn)).toEqual(crns);
+    });
+
+    it("still excludes instructors who do not match", () => {
+      expect(searchSections(accentedSections, "hopper")).toEqual([]);
+    });
+  });
 });
