@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
@@ -649,6 +649,103 @@ describe("importFall2026", () => {
     await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /prerequisite source.*fetched catalog pages/i,
     );
+  });
+});
+
+describe("change detection", () => {
+  async function importInto(
+    paths: Awaited<ReturnType<typeof outputPaths>>,
+    schedule: string,
+    importedAt: string,
+  ) {
+    const source = await fixtures();
+    return importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchFrom({
+        [SCHEDULE_URL]: schedule,
+        [CATALOG_INDEX_URL]: catalogIndex(),
+        [catalogUrl]: source.catalog,
+      }),
+      now: () => new Date(importedAt),
+    });
+  }
+
+  it("writes nothing when a re-import scrapes identical data", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const first = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+    const writtenAt = await Promise.all([
+      stat(paths.snapshotPath),
+      stat(paths.reportPath),
+    ]);
+
+    const second = await importInto(paths, source.schedule, "2026-08-05T19:00:00.000Z");
+    const reReadAt = await Promise.all([
+      stat(paths.snapshotPath),
+      stat(paths.reportPath),
+    ]);
+
+    expect(first.outcome).toBe("changed");
+    expect(second.outcome).toBe("unchanged");
+    // `importedAt` must stay the moment the data last changed, not the moment
+    // the job last ran -- otherwise every scheduled run churns the snapshot.
+    expect(second.snapshot.importedAt).toBe("2026-08-04T19:00:00.000Z");
+    expect(reReadAt.map(({ mtimeMs }) => mtimeMs)).toEqual(
+      writtenAt.map(({ mtimeMs }) => mtimeMs),
+    );
+  });
+
+  it("rewrites both artifacts when a single meeting room changes", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    const moved = source.schedule.replace("CHL300", "CHL301");
+    const second = await importInto(paths, moved, "2026-08-05T19:00:00.000Z");
+
+    expect(second.outcome).toBe("changed");
+    expect(second.snapshot.importedAt).toBe("2026-08-05T19:00:00.000Z");
+    expect(second.snapshot.sections[0].meetings[0].room).toBe("CHL301");
+  });
+
+  it("treats a differing importedAt alone as unchanged", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    const shifted = "2026-01-01T00:00:00.000Z";
+    const snapshot = JSON.parse(await readFile(paths.snapshotPath, "utf8")) as CourseSnapshot;
+    const report = JSON.parse(await readFile(paths.reportPath, "utf8")) as ImportReport;
+    snapshot.importedAt = shifted;
+    report.importedAt = shifted;
+    await writeFile(paths.snapshotPath, JSON.stringify(snapshot));
+    await writeFile(paths.reportPath, JSON.stringify(report));
+
+    const second = await importInto(paths, source.schedule, "2026-08-05T19:00:00.000Z");
+
+    expect(second.outcome).toBe("unchanged");
+    expect(second.snapshot.importedAt).toBe(shifted);
+  });
+
+  it("writes normally on a first run with no committed artifacts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+
+    const result = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    expect(result.outcome).toBe("changed");
+    expect(result.snapshot.sections).toHaveLength(FIXTURE_SECTION_COUNT);
+  });
+
+  it("treats unreadable committed artifacts as changed rather than failing", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await seedPreviousArtifacts(paths);
+
+    const result = await importInto(paths, source.schedule, "2026-08-04T19:00:00.000Z");
+
+    expect(result.outcome).toBe("changed");
   });
 });
 

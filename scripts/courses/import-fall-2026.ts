@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -587,6 +588,57 @@ function classifyPrerequisite(
   return { prerequisite: course.prerequisite };
 }
 
+function canonicalize(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonicalize);
+  if (isObject(value)) {
+    return Object.fromEntries(
+      Object.keys(value)
+        .sort()
+        .map((key) => [key, canonicalize(value[key])]),
+    );
+  }
+  return value;
+}
+
+/**
+ * Fingerprints the section data alone. Timestamps are deliberately excluded so
+ * that a run which scrapes identical data hashes identically -- otherwise
+ * `importedAt` would churn the snapshot on every scheduled run. Section order
+ * is significant: it mirrors the registrar's own ordering.
+ */
+export function hashSections(sections: readonly CourseSection[]): string {
+  return createHash("sha256")
+    .update(JSON.stringify(canonicalize(sections)))
+    .digest("hex");
+}
+
+interface CommittedArtifacts {
+  snapshot: CourseSnapshot;
+  report: ImportReport;
+}
+
+/** Returns the committed pair only when both parse and validate together. */
+async function readCommittedArtifacts(
+  snapshotPath: string,
+  reportPath: string,
+  minimumSectionCount: number,
+): Promise<CommittedArtifacts | null> {
+  try {
+    const [snapshotText, reportText] = await Promise.all([
+      readFile(snapshotPath, "utf8"),
+      readFile(reportPath, "utf8"),
+    ]);
+    const snapshot: unknown = JSON.parse(snapshotText);
+    const report: unknown = JSON.parse(reportText);
+    validateCourseSnapshot(snapshot);
+    validateImportReport(report, snapshot, minimumSectionCount);
+    return { snapshot, report };
+  } catch {
+    // Missing, unreadable, or stale artifacts simply mean "treat as changed".
+    return null;
+  }
+}
+
 async function replaceArtifacts(
   snapshotPath: string,
   reportPath: string,
@@ -655,7 +707,15 @@ async function replaceArtifacts(
   }
 }
 
-export async function importFall2026(options: ImportOptions = {}): Promise<{ snapshot: CourseSnapshot; report: ImportReport }> {
+export type ImportOutcome = "changed" | "unchanged";
+
+export interface ImportResult {
+  snapshot: CourseSnapshot;
+  report: ImportReport;
+  outcome: ImportOutcome;
+}
+
+export async function importFall2026(options: ImportOptions = {}): Promise<ImportResult> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const now = options.now ?? (() => new Date());
   const snapshotPath = options.snapshotPath ?? path.join(process.cwd(), "src/data/fall-2026.json");
@@ -735,6 +795,18 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     }
     return { ...scheduleSection, prerequisite: classification.prerequisite };
   });
+  // Short-circuit before stamping a new `importedAt`: a scheduled run that
+  // scrapes identical data must produce no write, no commit, and no deploy.
+  const sectionHash = hashSections(sections);
+  const committed = await readCommittedArtifacts(
+    snapshotPath,
+    reportPath,
+    minimumSectionCount,
+  );
+  if (committed && hashSections(committed.snapshot.sections) === sectionHash) {
+    return { ...committed, outcome: "unchanged" };
+  }
+
   const importedAt = now().toISOString();
   const snapshot: CourseSnapshot = {
     schemaVersion: 1,
@@ -780,7 +852,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     options.renameFile ?? rename,
     minimumSectionCount,
   );
-  return { snapshot, report };
+  return { snapshot, report, outcome: "changed" };
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
