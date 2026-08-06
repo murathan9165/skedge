@@ -29,6 +29,17 @@ const DEFAULT_SOURCE_REQUEST_TIMEOUT_MS = 60_000;
 const DEFAULT_MAXIMUM_CATALOG_DEPTH = 4;
 const DEFAULT_MAXIMUM_CATALOG_PAGES = 100;
 const MAXIMUM_SOURCE_REDIRECTS = 5;
+const DEFAULT_MAXIMUM_ATTEMPTS = 3;
+const DEFAULT_RETRY_BASE_DELAY_MS = 500;
+const DEFAULT_CATALOG_CONCURRENCY = 4;
+
+/**
+ * Identifies the importer to Kenyon's servers. A scheduled job that scrapes
+ * anonymously and in bursts is indistinguishable from abuse; naming ourselves
+ * and linking the project makes the traffic accountable.
+ */
+const SOURCE_USER_AGENT =
+  "kenyon-class-schedule-planner/0.1 (+https://github.com/murathan9165/skedge)";
 
 interface ImportOptions {
   fetchImpl?: typeof fetch;
@@ -40,6 +51,55 @@ interface ImportOptions {
   maximumCatalogDepth?: number;
   maximumCatalogPages?: number;
   requestTimeoutMs?: number;
+  maximumAttempts?: number;
+  retryBaseDelayMs?: number;
+  catalogConcurrency?: number;
+  sleep?: (milliseconds: number) => Promise<void>;
+}
+
+/** A failure worth another attempt: timeouts, connection errors, 429, and 5xx. */
+class TransientSourceError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "TransientSourceError";
+  }
+}
+
+function isRetryableStatus(status: number): boolean {
+  return status === 429 || (status >= 500 && status < 600);
+}
+
+/**
+ * Caps requests in flight. Gating the request itself rather than the traversal
+ * keeps the cap global no matter how the recursive catalog discovery fans out.
+ */
+function createRequestLimiter(
+  limit: number,
+): <T>(task: () => Promise<T>) => Promise<T> {
+  let active = 0;
+  const waiting: Array<() => void> = [];
+
+  return async function run<T>(task: () => Promise<T>): Promise<T> {
+    if (active >= limit) {
+      await new Promise<void>((resolve) => waiting.push(resolve));
+    }
+    active += 1;
+    try {
+      return await task();
+    } finally {
+      active -= 1;
+      waiting.shift()?.();
+    }
+  };
+}
+
+interface FetchPolicy {
+  fetchImpl: typeof fetch;
+  requestTimeoutMs: number;
+  maximumAttempts: number;
+  retryBaseDelayMs: number;
+  sleep: (milliseconds: number) => Promise<void>;
+  runRequest: <T>(task: () => Promise<T>) => Promise<T>;
 }
 
 type SourceKind = "schedule" | "catalog";
@@ -304,12 +364,12 @@ export function validateImportReport(
   }
 }
 
-async function fetchText(
-  fetchImpl: typeof fetch,
+async function fetchTextOnce(
+  policy: FetchPolicy,
   url: string,
   kind: SourceKind,
-  requestTimeoutMs: number,
 ): Promise<string> {
+  const { fetchImpl, requestTimeoutMs } = policy;
   const approvedUrl = assertApprovedSourceUrl(url, kind);
   const controller = new AbortController();
   let timedOut = false;
@@ -318,7 +378,11 @@ async function fetchText(
     timeout = setTimeout(() => {
       timedOut = true;
       controller.abort();
-      reject(new Error(`Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`));
+      reject(
+        new TransientSourceError(
+          `Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`,
+        ),
+      );
     }, requestTimeoutMs);
   });
 
@@ -326,7 +390,11 @@ async function fetchText(
     let requestUrl = approvedUrl;
     for (let redirectCount = 0; ; redirectCount += 1) {
       const response = await Promise.race([
-        fetchImpl(requestUrl, { redirect: "manual", signal: controller.signal }),
+        fetchImpl(requestUrl, {
+          redirect: "manual",
+          signal: controller.signal,
+          headers: { "user-agent": SOURCE_USER_AGENT },
+        }),
         timeoutPromise,
       ]);
       if (response.status >= 300 && response.status < 400) {
@@ -346,7 +414,12 @@ async function fetchText(
         continue;
       }
       if (!response.ok) {
-        throw new Error(`Failed to fetch ${requestUrl}: HTTP ${response.status}`);
+        const failure = `Failed to fetch ${requestUrl}: HTTP ${response.status}`;
+        // A 404 or 403 is a structural signal the pipeline should surface, not
+        // paper over with retries. Only 429 and 5xx are worth another attempt.
+        throw isRetryableStatus(response.status)
+          ? new TransientSourceError(failure)
+          : new Error(failure);
       }
       assertApprovedSourceUrl(response.url, kind, true);
       const bytes = new Uint8Array(await response.arrayBuffer());
@@ -357,12 +430,43 @@ async function fetchText(
       timedOut ||
       (error instanceof DOMException && error.name === "AbortError")
     ) {
-      throw new Error(`Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`);
+      throw new TransientSourceError(
+        `Request timed out after ${requestTimeoutMs}ms: ${approvedUrl}`,
+      );
+    }
+    if (error instanceof TypeError) {
+      // `fetch` reports connection-level failures as TypeError.
+      throw new TransientSourceError(
+        `Source request failed to connect: ${approvedUrl} (${error.message})`,
+      );
     }
     throw error;
   } finally {
     if (timeout !== undefined) clearTimeout(timeout);
   }
+}
+
+async function fetchText(
+  policy: FetchPolicy,
+  url: string,
+  kind: SourceKind,
+): Promise<string> {
+  let lastTransient: TransientSourceError | undefined;
+
+  for (let attempt = 1; attempt <= policy.maximumAttempts; attempt += 1) {
+    try {
+      return await policy.runRequest(() => fetchTextOnce(policy, url, kind));
+    } catch (error) {
+      if (!(error instanceof TransientSourceError)) throw error;
+      lastTransient = error;
+      if (attempt >= policy.maximumAttempts) break;
+      await policy.sleep(policy.retryBaseDelayMs * 2 ** (attempt - 1));
+    }
+  }
+
+  throw new Error(
+    `${lastTransient?.message ?? "Source request failed"} (after ${policy.maximumAttempts} attempts)`,
+  );
 }
 
 function buildCatalogMap(courses: CatalogCourse[]): Map<string, CatalogCourse> {
@@ -393,11 +497,10 @@ interface CatalogTraversal {
   visited: Set<string>;
   maximumDepth: number;
   maximumPages: number;
-  requestTimeoutMs: number;
+  policy: FetchPolicy;
 }
 
 async function fetchCatalogBranch(
-  fetchImpl: typeof fetch,
   url: string,
   now: () => Date,
   traversal: CatalogTraversal,
@@ -421,12 +524,7 @@ async function fetchCatalogBranch(
   }
   traversal.visited.add(approvedUrl);
 
-  const html = await fetchText(
-    fetchImpl,
-    approvedUrl,
-    "catalog",
-    traversal.requestTimeoutMs,
-  );
+  const html = await fetchText(traversal.policy, approvedUrl, "catalog");
   const retrievedAt = now().toISOString();
   try {
     return [
@@ -443,14 +541,7 @@ async function fetchCatalogBranch(
     const nextAncestors = new Set(ancestors).add(approvedUrl);
     const children = await Promise.all(
       subpageUrls.map((subpageUrl) =>
-        fetchCatalogBranch(
-          fetchImpl,
-          subpageUrl,
-          now,
-          traversal,
-          depth + 1,
-          nextAncestors,
-        ),
+        fetchCatalogBranch(subpageUrl, now, traversal, depth + 1, nextAncestors),
       ),
     );
     return [{ url: approvedUrl, retrievedAt, courses: [] }, ...children.flat()];
@@ -563,33 +654,44 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
     options.requestTimeoutMs ?? DEFAULT_SOURCE_REQUEST_TIMEOUT_MS,
     "Source request timeout",
   );
-
-  const scheduleHtml = await fetchText(
+  const policy: FetchPolicy = {
     fetchImpl,
-    SCHEDULE_URL,
-    "schedule",
     requestTimeoutMs,
-  );
+    maximumAttempts: positiveInteger(
+      options.maximumAttempts ?? DEFAULT_MAXIMUM_ATTEMPTS,
+      "Maximum source request attempts",
+    ),
+    retryBaseDelayMs: positiveInteger(
+      options.retryBaseDelayMs ?? DEFAULT_RETRY_BASE_DELAY_MS,
+      "Retry base delay",
+    ),
+    sleep:
+      options.sleep ??
+      ((milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))),
+    runRequest: createRequestLimiter(
+      positiveInteger(
+        options.catalogConcurrency ?? DEFAULT_CATALOG_CONCURRENCY,
+        "Catalog concurrency",
+      ),
+    ),
+  };
+
+  const scheduleHtml = await fetchText(policy, SCHEDULE_URL, "schedule");
   const scheduleRetrievedAt = now().toISOString();
   const parsedSchedule = parseScheduleHtml(scheduleHtml);
   assertFall2026ScheduleCompleteness(parsedSchedule, minimumSectionCount);
-  const catalogIndexHtml = await fetchText(
-    fetchImpl,
-    CATALOG_INDEX_URL,
-    "catalog",
-    requestTimeoutMs,
-  );
+  const catalogIndexHtml = await fetchText(policy, CATALOG_INDEX_URL, "catalog");
   const catalogIndexRetrievedAt = now().toISOString();
   const catalogUrls = parseCatalogIndexHtml(catalogIndexHtml, CATALOG_INDEX_URL);
   const traversal: CatalogTraversal = {
     visited: new Set(),
     maximumDepth: maximumCatalogDepth,
     maximumPages: maximumCatalogPages,
-    requestTimeoutMs,
+    policy,
   };
   const catalogPages = (
     await Promise.all(
-      catalogUrls.map((url) => fetchCatalogBranch(fetchImpl, url, now, traversal)),
+      catalogUrls.map((url) => fetchCatalogBranch(url, now, traversal)),
     )
   ).flat();
   const catalogCourses = catalogPages.flatMap(({ courses }) => courses);

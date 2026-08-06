@@ -646,6 +646,237 @@ describe("importFall2026", () => {
   });
 });
 
+describe("source request resilience", () => {
+  const noSleep = async () => {};
+
+  /** Fails the schedule URL `failures` times with `status`, then serves it. */
+  function flakyScheduleFetch(
+    schedule: string,
+    catalog: string,
+    failures: number,
+    status: number,
+  ): { fetchImpl: typeof fetch; scheduleAttempts: () => number } {
+    const fallback = fetchFrom({
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: catalog,
+    });
+    let attempts = 0;
+    const fetchImpl = (async (input: string | URL | Request, init?: RequestInit) => {
+      const url = input instanceof Request ? input.url : input.toString();
+      if (url !== SCHEDULE_URL) return fallback(input, init);
+      attempts += 1;
+      return attempts <= failures
+        ? responseFrom("upstream unavailable", url, status)
+        : responseFrom(schedule, url);
+    }) as typeof fetch;
+    return { fetchImpl, scheduleAttempts: () => attempts };
+  }
+
+  it("retries a transient 503 and succeeds on the third attempt", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      2,
+      503,
+    );
+
+    const { report } = await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      sleep: noSleep,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(scheduleAttempts()).toBe(3);
+    expect(report.counts.sections).toBe(FIXTURE_SECTION_COUNT);
+  });
+
+  it("retries a 429 rate-limit response", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      1,
+      429,
+    );
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      sleep: noSleep,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(scheduleAttempts()).toBe(2);
+  });
+
+  it("gives up after the configured attempt count and preserves artifacts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await seedPreviousArtifacts(paths);
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      Number.POSITIVE_INFINITY,
+      503,
+    );
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/HTTP 503.*after 3 attempts/i);
+    expect(scheduleAttempts()).toBe(3);
+    await expectPreviousArtifacts(paths);
+  });
+
+  it("does not retry a 404, which signals a real structural change", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const { fetchImpl, scheduleAttempts } = flakyScheduleFetch(
+      source.schedule,
+      source.catalog,
+      Number.POSITIVE_INFINITY,
+      404,
+    );
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/failed to fetch.*HTTP 404/i);
+    expect(scheduleAttempts()).toBe(1);
+  });
+
+  it("backs off for increasing delays between attempts", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const delays: number[] = [];
+    const { fetchImpl } = flakyScheduleFetch(source.schedule, source.catalog, 2, 503);
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl,
+      retryBaseDelayMs: 100,
+      sleep: async (milliseconds) => {
+        delays.push(milliseconds);
+      },
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(delays).toEqual([100, 200]);
+  });
+
+  it("does not retry an allowlist rejection", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    let scheduleAttempts = 0;
+    const fallback = fetchFrom({
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: source.catalog,
+    });
+    const offOriginFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      const url = input instanceof Request ? input.url : input.toString();
+      if (url !== SCHEDULE_URL) return fallback(input, init);
+      scheduleAttempts += 1;
+      return responseFrom(source.schedule, "https://attacker.example/fall-2026.html");
+    }) as typeof fetch;
+
+    await expect(
+      importFall2026({
+        ...paths,
+        minimumSectionCount: FIXTURE_SECTION_COUNT,
+        fetchImpl: offOriginFetch,
+        sleep: noSleep,
+      }),
+    ).rejects.toThrow(/final.*approved.*registrar\.kenyon\.edu/i);
+    expect(scheduleAttempts).toBe(1);
+  });
+
+  it("sends an identifying user-agent on every request", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const agents: Array<string | undefined> = [];
+    const fixtureFetch = fetchFrom({
+      [SCHEDULE_URL]: source.schedule,
+      [CATALOG_INDEX_URL]: catalogIndex(),
+      [catalogUrl]: source.catalog,
+    });
+    const recordingFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      agents.push(new Headers(init?.headers).get("user-agent") ?? undefined);
+      return fixtureFetch(input, init);
+    }) as typeof fetch;
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: recordingFetch,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(agents.length).toBeGreaterThan(0);
+    expect(agents.every((agent) => agent?.includes("kenyon-class-schedule-planner"))).toBe(true);
+  });
+
+  it("never exceeds the configured catalog request concurrency", async () => {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    const pageUrls = Array.from(
+      { length: 20 },
+      (_, index) => `https://www.kenyon.edu/catalog/dept-${index}/`,
+    );
+    const indexHtml = catalogIndex().replace(
+      `<li><a class="reference_nav_child_link" href="${catalogUrl}">American Studies</a></li>`,
+      pageUrls
+        .map((url, index) => `<li><a class="reference_nav_child_link" href="${url}">Dept ${index}</a></li>`)
+        .join(""),
+    );
+    const values: Record<string, string> = {
+      [SCHEDULE_URL]: source.schedule,
+      [CATALOG_INDEX_URL]: indexHtml,
+    };
+    for (const url of pageUrls) values[url] = source.catalog;
+
+    const fixtureFetch = fetchFrom(values);
+    let inFlight = 0;
+    let peakInFlight = 0;
+    const observedFetch = (async (input: string | URL | Request, init?: RequestInit) => {
+      inFlight += 1;
+      peakInFlight = Math.max(peakInFlight, inFlight);
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1));
+        return await fixtureFetch(input, init);
+      } finally {
+        inFlight -= 1;
+      }
+    }) as typeof fetch;
+
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      maximumCatalogPages: 30,
+      catalogConcurrency: 4,
+      fetchImpl: observedFetch,
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+
+    expect(peakInFlight).toBeGreaterThan(1);
+    expect(peakInFlight).toBeLessThanOrEqual(4);
+  });
+});
+
 describe("source character decoding", () => {
   async function importSchedule(
     scheduleBody: Uint8Array,
