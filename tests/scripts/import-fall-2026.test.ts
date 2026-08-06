@@ -24,6 +24,10 @@ async function fixtures() {
   };
 }
 
+async function windows1252ScheduleBytes(): Promise<Buffer> {
+  return readFile(path.join(fixtureDirectory, "fall-2026-schedule-windows-1252.html"));
+}
+
 function catalogIndex(): string {
   return `<li class="reference_nav_item"><div class="reference_nav_item_inner"><a href="${CATALOG_INDEX_URL}">Course Offerings</a></div><ul class="reference_nav_children"><li><a class="reference_nav_child_link" href="${catalogUrl}">American Studies</a></li></ul></li>`;
 }
@@ -37,6 +41,39 @@ function responseFrom(
   const response = new Response(body, { status, headers });
   Object.defineProperty(response, "url", { value: url });
   return response;
+}
+
+function bytesResponseFrom(
+  body: Uint8Array,
+  url: string,
+  headers?: HeadersInit,
+): Response {
+  // Copy into a plain ArrayBuffer so the body is a valid BodyInit regardless of
+  // whether the caller passed a Buffer or a Uint8Array view.
+  const buffer = new ArrayBuffer(body.byteLength);
+  new Uint8Array(buffer).set(body);
+  const response = new Response(buffer, { status: 200, headers });
+  Object.defineProperty(response, "url", { value: url });
+  return response;
+}
+
+/**
+ * Serves the schedule URL as raw bytes so the importer's decoding path is
+ * exercised. Every other URL falls through to the string-bodied fixtures.
+ */
+function fetchWithRawSchedule(
+  scheduleBody: Uint8Array,
+  rest: Record<string, string>,
+  scheduleHeaders?: HeadersInit,
+): typeof fetch {
+  const fallback = fetchFrom(rest);
+  return (async (input: string | URL | Request, init?: RequestInit) => {
+    const url = input instanceof Request ? input.url : input.toString();
+    if (url === SCHEDULE_URL) {
+      return bytesResponseFrom(scheduleBody, url, scheduleHeaders);
+    }
+    return fallback(input, init);
+  }) as typeof fetch;
 }
 
 function fetchFrom(values: Record<string, string>): typeof fetch {
@@ -606,5 +643,74 @@ describe("importFall2026", () => {
     await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /prerequisite source.*fetched catalog pages/i,
     );
+  });
+});
+
+describe("source character decoding", () => {
+  async function importSchedule(
+    scheduleBody: Uint8Array,
+    scheduleHeaders?: HeadersInit,
+  ): Promise<CourseSnapshot> {
+    const source = await fixtures();
+    const paths = await outputPaths();
+    await importFall2026({
+      ...paths,
+      minimumSectionCount: FIXTURE_SECTION_COUNT,
+      fetchImpl: fetchWithRawSchedule(
+        scheduleBody,
+        {
+          [CATALOG_INDEX_URL]: catalogIndex(),
+          [catalogUrl]: source.catalog,
+        },
+        scheduleHeaders,
+      ),
+      now: () => new Date("2026-08-04T19:00:00.000Z"),
+    });
+    return JSON.parse(await readFile(paths.snapshotPath, "utf8")) as CourseSnapshot;
+  }
+
+  function instructors(snapshot: CourseSnapshot): string[] {
+    return snapshot.sections.flatMap((section) => section.instructors);
+  }
+
+  it("decodes a windows-1252 schedule that declares no charset", async () => {
+    // The live registrar page is served as bare `text/html` with windows-1252
+    // bytes, so a UTF-8 assumption corrupts accented instructor names.
+    const snapshot = await importSchedule(await windows1252ScheduleBytes());
+
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(instructors(snapshot)).toContain("del Río Arrillaga, D");
+    expect(JSON.stringify(snapshot)).not.toContain("�");
+  });
+
+  it("honors an explicit utf-8 charset in the Content-Type header", async () => {
+    const utf8Schedule = (await windows1252ScheduleBytes()).toString("latin1");
+    const snapshot = await importSchedule(
+      Buffer.from(utf8Schedule, "utf8"),
+      { "content-type": "text/html; charset=utf-8" },
+    );
+
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(JSON.stringify(snapshot)).not.toContain("�");
+  });
+
+  it("honors a meta charset declaration when the header omits one", async () => {
+    const windows1252 = await windows1252ScheduleBytes();
+    const declared = Buffer.concat([
+      Buffer.from('<meta charset="windows-1252">', "ascii"),
+      windows1252,
+    ]);
+    const snapshot = await importSchedule(declared);
+
+    expect(instructors(snapshot)).toContain("López, I");
+  });
+
+  it("does not re-decode valid utf-8 bytes as windows-1252", async () => {
+    const utf8Schedule = (await windows1252ScheduleBytes()).toString("latin1");
+    const snapshot = await importSchedule(Buffer.from(utf8Schedule, "utf8"));
+
+    // Mis-decoding valid UTF-8 as windows-1252 yields mojibake ("LÃ³pez").
+    expect(instructors(snapshot)).toContain("López, I");
+    expect(JSON.stringify(snapshot)).not.toContain("Ã");
   });
 });

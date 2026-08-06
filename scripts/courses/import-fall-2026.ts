@@ -115,6 +115,52 @@ function assertApprovedSourceUrl(
   return url.href;
 }
 
+const FALLBACK_SOURCE_CHARSET = "windows-1252";
+const CHARSET_SNIFF_BYTES = 2048;
+
+function charsetFromContentType(header: string | null): string | null {
+  if (!header) return null;
+  const match = /charset=["']?([^"';,\s]+)/i.exec(header);
+  return match ? match[1].toLowerCase() : null;
+}
+
+function charsetFromMetaTag(bytes: Uint8Array): string | null {
+  // Charset declarations are ASCII-safe, so sniffing the head as ASCII is
+  // sufficient to find one without knowing the encoding yet.
+  const head = new TextDecoder("ascii").decode(bytes.subarray(0, CHARSET_SNIFF_BYTES));
+  const match = /<meta[^>]*charset=["']?([^"'>\s;/]+)/i.exec(head);
+  return match ? match[1].toLowerCase() : null;
+}
+
+function decodeWith(bytes: Uint8Array, charset: string): string | null {
+  try {
+    return new TextDecoder(charset, { fatal: true }).decode(bytes);
+  } catch {
+    // An unsupported label or a mismatched declaration is worth surviving.
+    return null;
+  }
+}
+
+/**
+ * Kenyon's registrar serves the schedule as bare `text/html` with windows-1252
+ * bytes, so assuming UTF-8 corrupts accented instructor names. Prefer a
+ * declared charset, then well-formed UTF-8, and fall back to windows-1252 --
+ * which decodes any byte sequence and so always terminates the chain.
+ */
+export function decodeSourceBytes(
+  bytes: Uint8Array,
+  contentType: string | null,
+): string {
+  const declared = charsetFromContentType(contentType) ?? charsetFromMetaTag(bytes);
+  const declaredText = declared === null ? null : decodeWith(bytes, declared);
+  if (declaredText !== null) return declaredText;
+
+  return (
+    decodeWith(bytes, "utf-8") ??
+    new TextDecoder(FALLBACK_SOURCE_CHARSET).decode(bytes)
+  );
+}
+
 function clockMinutes(value: unknown): number | null {
   if (typeof value !== "string") return null;
   const match = /^(?:[01]\d|2[0-3]):[0-5]\d$/.exec(value);
@@ -303,7 +349,8 @@ async function fetchText(
         throw new Error(`Failed to fetch ${requestUrl}: HTTP ${response.status}`);
       }
       assertApprovedSourceUrl(response.url, kind, true);
-      return await response.text();
+      const bytes = new Uint8Array(await response.arrayBuffer());
+      return decodeSourceBytes(bytes, response.headers.get("content-type"));
     }
   } catch (error) {
     if (
