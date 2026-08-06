@@ -16,5 +16,11 @@ describe("Home", () => {
     expect(screen.queryByRole("heading", { name: /fall 2026 class schedule planner/i })).not.toBeInTheDocument();
     expect(screen.getByRole("complementary", { name: /course search/i })).toBeInTheDocument();
     expect(screen.getByRole("grid", { name: /monday through friday class schedule/i })).toBeInTheDocument();
+    expect(screen.getByText(/this app is in beta/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "kocaman1@kenyon.edu" })).toHaveAttribute(
+      "href",
+      "mailto:kocaman1@kenyon.edu",
+    );
+    expect(screen.queryByText(/the app is in alpha/i)).not.toBeInTheDocument();
   });
 });
