@@ -20,6 +20,7 @@ import {
   assertFall2026ScheduleCompleteness,
   FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
   parseScheduleHtml,
+  sectionCountTolerance,
 } from "./parse-schedule";
 
 export const SCHEDULE_URL = "https://registrar.kenyon.edu/sep26_dept.htm";
@@ -312,9 +313,30 @@ export function validateImportReport(
   assertion(classified === rowCounts.total, "Not every source schedule row was classified");
   assertion(rowCounts.section === snapshot.sections.length, "Schedule section row count differs from snapshot");
   assertion(value.counts.sections === snapshot.sections.length, "Report section count differs from snapshot");
+  assertion(isObject(value.completeness), "Completeness metadata is missing");
+  const completeness = value.completeness;
+  for (const key of ["baseline", "actual", "delta", "tolerance"] as const) {
+    assertion(Number.isInteger(completeness[key]), `Invalid completeness ${key}`);
+  }
   assertion(
-    snapshot.sections.length >= minimumSectionCount,
-    `Fall 2026 snapshot contains ${snapshot.sections.length} sections, below the reviewed minimum of ${minimumSectionCount}`,
+    completeness.baseline === minimumSectionCount,
+    "Completeness baseline differs from the reviewed baseline",
+  );
+  assertion(
+    completeness.actual === snapshot.sections.length,
+    "Completeness section count differs from snapshot",
+  );
+  assertion(
+    completeness.tolerance === sectionCountTolerance(minimumSectionCount),
+    "Completeness tolerance differs from the reviewed tolerance",
+  );
+  assertion(
+    completeness.delta === (completeness.actual as number) - (completeness.baseline as number),
+    "Completeness delta is inconsistent with its baseline and count",
+  );
+  assertion(
+    (completeness.delta as number) >= -(completeness.tolerance as number),
+    `Fall 2026 snapshot contains ${snapshot.sections.length} sections, below the reviewed baseline of ${minimumSectionCount} and beyond the accepted tolerance of ${completeness.tolerance}`,
   );
   assertion(value.counts.catalogPages === sources.catalogPages.length, "Catalog page count differs from source records");
   const catalogCourseCount = sources.catalogPages.reduce(
@@ -679,7 +701,10 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
   const scheduleHtml = await fetchText(policy, SCHEDULE_URL, "schedule");
   const scheduleRetrievedAt = now().toISOString();
   const parsedSchedule = parseScheduleHtml(scheduleHtml);
-  assertFall2026ScheduleCompleteness(parsedSchedule, minimumSectionCount);
+  const completeness = assertFall2026ScheduleCompleteness(
+    parsedSchedule,
+    minimumSectionCount,
+  );
   const catalogIndexHtml = await fetchText(policy, CATALOG_INDEX_URL, "catalog");
   const catalogIndexRetrievedAt = now().toISOString();
   const catalogUrls = parseCatalogIndexHtml(catalogIndexHtml, CATALOG_INDEX_URL);
@@ -741,6 +766,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<{ sna
       sections: sections.length,
       prerequisites: prerequisiteCounts,
     },
+    completeness,
     unmatchedPrerequisites,
   };
 

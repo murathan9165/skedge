@@ -61,6 +61,13 @@ export interface ImportReport {
     sections: number;
     prerequisites: { known: number; none: number; unavailable: number };
   };
+  /** Section count measured against the reviewed baseline and its tolerance. */
+  completeness: {
+    baseline: number;
+    actual: number;
+    delta: number;
+    tolerance: number;
+  };
   unmatchedPrerequisites: Array<{
     crn: string;
     courseCode: string;

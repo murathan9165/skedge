@@ -3,7 +3,12 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { parseScheduleHtml } from "../../scripts/courses/parse-schedule";
+import {
+  assertFall2026ScheduleCompleteness,
+  parseScheduleHtml,
+  sectionCountTolerance,
+  type ParsedSchedule,
+} from "../../scripts/courses/parse-schedule";
 
 const fixturePath = path.join(
   process.cwd(),
@@ -114,5 +119,75 @@ describe("parseScheduleHtml", () => {
     const html = (await fixture()).replace("      SUM", "unexpected source content\n      SUM");
 
     expect(() => parseScheduleHtml(html)).toThrow(/unaccounted schedule row/i);
+  });
+});
+
+describe("assertFall2026ScheduleCompleteness", () => {
+  const BASELINE = 629;
+
+  // Only the section count is read, so fabricating length is sufficient.
+  function scheduleOf(sectionCount: number): ParsedSchedule {
+    return {
+      sections: Array.from({ length: sectionCount }) as ParsedSchedule["sections"],
+      rowCounts: {
+        total: sectionCount,
+        header: 0,
+        section: sectionCount,
+        continuation: 0,
+        divider: 0,
+        summary: 0,
+      },
+    };
+  }
+
+  it("accepts a count matching the reviewed baseline", () => {
+    expect(assertFall2026ScheduleCompleteness(scheduleOf(BASELINE), BASELINE)).toEqual({
+      baseline: BASELINE,
+      actual: BASELINE,
+      delta: 0,
+      tolerance: 15,
+    });
+  });
+
+  it("accepts an ordinary cancellation and records the delta", () => {
+    expect(assertFall2026ScheduleCompleteness(scheduleOf(627), BASELINE)).toMatchObject({
+      actual: 627,
+      delta: -2,
+    });
+  });
+
+  it("accepts a drop sitting exactly on the tolerance boundary", () => {
+    expect(assertFall2026ScheduleCompleteness(scheduleOf(614), BASELINE)).toMatchObject({
+      delta: -15,
+    });
+  });
+
+  it("rejects a drop one section beyond the tolerance boundary", () => {
+    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(613), BASELINE)).toThrow(
+      /613 sections.*16 below.*629.*tolerance of 15/i,
+    );
+  });
+
+  it("rejects a truncated schedule outright", () => {
+    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(0), BASELINE)).toThrow(
+      /below.*reviewed.*629/i,
+    );
+  });
+
+  it("accepts a count above the baseline without a negative delta", () => {
+    expect(assertFall2026ScheduleCompleteness(scheduleOf(640), BASELINE)).toMatchObject({
+      delta: 11,
+    });
+  });
+
+  it("scales tolerance with the baseline once 2% exceeds the floor", () => {
+    expect(sectionCountTolerance(629)).toBe(15);
+    expect(sectionCountTolerance(2000)).toBe(40);
+  });
+
+  it("rejects a non-positive baseline", () => {
+    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(10), 0)).toThrow(
+      /positive integer/i,
+    );
   });
 });

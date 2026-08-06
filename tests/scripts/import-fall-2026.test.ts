@@ -173,6 +173,12 @@ describe("importFall2026", () => {
         sections: 4,
         prerequisites: { known: 0, none: 1, unavailable: 3 },
       },
+      completeness: {
+        baseline: FIXTURE_SECTION_COUNT,
+        actual: 4,
+        delta: 0,
+        tolerance: 15,
+      },
     });
     expect(report.unmatchedPrerequisites).toHaveLength(3);
   });
