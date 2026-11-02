@@ -25,22 +25,22 @@ describe("CourseSearchDrawer", () => {
     render(<CourseSearchDrawer sections={sections} />);
 
     expect(screen.getByRole("complementary", { name: /course search/i })).toBeInTheDocument();
-    expect(screen.getByRole("searchbox", { name: /search fall 2026 courses/i })).toBeInTheDocument();
-    expect(screen.queryByText("Browse all Fall 2026 sections")).not.toBeInTheDocument();
+    expect(screen.getByRole("searchbox", { name: /search spring 2027 courses/i })).toBeInTheDocument();
+    expect(screen.queryByText("Browse all Spring 2027 sections")).not.toBeInTheDocument();
     expect(screen.queryByText("2 sections")).not.toBeInTheDocument();
     expect(screen.getAllByRole("article")).toHaveLength(2);
   });
 
   it("updates real course-card results for a search and shows a clear no-results state", () => {
     render(<CourseSearchDrawer sections={sections} />);
-    const search = screen.getByRole("searchbox", { name: /search fall 2026 courses/i });
+    const search = screen.getByRole("searchbox", { name: /search spring 2027 courses/i });
 
     fireEvent.change(search, { target: { value: "lovelace" } });
     expect(screen.getByRole("heading", { name: /biol 112: cells/i })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { name: /amst 140: prisons/i })).not.toBeInTheDocument();
 
     fireEvent.change(search, { target: { value: "not a course" } });
-    expect(screen.getByText('No Fall 2026 sections match "not a course".')).toBeInTheDocument();
+    expect(screen.getByText('No Spring 2027 sections match "not a course".')).toBeInTheDocument();
     expect(screen.queryAllByRole("article")).toHaveLength(0);
   });
 

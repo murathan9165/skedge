@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Runs the Fall 2026 course import on a schedule from a local machine, as a
+# Runs the Spring 2027 course import on a schedule from a local machine, as a
 # peer to .github/workflows/daily-course-import.yml. Either scheduler may win on
 # a given day: whichever imports first commits, and the other sees identical
 # section data, exits 3, and does nothing.
@@ -61,7 +61,7 @@ if [ ! -d node_modules ] || [ "$(cat "$LOCK_STAMP" 2>/dev/null)" != "$CURRENT_LO
 fi
 
 SUMMARY="$WORKDIR/summary.json"
-npx --no-install tsx scripts/courses/import-fall-2026.ts > "$SUMMARY" 2>>"$LOG"
+npx --no-install tsx scripts/courses/import-spring-2027.ts > "$SUMMARY" 2>>"$LOG"
 CODE=$?
 
 case "$CODE" in
@@ -83,10 +83,10 @@ npm run build --silent >>"$LOG" 2>&1 || fail "build failed on refreshed data -- 
 MESSAGE="$(SUMMARY_PATH="$SUMMARY" node -e '
   const s = require(process.env.SUMMARY_PATH);
   const drift = s.delta === 0 ? "no section change" : `${s.delta > 0 ? "+" : ""}${s.delta} sections`;
-  console.log(`data: refresh Fall 2026 snapshot (${s.sections} sections, ${drift})`);
+  console.log(`data: refresh Spring 2027 snapshot (${s.sections} sections, ${drift})`);
 ')" || fail "could not build commit message"
 
-git add src/data/fall-2026.json src/data/fall-2026.import-report.json
+git add src/data/spring-2027.json src/data/spring-2027.import-report.json
 
 # The importer compares against the artifacts on disk, git against HEAD. The
 # reset above keeps those in sync, so this should not fire -- but a no-op commit

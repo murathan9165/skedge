@@ -11,9 +11,9 @@ import {
   buildRunSummary,
   describeRunSummary,
   exitCodeForOutcome,
-  importFall2026,
-} from "../../scripts/courses/import-fall-2026";
-import { verifyFall2026Data } from "../../scripts/courses/verify-fall-2026";
+  importSpring2027,
+} from "../../scripts/courses/import-spring-2027";
+import { verifySpring2027Data } from "../../scripts/courses/verify-spring-2027";
 import type { CourseSnapshot, ImportReport } from "../../src/lib/courses/types";
 
 const catalogUrl = "https://www.kenyon.edu/catalog/amst/";
@@ -94,8 +94,8 @@ async function outputPaths() {
   const directory = await mkdtemp(path.join(os.tmpdir(), "kenyon-import-test-"));
   temporaryDirectories.push(directory);
   return {
-    snapshotPath: path.join(directory, "fall-2026.json"),
-    reportPath: path.join(directory, "fall-2026.import-report.json"),
+    snapshotPath: path.join(directory, "spring-2027.json"),
+    reportPath: path.join(directory, "spring-2027.import-report.json"),
   };
 }
 
@@ -124,7 +124,7 @@ function oneSectionSchedule(schedule: string): string {
 async function importedFixtureArtifacts() {
   const source = await fixtures();
   const paths = await outputPaths();
-  await importFall2026({
+  await importSpring2027({
     ...paths,
     minimumSectionCount: FIXTURE_SECTION_COUNT,
     fetchImpl: fetchFrom({
@@ -141,11 +141,11 @@ afterEach(async () => {
   await Promise.all(temporaryDirectories.splice(0).map((directory) => rm(directory, { recursive: true })));
 });
 
-describe("importFall2026", () => {
+describe("importSpring2027", () => {
   it("builds validated snapshot and report artifacts from fetched source fixtures", async () => {
     const source = await fixtures();
     const paths = await outputPaths();
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -158,6 +158,9 @@ describe("importFall2026", () => {
 
     const snapshot = JSON.parse(await readFile(paths.snapshotPath, "utf8")) as CourseSnapshot;
     const report = JSON.parse(await readFile(paths.reportPath, "utf8")) as ImportReport;
+    expect(snapshot.term).toEqual({ id: "spring-2027", label: "Spring 2027" });
+    expect(report.term).toBe("spring-2027");
+    expect(report.sources.schedule.url).toBe("https://registrar.kenyon.edu/jan27_dept.htm");
     expect(snapshot.sections).toHaveLength(4);
     expect(snapshot.sections.find(({ crn }) => crn === "80565")?.prerequisite).toEqual({
       status: "none",
@@ -187,13 +190,13 @@ describe("importFall2026", () => {
     expect(report.unmatchedPrerequisites).toHaveLength(3);
   });
 
-  it("rejects an HTTP 200 schedule below the reviewed Fall 2026 completeness baseline", async () => {
+  it("rejects an HTTP 200 schedule below the reviewed Spring 2027 completeness baseline", async () => {
     const source = await fixtures();
     const paths = await outputPaths();
     await seedPreviousArtifacts(paths);
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         fetchImpl: fetchFrom({
           [SCHEDULE_URL]: oneSectionSchedule(source.schedule),
@@ -201,7 +204,7 @@ describe("importFall2026", () => {
           [catalogUrl]: source.catalog,
         }),
       }),
-    ).rejects.toThrow(/below.*reviewed.*629/i);
+    ).rejects.toThrow(/below.*reviewed.*655/i);
     await expectPreviousArtifacts(paths);
   });
 
@@ -209,7 +212,7 @@ describe("importFall2026", () => {
     const source = await fixtures();
     const paths = await outputPaths();
 
-    const { report } = await importFall2026({
+    const { report } = await importSpring2027({
       ...paths,
       minimumSectionCount: 1,
       fetchImpl: fetchFrom({
@@ -240,7 +243,7 @@ describe("importFall2026", () => {
     }) as typeof fetch;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: redirectedFetch,
@@ -272,7 +275,7 @@ describe("importFall2026", () => {
     }) as typeof fetch;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: redirectingFetch,
@@ -302,7 +305,7 @@ describe("importFall2026", () => {
       };
 
       await expect(
-        importFall2026({
+        importSpring2027({
           ...paths,
           minimumSectionCount: FIXTURE_SECTION_COUNT,
           fetchImpl: fetchFrom(values),
@@ -336,7 +339,7 @@ describe("importFall2026", () => {
     }) as typeof fetch;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: boundedCycleFetch,
@@ -365,7 +368,7 @@ describe("importFall2026", () => {
     );
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         maximumCatalogPages: 2,
@@ -390,7 +393,7 @@ describe("importFall2026", () => {
     const thirdUrl = "https://www.kenyon.edu/catalog/depth-three/";
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         maximumCatalogDepth: 1,
@@ -432,7 +435,7 @@ describe("importFall2026", () => {
     }) as typeof fetch;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         requestTimeoutMs: 5,
@@ -449,7 +452,7 @@ describe("importFall2026", () => {
       .replace("AMST 140.00", "AMST 291.00")
       .replace("Prisons, Policing, &amp; Amer Cult", "ST: Black Masculinities       ");
     const specialTopicCatalog = source.catalog.replace("AMST 140", "AMST 291");
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -473,7 +476,7 @@ describe("importFall2026", () => {
     const childUrl = "https://www.kenyon.edu/catalog/ddf/courses/";
     const umbrellaIndex = catalogIndex().replaceAll(catalogUrl, umbrellaUrl);
     const umbrella = `<nav><a class="sub_nav_link" href="${childUrl}">Courses in Dance</a></nav>`;
-    const { report } = await importFall2026({
+    const { report } = await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -495,7 +498,7 @@ describe("importFall2026", () => {
     await seedPreviousArtifacts(paths);
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: fetchFrom({
@@ -513,7 +516,7 @@ describe("importFall2026", () => {
     await seedPreviousArtifacts(paths);
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: fetchFrom({
@@ -536,7 +539,7 @@ describe("importFall2026", () => {
     let commitRenames = 0;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: fetchFrom({
@@ -558,7 +561,7 @@ describe("importFall2026", () => {
   it("verifies committed artifacts without using the network", async () => {
     const source = await fixtures();
     const paths = await outputPaths();
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -573,7 +576,7 @@ describe("importFall2026", () => {
       throw new Error("network access is forbidden during verification");
     }) as typeof fetch;
     try {
-      await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).resolves.toEqual({
+      await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).resolves.toEqual({
         sections: 4,
         classifiedRows: 9,
       });
@@ -585,7 +588,7 @@ describe("importFall2026", () => {
   it("rejects a report whose source counts do not match its source records", async () => {
     const source = await fixtures();
     const paths = await outputPaths();
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -599,7 +602,7 @@ describe("importFall2026", () => {
     report.counts.catalogPages = 99;
     await writeFile(paths.reportPath, JSON.stringify(report));
 
-    await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
+    await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /catalog page count/i,
     );
   });
@@ -610,7 +613,7 @@ describe("importFall2026", () => {
     snapshot.sections[0].meetings[0].startTime = "09:99";
     await writeFile(paths.snapshotPath, JSON.stringify(snapshot));
 
-    await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
+    await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /invalid start time.*80565/i,
     );
   });
@@ -621,7 +624,7 @@ describe("importFall2026", () => {
     snapshot.sections[0].courseCode = "AMST 999";
     await writeFile(paths.snapshotPath, JSON.stringify(snapshot));
 
-    await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
+    await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /course code does not match.*80565/i,
     );
   });
@@ -632,7 +635,7 @@ describe("importFall2026", () => {
     report.unmatchedPrerequisites[0].title = "Wrong section title";
     await writeFile(paths.reportPath, JSON.stringify(report));
 
-    await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
+    await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /unmatched prerequisite identity.*80116/i,
     );
   });
@@ -650,7 +653,7 @@ describe("importFall2026", () => {
       "https://www.kenyon.edu/catalog/not-fetched/";
     await writeFile(paths.snapshotPath, JSON.stringify(snapshot));
 
-    await expect(verifyFall2026Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
+    await expect(verifySpring2027Data(paths.snapshotPath, paths.reportPath, FIXTURE_SECTION_COUNT)).rejects.toThrow(
       /prerequisite source.*fetched catalog pages/i,
     );
   });
@@ -659,7 +662,7 @@ describe("importFall2026", () => {
 describe("run summary", () => {
   async function runImport(paths: Awaited<ReturnType<typeof outputPaths>>, schedule?: string) {
     const source = await fixtures();
-    return importFall2026({
+    return importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -727,7 +730,7 @@ describe("change detection", () => {
     importedAt: string,
   ) {
     const source = await fixtures();
-    return importFall2026({
+    return importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchFrom({
@@ -853,7 +856,7 @@ describe("source request resilience", () => {
       503,
     );
 
-    const { report } = await importFall2026({
+    const { report } = await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl,
@@ -875,7 +878,7 @@ describe("source request resilience", () => {
       429,
     );
 
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl,
@@ -898,7 +901,7 @@ describe("source request resilience", () => {
     );
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl,
@@ -920,7 +923,7 @@ describe("source request resilience", () => {
     );
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl,
@@ -936,7 +939,7 @@ describe("source request resilience", () => {
     const delays: number[] = [];
     const { fetchImpl } = flakyScheduleFetch(source.schedule, source.catalog, 2, 503);
 
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl,
@@ -966,7 +969,7 @@ describe("source request resilience", () => {
     }) as typeof fetch;
 
     await expect(
-      importFall2026({
+      importSpring2027({
         ...paths,
         minimumSectionCount: FIXTURE_SECTION_COUNT,
         fetchImpl: offOriginFetch,
@@ -990,7 +993,7 @@ describe("source request resilience", () => {
       return fixtureFetch(input, init);
     }) as typeof fetch;
 
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: recordingFetch,
@@ -1034,7 +1037,7 @@ describe("source request resilience", () => {
       }
     }) as typeof fetch;
 
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       maximumCatalogPages: 30,
@@ -1055,7 +1058,7 @@ describe("source character decoding", () => {
   ): Promise<CourseSnapshot> {
     const source = await fixtures();
     const paths = await outputPaths();
-    await importFall2026({
+    await importSpring2027({
       ...paths,
       minimumSectionCount: FIXTURE_SECTION_COUNT,
       fetchImpl: fetchWithRawSchedule(

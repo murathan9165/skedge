@@ -12,7 +12,7 @@ export interface ParsedSchedule {
   rowCounts: ScheduleRowCounts;
 }
 
-export const FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT = 629;
+export const SPRING_2027_REVIEWED_MINIMUM_SECTION_COUNT = 655;
 
 /**
  * Sections are genuinely cancelled between imports, so an exact floor breaks on
@@ -37,12 +37,12 @@ export function sectionCountTolerance(baseline: number): number {
   );
 }
 
-export function assertFall2026ScheduleCompleteness(
+export function assertSpring2027ScheduleCompleteness(
   parsed: ParsedSchedule,
-  baseline = FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
+  baseline = SPRING_2027_REVIEWED_MINIMUM_SECTION_COUNT,
 ): ScheduleCompleteness {
   if (!Number.isInteger(baseline) || baseline < 1) {
-    throw new Error("Fall 2026 minimum section count must be a positive integer");
+    throw new Error("Spring 2027 minimum section count must be a positive integer");
   }
 
   const actual = parsed.sections.length;
@@ -51,7 +51,7 @@ export function assertFall2026ScheduleCompleteness(
 
   if (delta < -tolerance) {
     throw new Error(
-      `Fall 2026 schedule contained ${actual} sections, ${-delta} below the reviewed baseline of ${baseline} and beyond the accepted tolerance of ${tolerance}`,
+      `Spring 2027 schedule contained ${actual} sections, ${-delta} below the reviewed baseline of ${baseline} and beyond the accepted tolerance of ${tolerance}`,
     );
   }
 
@@ -124,18 +124,47 @@ function parseOptionalInteger(value: string): number | null {
   return trimmed === "" ? null : Number(trimmed);
 }
 
-function parseSection(line: string): ImportedScheduleSection {
-  const crn = line.slice(0, 5);
-  const subject = line.slice(6, 10).trim();
-  const numberAndSection = line.slice(11, 18).trim();
+interface ScheduleColumn {
+  name: string;
+  start: number;
+  end?: number;
+}
+
+function parseColumns(header: string): ScheduleColumn[] {
+  const tokens = Array.from(header.matchAll(/\S+/g));
+  const columns = tokens.map((token, index) => ({
+    name: token[0],
+    start: token.index,
+    end: tokens[index + 1]?.index,
+  }));
+  for (const name of ["CRN", "SUBJ", "NUM", "TITLE", "UNIT", "CRED", "TIME", "ADDL_TIME", "P", "LMT", "ENR", "INSTRUCTOR"]) {
+    if (!columns.some(column => column.name === name)) {
+      throw new Error(`Schedule header is missing the ${name} column`);
+    }
+  }
+  if (columns.filter(column => column.name === "DAYS").length !== 2) {
+    throw new Error("Schedule header must contain two DAYS columns");
+  }
+  return columns;
+}
+
+function parseSection(line: string, columns: ScheduleColumn[]): ImportedScheduleSection {
+  function field(name: string, occurrence = 0): string {
+    const column = columns.filter(column => column.name === name)[occurrence];
+    return column ? line.slice(column.start, column.end).trim() : "";
+  }
+
+  const crn = field("CRN");
+  const subject = field("SUBJ");
+  const numberAndSection = field("NUM");
   const [catalogNumber, sectionNumber] = numberAndSection.split(".");
   if (!subject || !catalogNumber || !sectionNumber) {
     throw new Error(`Malformed schedule row for CRN ${crn}`);
   }
 
   const meetings = [
-    parseMeeting(line.slice(109, 116), line.slice(116, 126), line.slice(126, 137), crn),
-    parseMeeting(line.slice(137, 144), line.slice(144, 154), line.slice(154, 165), crn),
+    parseMeeting(field("DAYS"), field("TIME"), field("ROOM"), crn),
+    parseMeeting(field("DAYS", 1), field("ADDL_TIME"), field("ROOM2"), crn),
   ].filter((meeting): meeting is MeetingInterval => meeting !== null);
 
   return {
@@ -144,12 +173,12 @@ function parseSection(line: string): ImportedScheduleSection {
     catalogNumber,
     sectionNumber,
     courseCode: `${subject} ${catalogNumber}`,
-    title: line.slice(19, 62).trim(),
-    credits: Number(line.slice(73, 78).trim()),
-    permission: line.slice(165, 168).trim() || null,
-    seatLimit: parseOptionalInteger(line.slice(168, 173)),
-    seatsEnrolled: parseOptionalInteger(line.slice(173, 177)),
-    instructors: parseInstructors(line.slice(183).trim()),
+    title: field("TITLE"),
+    credits: Number(field("CRED")),
+    permission: field("P") || null,
+    seatLimit: parseOptionalInteger(field("LMT")),
+    seatsEnrolled: parseOptionalInteger(field("ENR")),
+    instructors: parseInstructors(field("INSTRUCTOR")),
     meetingStatus: meetings.length > 0 ? "scheduled" : "time-unavailable",
     meetings,
   };
@@ -157,9 +186,9 @@ function parseSection(line: string): ImportedScheduleSection {
 
 export function parseScheduleHtml(html: string): ParsedSchedule {
   const $ = load(html);
-  const pre = $("pre").first();
-  if (pre.length === 0 || !pre.text().includes("CRN   SUBJ NUM")) {
-    throw new Error("Fall 2026 schedule did not contain the expected fixed-width table");
+  const tables = $("pre");
+  if (tables.length === 0) {
+    throw new Error("Spring 2027 schedule did not contain the expected fixed-width table");
   }
 
   const counts: ScheduleRowCounts = {
@@ -173,35 +202,43 @@ export function parseScheduleHtml(html: string): ParsedSchedule {
   const sections: ImportedScheduleSection[] = [];
   const crns = new Set<string>();
 
-  for (const line of pre.text().split(/\r?\n/)) {
-    if (!line.trim()) continue;
-    counts.total += 1;
+  for (const table of tables.toArray()) {
+    const lines = $(table).text().split(/\r?\n/);
+    const header = lines.find(line => line.startsWith("CRN   SUBJ NUM"));
+    if (!header) throw new Error("Spring 2027 schedule did not contain the expected fixed-width table");
+    const columns = parseColumns(header);
+    const roomStart = columns.find(column => column.name === "ROOM")?.start;
 
-    if (line.startsWith("CRN   SUBJ") || line.startsWith("----- ----")) {
-      counts.header += 1;
-    } else if (/^\d{5}\s/.test(line)) {
-      const section = parseSection(line);
-      if (crns.has(section.crn)) throw new Error(`Duplicate CRN ${section.crn}`);
-      crns.add(section.crn);
-      sections.push(section);
-      counts.section += 1;
-    } else if (/^\s{126}\S/.test(line)) {
-      const previousSection = sections.at(-1);
-      const previousMeeting = previousSection?.meetings[0];
-      if (!previousMeeting || line.slice(0, 126).trim()) {
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      counts.total += 1;
+
+      if (line.startsWith("CRN   SUBJ") || line.startsWith("----- ----")) {
+        counts.header += 1;
+      } else if (/^\d{5}\s/.test(line)) {
+        const section = parseSection(line, columns);
+        if (crns.has(section.crn)) throw new Error(`Duplicate CRN ${section.crn}`);
+        crns.add(section.crn);
+        sections.push(section);
+        counts.section += 1;
+      } else if (roomStart !== undefined && !line.slice(0, roomStart).trim() && /^\S/.test(line.slice(roomStart))) {
+        const previousSection = sections.at(-1);
+        const previousMeeting = previousSection?.meetings[0];
+        if (!previousMeeting) {
+          throw new Error(`Unaccounted schedule row: ${line}`);
+        }
+        previousMeeting.room += line.slice(roomStart).trim();
+        counts.continuation += 1;
+      } else if (/^\s+\*{4}/.test(line)) {
+        counts.divider += 1;
+      } else if (/^\s+SUM(?:\s|$)/.test(line)) {
+        counts.summary += 1;
+      } else {
         throw new Error(`Unaccounted schedule row: ${line}`);
       }
-      previousMeeting.room += line.slice(126).trim();
-      counts.continuation += 1;
-    } else if (/^\s+\*{4}/.test(line)) {
-      counts.divider += 1;
-    } else if (/^\s+SUM(?:\s|$)/.test(line)) {
-      counts.summary += 1;
-    } else {
-      throw new Error(`Unaccounted schedule row: ${line}`);
     }
   }
 
-  if (sections.length === 0) throw new Error("Fall 2026 schedule contained no section rows");
+  if (sections.length === 0) throw new Error("Spring 2027 schedule contained no section rows");
   return { sections, rowCounts: counts };
 }

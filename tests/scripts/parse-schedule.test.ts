@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
-  assertFall2026ScheduleCompleteness,
+  assertSpring2027ScheduleCompleteness,
   parseScheduleHtml,
   sectionCountTolerance,
   type ParsedSchedule,
@@ -20,6 +20,31 @@ async function fixture(): Promise<string> {
 }
 
 describe("parseScheduleHtml", () => {
+  it("parses the official spring format with its added TO_OR column and unpublished rooms", async () => {
+    const html = await readFile(path.join(process.cwd(), "tests/fixtures/kenyon/spring-2027-schedule.html"), "utf8");
+    const parsed = parseScheduleHtml(html);
+
+    expect(parsed.sections).toHaveLength(655);
+    expect(parsed.rowCounts.section).toBe(655);
+    expect(parsed.sections[0]).toEqual({
+      crn: "10369", subject: "AFDS", catalogNumber: "110", sectionNumber: "00",
+      courseCode: "AFDS 110", title: "Intro African Diaspora Studies", credits: 4,
+      permission: null, seatLimit: 14, seatsEnrolled: null, instructors: ["Kohlman, M"],
+      meetingStatus: "scheduled",
+      meetings: [{ days: ["T", "R"], startTime: "14:40", endTime: "16:00", room: "" }],
+    });
+    expect(parsed.sections.find(section => section.crn === "10047")).toMatchObject({
+      courseCode: "ANTH 498", permission: "GP", seatLimit: 5,
+      instructors: ["Novotny, C"], meetingStatus: "time-unavailable", meetings: [],
+    });
+    expect(parsed.sections.find(section => section.crn === "10066")?.meetings).toEqual([
+      { days: ["M", "W", "F"], startTime: "13:10", endTime: "14:00", room: "" },
+      { days: ["T"], startTime: "13:10", endTime: "14:30", room: "" },
+    ]);
+    expect(parsed.sections.find(section => section.crn === "10665")?.instructors).toEqual(["del Río Arrillaga, D"]);
+    expect(parsed.sections.at(-1)?.courseCode).toBe("SOCY 498");
+  });
+
   it("preserves section identity and normalizes a repeated meeting pattern", async () => {
     const parsed = parseScheduleHtml(await fixture());
 
@@ -125,8 +150,8 @@ describe("parseScheduleHtml", () => {
   });
 });
 
-describe("assertFall2026ScheduleCompleteness", () => {
-  const BASELINE = 629;
+describe("assertSpring2027ScheduleCompleteness", () => {
+  const BASELINE = 655;
 
   // Only the section count is read, so fabricating length is sufficient.
   function scheduleOf(sectionCount: number): ParsedSchedule {
@@ -144,7 +169,7 @@ describe("assertFall2026ScheduleCompleteness", () => {
   }
 
   it("accepts a count matching the reviewed baseline", () => {
-    expect(assertFall2026ScheduleCompleteness(scheduleOf(BASELINE), BASELINE)).toEqual({
+    expect(assertSpring2027ScheduleCompleteness(scheduleOf(BASELINE), BASELINE)).toEqual({
       baseline: BASELINE,
       actual: BASELINE,
       delta: 0,
@@ -153,43 +178,43 @@ describe("assertFall2026ScheduleCompleteness", () => {
   });
 
   it("accepts an ordinary cancellation and records the delta", () => {
-    expect(assertFall2026ScheduleCompleteness(scheduleOf(627), BASELINE)).toMatchObject({
-      actual: 627,
+    expect(assertSpring2027ScheduleCompleteness(scheduleOf(653), BASELINE)).toMatchObject({
+      actual: 653,
       delta: -2,
     });
   });
 
   it("accepts a drop sitting exactly on the tolerance boundary", () => {
-    expect(assertFall2026ScheduleCompleteness(scheduleOf(614), BASELINE)).toMatchObject({
+    expect(assertSpring2027ScheduleCompleteness(scheduleOf(640), BASELINE)).toMatchObject({
       delta: -15,
     });
   });
 
   it("rejects a drop one section beyond the tolerance boundary", () => {
-    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(613), BASELINE)).toThrow(
-      /613 sections.*16 below.*629.*tolerance of 15/i,
+    expect(() => assertSpring2027ScheduleCompleteness(scheduleOf(639), BASELINE)).toThrow(
+      /639 sections.*16 below.*655.*tolerance of 15/i,
     );
   });
 
   it("rejects a truncated schedule outright", () => {
-    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(0), BASELINE)).toThrow(
-      /below.*reviewed.*629/i,
+    expect(() => assertSpring2027ScheduleCompleteness(scheduleOf(0), BASELINE)).toThrow(
+      /below.*reviewed.*655/i,
     );
   });
 
   it("accepts a count above the baseline without a negative delta", () => {
-    expect(assertFall2026ScheduleCompleteness(scheduleOf(640), BASELINE)).toMatchObject({
+    expect(assertSpring2027ScheduleCompleteness(scheduleOf(666), BASELINE)).toMatchObject({
       delta: 11,
     });
   });
 
   it("scales tolerance with the baseline once 2% exceeds the floor", () => {
-    expect(sectionCountTolerance(629)).toBe(15);
+    expect(sectionCountTolerance(655)).toBe(15);
     expect(sectionCountTolerance(2000)).toBe(40);
   });
 
   it("rejects a non-positive baseline", () => {
-    expect(() => assertFall2026ScheduleCompleteness(scheduleOf(10), 0)).toThrow(
+    expect(() => assertSpring2027ScheduleCompleteness(scheduleOf(10), 0)).toThrow(
       /positive integer/i,
     );
   });

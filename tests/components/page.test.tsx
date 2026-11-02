@@ -9,11 +9,11 @@ describe("Home", () => {
     render(<Home />);
 
     expect(
-      screen.getByRole("main", { name: /fall 2026 course planner/i }),
+      screen.getByRole("main", { name: /spring 2027 course planner/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /weekly schedule/i })).toBeInTheDocument();
-    expect(screen.getByRole("searchbox", { name: /search fall 2026 courses/i })).toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: /fall 2026 class schedule planner/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("searchbox", { name: /search spring 2027 courses/i })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /spring 2027 class schedule planner/i })).not.toBeInTheDocument();
     expect(screen.getByRole("complementary", { name: /course search/i })).toBeInTheDocument();
     expect(screen.getByRole("grid", { name: /monday through friday class schedule/i })).toBeInTheDocument();
     expect(screen.getByText(/this app is in beta/i)).toBeInTheDocument();

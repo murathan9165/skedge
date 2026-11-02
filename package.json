@@ -7,8 +7,8 @@
   },
   "scripts": {
     "build": "next build",
-    "data:import": "tsx scripts/courses/import-fall-2026.ts",
-    "data:verify": "tsx scripts/courses/verify-fall-2026.ts",
+    "data:import": "tsx scripts/courses/import-spring-2027.ts",
+    "data:verify": "tsx scripts/courses/verify-spring-2027.ts",
     "dev": "next dev",
     "lint": "eslint .",
     "prebuild": "npm run data:verify",

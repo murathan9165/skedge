@@ -12,7 +12,7 @@ import {
   type SyntheticEvent,
 } from "react";
 
-import snapshot from "@/data/fall-2026.json";
+import snapshot from "@/data/spring-2027.json";
 import {
   initialPlannerState,
   plannerReducer,

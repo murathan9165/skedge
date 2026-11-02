@@ -18,13 +18,13 @@ import {
   type CatalogCourse,
 } from "./parse-catalog";
 import {
-  assertFall2026ScheduleCompleteness,
-  FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
+  assertSpring2027ScheduleCompleteness,
+  SPRING_2027_REVIEWED_MINIMUM_SECTION_COUNT,
   parseScheduleHtml,
   sectionCountTolerance,
 } from "./parse-schedule";
 
-export const SCHEDULE_URL = "https://registrar.kenyon.edu/sep26_dept.htm";
+export const SCHEDULE_URL = "https://registrar.kenyon.edu/jan27_dept.htm";
 export const CATALOG_INDEX_URL =
   "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/course-offerings/";
 const DEFAULT_SOURCE_REQUEST_TIMEOUT_MS = 60_000;
@@ -134,16 +134,16 @@ function nonNegativeInteger(value: number, label: string): number {
 }
 
 function minimumSectionCountFromEnvironment(): number {
-  const override = process.env.KENYON_FALL_2026_MINIMUM_SECTIONS;
-  if (override === undefined) return FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT;
+  const override = process.env.KENYON_SPRING_2027_MINIMUM_SECTIONS;
+  if (override === undefined) return SPRING_2027_REVIEWED_MINIMUM_SECTION_COUNT;
   if (!/^\d+$/.test(override)) {
     throw new Error(
-      "KENYON_FALL_2026_MINIMUM_SECTIONS must be a positive integer maintenance override",
+      "KENYON_SPRING_2027_MINIMUM_SECTIONS must be a positive integer maintenance override",
     );
   }
   return positiveInteger(
     Number(override),
-    "KENYON_FALL_2026_MINIMUM_SECTIONS maintenance override",
+    "KENYON_SPRING_2027_MINIMUM_SECTIONS maintenance override",
   );
 }
 
@@ -234,7 +234,7 @@ export function validateCourseSnapshot(value: unknown): asserts value is CourseS
   assertion(isObject(value), "Snapshot must be an object");
   assertion(value.schemaVersion === 1, "Snapshot schemaVersion must be 1");
   assertion(isObject(value.term), "Snapshot term must be an object");
-  assertion(value.term.id === "fall-2026" && value.term.label === "Fall 2026", "Invalid term");
+  assertion(value.term.id === "spring-2027" && value.term.label === "Spring 2027", "Invalid term");
   assertion(typeof value.importedAt === "string" && !Number.isNaN(Date.parse(value.importedAt)), "Invalid importedAt");
   assertion(Array.isArray(value.sections) && value.sections.length > 0, "Snapshot must contain sections");
 
@@ -280,11 +280,11 @@ export function validateCourseSnapshot(value: unknown): asserts value is CourseS
 export function validateImportReport(
   value: unknown,
   snapshot: CourseSnapshot,
-  minimumSectionCount = FALL_2026_REVIEWED_MINIMUM_SECTION_COUNT,
+  minimumSectionCount = SPRING_2027_REVIEWED_MINIMUM_SECTION_COUNT,
 ): asserts value is ImportReport {
-  positiveInteger(minimumSectionCount, "Fall 2026 minimum section count");
+  positiveInteger(minimumSectionCount, "Spring 2027 minimum section count");
   assertion(isObject(value), "Import report must be an object");
-  assertion(value.schemaVersion === 1 && value.term === "fall-2026", "Invalid import report identity");
+  assertion(value.schemaVersion === 1 && value.term === "spring-2027", "Invalid import report identity");
   assertion(value.importedAt === snapshot.importedAt, "Snapshot and report timestamps differ");
   assertion(isObject(value.sources) && isObject(value.counts), "Import report metadata is missing");
   const sources = value.sources;
@@ -340,7 +340,7 @@ export function validateImportReport(
   );
   assertion(
     (completeness.delta as number) >= -(completeness.tolerance as number),
-    `Fall 2026 snapshot contains ${snapshot.sections.length} sections, below the reviewed baseline of ${minimumSectionCount} and beyond the accepted tolerance of ${completeness.tolerance}`,
+    `Spring 2027 snapshot contains ${snapshot.sections.length} sections, below the reviewed baseline of ${minimumSectionCount} and beyond the accepted tolerance of ${completeness.tolerance}`,
   );
   assertion(value.counts.catalogPages === sources.catalogPages.length, "Catalog page count differs from source records");
   const catalogCourseCount = sources.catalogPages.reduce(
@@ -672,7 +672,7 @@ async function replaceArtifacts(
     readPreviousArtifact(snapshotPath),
     readPreviousArtifact(reportPath),
   ]);
-  const temporaryDirectory = await mkdtemp(path.join(outputDirectory, ".fall-2026-import-"));
+  const temporaryDirectory = await mkdtemp(path.join(outputDirectory, ".spring-2027-import-"));
   const nextSnapshot = path.join(temporaryDirectory, path.basename(snapshotPath));
   const nextReport = path.join(temporaryDirectory, path.basename(reportPath));
   try {
@@ -718,14 +718,14 @@ export interface ImportResult {
   outcome: ImportOutcome;
 }
 
-export async function importFall2026(options: ImportOptions = {}): Promise<ImportResult> {
+export async function importSpring2027(options: ImportOptions = {}): Promise<ImportResult> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const now = options.now ?? (() => new Date());
-  const snapshotPath = options.snapshotPath ?? path.join(process.cwd(), "src/data/fall-2026.json");
-  const reportPath = options.reportPath ?? path.join(process.cwd(), "src/data/fall-2026.import-report.json");
+  const snapshotPath = options.snapshotPath ?? path.join(process.cwd(), "src/data/spring-2027.json");
+  const reportPath = options.reportPath ?? path.join(process.cwd(), "src/data/spring-2027.import-report.json");
   const minimumSectionCount = positiveInteger(
     options.minimumSectionCount ?? minimumSectionCountFromEnvironment(),
-    "Fall 2026 minimum section count",
+    "Spring 2027 minimum section count",
   );
   const maximumCatalogDepth = nonNegativeInteger(
     options.maximumCatalogDepth ?? DEFAULT_MAXIMUM_CATALOG_DEPTH,
@@ -764,7 +764,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<Impor
   const scheduleHtml = await fetchText(policy, SCHEDULE_URL, "schedule");
   const scheduleRetrievedAt = now().toISOString();
   const parsedSchedule = parseScheduleHtml(scheduleHtml);
-  const completeness = assertFall2026ScheduleCompleteness(
+  const completeness = assertSpring2027ScheduleCompleteness(
     parsedSchedule,
     minimumSectionCount,
   );
@@ -813,7 +813,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<Impor
   const importedAt = now().toISOString();
   const snapshot: CourseSnapshot = {
     schemaVersion: 1,
-    term: { id: "fall-2026", label: "Fall 2026" },
+    term: { id: "spring-2027", label: "Spring 2027" },
     importedAt,
     sections,
   };
@@ -823,7 +823,7 @@ export async function importFall2026(options: ImportOptions = {}): Promise<Impor
   );
   const report: ImportReport = {
     schemaVersion: 1,
-    term: "fall-2026",
+    term: "spring-2027",
     importedAt,
     sources: {
       schedule: { url: SCHEDULE_URL, retrievedAt: scheduleRetrievedAt },
@@ -898,17 +898,17 @@ export function buildRunSummary({ report, outcome }: ImportResult): RunSummary {
 
 export function describeRunSummary(summary: RunSummary): string {
   if (summary.outcome === "unchanged") {
-    return `No change: ${summary.sections} Fall 2026 sections match the committed snapshot from ${summary.importedAt}.`;
+    return `No change: ${summary.sections} Spring 2027 sections match the committed snapshot from ${summary.importedAt}.`;
   }
   const drift =
     summary.delta === 0
       ? "matching the reviewed baseline"
       : `${summary.delta > 0 ? "+" : ""}${summary.delta} against the reviewed baseline of ${summary.baseline} (tolerance ${summary.tolerance})`;
-  return `Imported ${summary.sections} Fall 2026 sections, ${drift}.`;
+  return `Imported ${summary.sections} Spring 2027 sections, ${drift}.`;
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
-  importFall2026()
+  importSpring2027()
     .then((result) => {
       const summary = buildRunSummary(result);
       // Human-readable narration on stderr, machine-readable summary on stdout,
