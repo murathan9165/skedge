@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import snapshot from "@/data/fall-2026.json";
+import snapshot from "@/data/spring-2027.json";
 import { plannerReducer } from "@/lib/courses/planner-state";
 import {
   CALENDAR_PIXELS_PER_MINUTE,
@@ -81,7 +81,7 @@ describe("projectScheduleEvents", () => {
 });
 
 describe("calendar geometry", () => {
-  it("derives stable padded whole-hour bounds from the complete Fall 2026 snapshot", () => {
+  it("derives stable padded whole-hour bounds from the complete Spring 2027 snapshot", () => {
     const bounds = deriveCalendarBounds((snapshot as CourseSnapshot).sections);
 
     expect(bounds).toEqual({ startMinutes: 480, endMinutes: 1380 });

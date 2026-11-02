@@ -2,7 +2,7 @@
 
 import { useDroppable } from "@dnd-kit/react";
 import { useRef } from "react";
-import snapshot from "@/data/fall-2026.json";
+import snapshot from "@/data/spring-2027.json";
 import {
   markScheduleConflicts,
   type ConflictMarkedEvent,

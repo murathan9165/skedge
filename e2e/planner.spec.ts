@@ -1,7 +1,7 @@
 import { expect, type Locator, type Page, test } from "@playwright/test";
 
 async function searchFor(page: Page, query: string) {
-  await page.getByRole("searchbox", { name: "Search Fall 2026 courses" }).fill(query);
+  await page.getByRole("searchbox", { name: "Search Spring 2027 courses" }).fill(query);
 }
 
 async function pointerDrag(page: Page, source: Locator, target: Locator) {
@@ -50,7 +50,7 @@ test("click Add, prerequisite disclosure, refresh reset, and static-only runtime
   });
 
   await page.goto("/");
-  await expect(page.getByRole("main", { name: "Fall 2026 course planner" })).toBeVisible();
+  await expect(page.getByRole("main", { name: "Spring 2027 course planner" })).toBeVisible();
   const drawerBox = await page.getByRole("complementary", { name: "Course search" }).boundingBox();
   const calendarBox = await page.getByRole("region", { name: "Weekly schedule" }).boundingBox();
   expect(
@@ -94,11 +94,11 @@ test("prerequisite popovers remain fully visible at desktop and narrow viewport 
     if (viewport.width < 500) {
       await page.getByRole("button", { name: "Open course search" }).click();
     }
-    await searchFor(page, "PHYS 240");
-    const trigger = page.getByRole("button", { name: "Prerequisites for PHYS 240", exact: true });
+    await searchFor(page, "PHYS 245");
+    const trigger = page.getByRole("button", { name: "Prerequisites for PHYS 245", exact: true });
     await trigger.scrollIntoViewIfNeeded();
     await trigger.click();
-    const popover = page.getByRole("dialog", { name: "Prerequisites for PHYS 240" });
+    const popover = page.getByRole("dialog", { name: "Prerequisites for PHYS 245" });
     await expect(popover).toBeVisible();
     await expectFullyVisibleInViewport(popover);
     await popover.getByRole("button", { name: "Close prerequisites" }).click();
@@ -120,8 +120,8 @@ test("dragging a scheduled course details surface onto the week adds its officia
     page.getByRole("grid", { name: "Monday through Friday class schedule" }),
   );
 
-  await expect(page.getByRole("article", { name: /amst 140 section 00, wednesday, 8:40 am to 10:00 am/i })).toBeVisible();
-  await expect(page.getByRole("article", { name: /amst 140 section 00, friday, 8:40 am to 10:00 am/i })).toBeVisible();
+  await expect(page.getByRole("article", { name: /amst 140 section 00, wednesday, 2:10 pm to 3:30 pm/i })).toBeVisible();
+  await expect(page.getByRole("article", { name: /amst 140 section 00, friday, 2:10 pm to 3:30 pm/i })).toBeVisible();
   await expect(page.getByRole("button", { name: "Added AMST 140", exact: true })).toBeDisabled();
 });
 
@@ -178,21 +178,21 @@ test("overlapping sections remain visible with conflict cues and Remove restores
 
 test("untimed sections keep prerequisites but cannot be clicked or dragged into the calendar", async ({ page }) => {
   await page.goto("/");
-  await searchFor(page, "AMST 497Y");
+  await searchFor(page, "ANTH 498");
 
   await expect(page.getByText("Time unavailable", { exact: true })).toBeVisible();
-  await expect(page.getByRole("button", { name: "Add AMST 497Y", exact: true })).toBeDisabled();
-  const untimedCard = page.locator('[data-section-number="00"]').filter({ hasText: "AMST 497Y" });
+  await expect(page.getByRole("button", { name: "Add ANTH 498", exact: true })).toBeDisabled();
+  const untimedCard = page.locator('[data-section-number="00"]').filter({ hasText: "ANTH 498" });
   await expect(untimedCard).not.toHaveAttribute("data-drag-enabled");
   await expect(untimedCard.locator(".course-card__details")).toHaveAttribute("tabindex", "-1");
-  await page.getByRole("button", { name: "Prerequisites for AMST 497Y", exact: true }).click();
-  await expect(page.getByRole("dialog", { name: "Prerequisites for AMST 497Y" })).toBeVisible();
+  await page.getByRole("button", { name: "Prerequisites for ANTH 498", exact: true }).click();
+  await expect(page.getByRole("dialog", { name: "Prerequisites for ANTH 498" })).toBeVisible();
   await expect(page.locator(".weekly-calendar__event")).toHaveCount(0);
 });
 
 test("search, prerequisites, Add, conflict, and Remove are keyboard operable", async ({ page }) => {
   await page.goto("/");
-  const search = page.getByRole("searchbox", { name: "Search Fall 2026 courses" });
+  const search = page.getByRole("searchbox", { name: "Search Spring 2027 courses" });
   await expect(search).toBeVisible();
   await page.keyboard.press("Tab");
   await expect(search).toBeFocused();
@@ -238,6 +238,8 @@ test("search, prerequisites, Add, conflict, and Remove are keyboard operable", a
   await page.keyboard.type("no matching course");
   await page.keyboard.press("Tab");
   await page.keyboard.press("Tab");
+  await expect(page.getByRole("link", { name: "kocaman1@kenyon.edu" })).toBeFocused();
+  await page.keyboard.press("Tab");
   await expect(page.getByRole("button", { name: "Reset week" })).toBeFocused();
   await page.keyboard.press("Tab");
   await expect(page.locator(".weekly-calendar__scroll")).toBeFocused();
@@ -255,7 +257,7 @@ test("narrow drawer traps keyboard focus and releases it when resized to desktop
 
   await page.getByRole("button", { name: "Open course search" }).click();
   const drawer = page.locator("#course-search-panel");
-  const search = page.getByRole("searchbox", { name: "Search Fall 2026 courses" });
+  const search = page.getByRole("searchbox", { name: "Search Spring 2027 courses" });
   await expect(page.getByRole("dialog", { name: "Course search drawer" })).toBeVisible();
   await expect(drawer).toBeVisible();
   await expect(search).toBeFocused();
@@ -286,6 +288,8 @@ test("narrow drawer traps keyboard focus and releases it when resized to desktop
   await expect(prerequisiteTrigger).toBeFocused();
   await page.keyboard.press("Tab");
   await page.keyboard.press("Tab");
+  await expect(page.getByRole("link", { name: "kocaman1@kenyon.edu" })).toBeFocused();
+  await page.keyboard.press("Tab");
   await expect(page.locator(".weekly-calendar__scroll")).toBeFocused();
 });
 
@@ -299,7 +303,7 @@ test("narrow viewport uses a collapsible overlay drawer and a horizontally scrol
   await openDrawer.click();
   await expect(drawer).toBeVisible();
   await expect(page.getByRole("dialog", { name: "Course search drawer" })).toBeVisible();
-  await expect(page.getByRole("searchbox", { name: "Search Fall 2026 courses" })).toBeFocused();
+  await expect(page.getByRole("searchbox", { name: "Search Spring 2027 courses" })).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(drawer).toBeHidden();
   await expect(openDrawer).toBeFocused();
@@ -335,7 +339,7 @@ test("Escape closes a nested prerequisite popover before the narrow drawer", asy
   await expect(popover).toBeHidden();
   await expect(drawer).toBeVisible();
   await expect(trigger).toBeFocused();
-  await expect(page.getByRole("searchbox", { name: "Search Fall 2026 courses" })).toHaveValue("AMST 140");
+  await expect(page.getByRole("searchbox", { name: "Search Spring 2027 courses" })).toHaveValue("AMST 140");
 
   await page.keyboard.press("Escape");
   await expect(drawer).toBeHidden();
@@ -345,7 +349,7 @@ test("Escape closes a nested prerequisite popover before the narrow drawer", asy
 test("desktop drawer focus moves to its launcher when a resize hides the drawer", async ({ page }) => {
   await page.setViewportSize({ width: 1024, height: 768 });
   await page.goto("/");
-  const search = page.getByRole("searchbox", { name: "Search Fall 2026 courses" });
+  const search = page.getByRole("searchbox", { name: "Search Spring 2027 courses" });
   await search.focus();
   await expect(search).toBeFocused();
 

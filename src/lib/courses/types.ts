@@ -34,7 +34,7 @@ export interface CourseSection extends ImportedScheduleSection {
 
 export interface CourseSnapshot {
   schemaVersion: 1;
-  term: { id: "fall-2026"; label: "Fall 2026" };
+  term: { id: "spring-2027"; label: "Spring 2027" };
   importedAt: string;
   sections: CourseSection[];
 }
@@ -50,7 +50,7 @@ export interface ScheduleRowCounts {
 
 export interface ImportReport {
   schemaVersion: 1;
-  term: "fall-2026";
+  term: "spring-2027";
   importedAt: string;
   sources: {
     schedule: { url: string; retrievedAt: string };

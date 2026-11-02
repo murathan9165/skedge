@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import snapshot from "@/data/fall-2026.json";
+import snapshot from "@/data/spring-2027.json";
 import { searchSections } from "@/lib/courses/search";
 import type { CourseSection, CourseSnapshot } from "@/lib/courses/types";
 
@@ -28,7 +28,7 @@ export function CourseSearchDrawer({
   return (
     <aside className="course-search-drawer" aria-label="Course search">
       <label className="course-search-drawer__label" htmlFor="course-search">
-        Search Fall 2026 courses
+        Search Spring 2027 courses
       </label>
       <input
         id="course-search"
@@ -56,7 +56,7 @@ export function CourseSearchDrawer({
           </div>
         </>
       ) : (
-        <p role="status">No Fall 2026 sections match &quot;{query}&quot;.</p>
+        <p role="status">No Spring 2027 sections match &quot;{query}&quot;.</p>
       )}
     </aside>
   );

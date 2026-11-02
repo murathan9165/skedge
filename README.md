@@ -1,12 +1,12 @@
 # Kenyon Class Schedule Planner
 
-An anonymous, static planner for exploring Fall 2026 Kenyon course sections in a weekly calendar. It is a planning tool only: it does not register students, change enrollment, enforce eligibility, create accounts, save schedules, or fetch live course data in the browser.
+An anonymous, static planner for exploring Spring 2027 Kenyon course sections in a weekly calendar. It is a planning tool only: it does not register students, change enrollment, enforce eligibility, create accounts, save schedules, or fetch live course data in the browser.
 
 ## Static architecture
 
 Course data is imported from official Kenyon sources and committed as a fixed snapshot. The Next.js App Router application builds that snapshot into static HTML, CSS, and JavaScript in `out/`; no runtime server or database is part of the product.
 
-The source material for the import workflow is the [Fall 2026 schedule by department](https://registrar.kenyon.edu/sep26_dept.htm), the [2026–27 course catalog](https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/), and its [course offerings index](https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/course-offerings/). Imported snapshots retain their source attribution and retrieval details.
+The source material for the import workflow is the [Spring 2027 schedule by department](https://registrar.kenyon.edu/jan27_dept.htm), the [2026–27 course catalog](https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/), and its [course offerings index](https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/course-offerings/). Imported snapshots retain their source attribution and retrieval details.
 
 ## Development
 
@@ -19,7 +19,7 @@ npm run dev
 
 ## Data workflow
 
-The data commands drive the checked-in Fall 2026 import pipeline:
+The data commands drive the checked-in Spring 2027 import pipeline:
 
 ```bash
 npm run data:import
@@ -52,23 +52,27 @@ Because launchd tracks wall-clock time, the local run follows DST correctly — 
 
 The installer copies the runner to `~/.local/bin`; edit `scripts/courses/daily-import.sh` and re-run `npm run schedule:install` to update it.
 
+When deploying this Spring 2027 rollover, re-run `npm run schedule:install` after the updated code reaches `main`. Previously installed runners still refer to the Fall 2026 importer.
+
 The CLI exits `0` when data changed, `3` when it was unchanged, and `1` on failure. It narrates on stderr and writes a JSON summary to stdout:
 
 ```bash
-npx tsx scripts/courses/import-fall-2026.ts > summary.json
+npx tsx scripts/courses/import-spring-2027.ts > summary.json
 ```
 
 ### Completeness tolerance
 
-The importer measures each scrape against the reviewed 629-section Fall 2026 baseline. Drops within tolerance — the greater of 15 sections or 2% — are accepted as ordinary cancellations and recorded as a delta in the import report. Larger drops hard-fail, since they suggest a truncated response or a source format change rather than mass cancellation.
+The importer measures each scrape against the reviewed 655-section Spring 2027 baseline. Drops within tolerance — the greater of 15 sections or 2% — are accepted as ordinary cancellations and recorded as a delta in the import report. Larger drops hard-fail, since they suggest a truncated response or a source format change rather than mass cancellation.
 
-To move the baseline deliberately, run an inspection import with `KENYON_FALL_2026_MINIMUM_SECTIONS=<reviewed-count> npm run data:import` and update the reviewed baseline in code before accepting the new artifacts.
+To move the baseline deliberately, run an inspection import with `KENYON_SPRING_2027_MINIMUM_SECTIONS=<reviewed-count> npm run data:import` and update the reviewed baseline in code before accepting the new artifacts.
 
 ### Source fetching
 
 Requests to Kenyon carry an identifying User-Agent, retry timeouts, connection errors, 429, and 5xx across three attempts with exponential backoff, and are capped at four in flight. Other 4xx responses fail immediately — a 404 is a real structural signal, not something to retry past.
 
 The registrar serves the schedule as `text/html` with no charset declaration and Windows-1252 bytes, so the importer decodes by detected charset rather than assuming UTF-8. Assuming UTF-8 corrupts accented instructor names.
+
+The Spring 2027 source spans two fixed-width tables and currently omits room columns. The parser reads both tables and derives column positions from their headers; rooms stay blank when unpublished.
 
 Firecrawl was evaluated as a fetch layer and rejected: the page is fully static, needs no JS rendering, and the per-run page volume would be prohibitive. It remains a documented fallback should Kenyon begin blocking GitHub Actions IP ranges — see `docs/plans/2026-08-06-001-feat-scheduled-course-scraper-plan.md`.
 
