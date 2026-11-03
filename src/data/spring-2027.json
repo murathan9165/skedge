@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-02T19:21:28.247Z",
+  "importedAt": "2026-11-03T18:44:01.074Z",
   "sections": [
     {
       "crn": "10369",
@@ -620,7 +620,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Westmor, T"
       ],
@@ -1025,7 +1025,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Calvin, K"
       ],
@@ -1681,7 +1681,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -1807,7 +1807,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 14,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Fahey, C"
       ],
@@ -1995,7 +1995,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -2158,7 +2158,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Gillen, C"
       ],
@@ -5975,7 +5975,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Quinn, A"
       ],
@@ -6796,7 +6796,7 @@
       }
     },
     {
-      "crn": "10025",
+      "crn": "10788",
       "subject": "HIST",
       "catalogNumber": "233",
       "sectionNumber": "00",
@@ -6970,37 +6970,6 @@
         {
           "days": [
             "R"
-          ],
-          "startTime": "19:00",
-          "endTime": "22:00",
-          "room": ""
-        }
-      ],
-      "prerequisite": {
-        "status": "known",
-        "text": "Sophomore standing.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/history/academic-program-requirements/courses-in-history/"
-      }
-    },
-    {
-      "crn": "10710",
-      "subject": "HIST",
-      "catalogNumber": "358",
-      "sectionNumber": "00",
-      "courseCode": "HIST 358",
-      "title": "Imagined India: Film & Fiction",
-      "credits": 4,
-      "permission": null,
-      "seatLimit": 12,
-      "seatsEnrolled": null,
-      "instructors": [
-        "Singer, W"
-      ],
-      "meetingStatus": "scheduled",
-      "meetings": [
-        {
-          "days": [
-            "W"
           ],
           "startTime": "19:00",
           "endTime": "22:00",
@@ -8458,7 +8427,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Limas, C"
       ],
@@ -15038,7 +15007,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Petersen, S"
       ],
@@ -15101,7 +15070,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 8,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Engell, A"
       ],
@@ -16863,7 +16832,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 35,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Dickens, L"
       ],
@@ -17027,7 +16996,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Aggarwal, A"
       ],
@@ -17288,7 +17257,7 @@
       "title": "Animal Cognition",
       "credits": 4,
       "permission": null,
-      "seatLimit": 15,
+      "seatLimit": 20,
       "seatsEnrolled": null,
       "instructors": [
         "Engell, A"
@@ -17595,7 +17564,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 10,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Murnen, S"
       ],
