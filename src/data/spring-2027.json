@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-03T18:44:01.074Z",
+  "importedAt": "2026-11-04T18:57:32.927Z",
   "sections": [
     {
       "crn": "10369",
@@ -141,7 +141,7 @@
       "title": "American Art to 1900",
       "credits": 4,
       "permission": null,
-      "seatLimit": 11,
+      "seatLimit": 2,
       "seatsEnrolled": null,
       "instructors": [
         "Porter, A"
@@ -588,7 +588,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Gallareta Cervera, T"
       ],
@@ -797,7 +797,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 2,
       "instructors": [
         "Blick, S"
       ],
@@ -895,7 +895,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Calvin, K"
       ],
@@ -960,7 +960,7 @@
       "title": "American Art to 1900",
       "credits": 4,
       "permission": null,
-      "seatLimit": 11,
+      "seatLimit": 20,
       "seatsEnrolled": null,
       "instructors": [
         "Porter, A"
@@ -1025,7 +1025,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Calvin, K"
       ],
@@ -1206,7 +1206,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Johnston, J"
       ],
@@ -1300,7 +1300,7 @@
       "title": "Sculpture as Social Practice",
       "credits": 4,
       "permission": null,
-      "seatLimit": 12,
+      "seatLimit": 9,
       "seatsEnrolled": null,
       "instructors": [
         "Ishimura, M"
@@ -1332,7 +1332,7 @@
       "title": "Film & Darkroom Photo",
       "credits": 4,
       "permission": null,
-      "seatLimit": 10,
+      "seatLimit": 4,
       "seatsEnrolled": null,
       "instructors": [
         "Hackbardt, M"
@@ -1493,7 +1493,7 @@
       "title": "Contemporary Art for Artists",
       "credits": 4,
       "permission": null,
-      "seatLimit": 10,
+      "seatLimit": 5,
       "seatsEnrolled": null,
       "instructors": [
         "Ishimura, M"
@@ -1516,16 +1516,16 @@
       }
     },
     {
-      "crn": "10561",
+      "crn": "10789",
       "subject": "ARTS",
-      "catalogNumber": "480",
+      "catalogNumber": "481",
       "sectionNumber": "01",
-      "courseCode": "ARTS 480",
+      "courseCode": "ARTS 481",
       "title": "Advanced Studio",
       "credits": 4,
       "permission": "PI",
       "seatLimit": 14,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Hill, C"
       ],
@@ -1544,16 +1544,16 @@
       ],
       "prerequisite": {
         "status": "known",
-        "text": "Senior art majors only.",
+        "text": "Prerequisite: ARTS 480. Senior art majors only.",
         "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/studio-art/academic-program-requirements/courses-in-studio-art/"
       }
     },
     {
-      "crn": "10562",
+      "crn": "10790",
       "subject": "ARTS",
-      "catalogNumber": "480",
+      "catalogNumber": "481",
       "sectionNumber": "02",
-      "courseCode": "ARTS 480",
+      "courseCode": "ARTS 481",
       "title": "Advanced Studio",
       "credits": 4,
       "permission": "PI",
@@ -1575,7 +1575,7 @@
       ],
       "prerequisite": {
         "status": "known",
-        "text": "Senior art majors only.",
+        "text": "Prerequisite: ARTS 480. Senior art majors only.",
         "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/studio-art/academic-program-requirements/courses-in-studio-art/"
       }
     },
@@ -2110,9 +2110,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: BIOL 109Y-110Y or a chemistry lab course. Prerequisite or corequisite: BIOL 238.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
+        "status": "unavailable"
       }
     },
     {
@@ -2206,9 +2204,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: BIOL 243.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
+        "status": "unavailable"
       }
     },
     {
@@ -2270,9 +2266,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: BIOL 109Y-110Y and 116. Prerequisite or corequisite: BIOL 255.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
+        "status": "unavailable"
       }
     },
     {
@@ -2333,9 +2327,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: BIOL 258D.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
+        "status": "unavailable"
       }
     },
     {
@@ -2396,9 +2388,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: BIOL 266.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
+        "status": "unavailable"
       }
     },
     {
@@ -3129,7 +3119,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 33,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Kontes, Z"
       ],
@@ -3309,7 +3299,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Davis, B"
       ],
@@ -5721,7 +5711,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Heidt, S"
       ],
@@ -5786,7 +5776,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Fernando, K"
       ],
@@ -5944,7 +5934,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Leong, M"
       ],
@@ -5975,7 +5965,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Quinn, A"
       ],
@@ -7054,7 +7044,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Kilic-Schubel, N"
       ],
@@ -7174,7 +7164,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Rivest, J"
       ],
@@ -7227,7 +7217,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Teall, A",
         "Ferenbaugh, A"
@@ -8722,7 +8712,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Dairon, P"
       ],
@@ -9611,7 +9601,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Couso Diaz, S"
       ],
@@ -14910,7 +14900,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Rudolph, L",
         "Kovach, J"
@@ -15287,7 +15277,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Lloyd, R"
       ],
@@ -15596,7 +15586,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Schumacher, B"
       ],
@@ -15628,7 +15618,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 48,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Wade, M",
         "Giblin, T"
@@ -16393,7 +16383,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -17029,7 +17019,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Jones, C"
       ],
@@ -18213,7 +18203,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Kohlman, M"
       ],
