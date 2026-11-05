@@ -1,280 +1,280 @@
 {
   "schemaVersion": 1,
   "term": "spring-2027",
-  "importedAt": "2026-11-04T18:57:32.927Z",
+  "importedAt": "2026-11-05T19:09:21.650Z",
   "sources": {
     "schedule": {
       "url": "https://registrar.kenyon.edu/jan27_dept.htm",
-      "retrievedAt": "2026-11-04T18:57:09.385Z"
+      "retrievedAt": "2026-11-05T19:08:58.768Z"
     },
     "catalogIndex": {
       "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/course-offerings/",
-      "retrievedAt": "2026-11-04T18:57:12.132Z"
+      "retrievedAt": "2026-11-05T19:08:59.038Z"
     },
     "catalogPages": [
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/african-diaspora-studies/courses-in-african-diaspora-studies/",
-        "retrievedAt": "2026-11-04T18:57:12.301Z",
+        "retrievedAt": "2026-11-05T19:08:59.620Z",
         "courseCount": 5
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/american-studies/academic-program-and-requirements/courses-in-american-studies/",
-        "retrievedAt": "2026-11-04T18:57:12.992Z",
+        "retrievedAt": "2026-11-05T19:09:02.673Z",
         "courseCount": 22
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/anthropology/academic-program-requirements/courses-in-anthropology/",
-        "retrievedAt": "2026-11-04T18:57:12.870Z",
+        "retrievedAt": "2026-11-05T19:09:02.101Z",
         "courseCount": 40
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/art-history/academic-program-requirements/courses-in-art-history/",
-        "retrievedAt": "2026-11-04T18:57:13.075Z",
+        "retrievedAt": "2026-11-05T19:09:02.143Z",
         "courseCount": 40
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/asian-and-middle-east-studies/academic-program-requirements/courses-in-asian-and-middle-east-studies/",
-        "retrievedAt": "2026-11-04T18:57:12.664Z",
+        "retrievedAt": "2026-11-05T19:08:59.758Z",
         "courseCount": 8
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/",
-        "retrievedAt": "2026-11-04T18:57:13.353Z",
-        "courseCount": 37
+        "retrievedAt": "2026-11-05T19:09:00.222Z",
+        "courseCount": 35
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/chemistry/academic-program-requirements/courses-in-chemistry/",
-        "retrievedAt": "2026-11-04T18:57:13.845Z",
+        "retrievedAt": "2026-11-05T19:09:00.612Z",
         "courseCount": 28
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/",
-        "retrievedAt": "2026-11-04T18:57:13.098Z",
+        "retrievedAt": "2026-11-05T19:09:00.708Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses/",
-        "retrievedAt": "2026-11-04T18:57:15.711Z",
+        "retrievedAt": "2026-11-05T19:09:04.466Z",
         "courseCount": 17
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses-in-latin/",
-        "retrievedAt": "2026-11-04T18:57:15.928Z",
+        "retrievedAt": "2026-11-05T19:09:04.524Z",
         "courseCount": 7
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/classics/academic-program-requirements/courses-in-greek/",
-        "retrievedAt": "2026-11-04T18:57:15.968Z",
+        "retrievedAt": "2026-11-05T19:09:04.598Z",
         "courseCount": 10
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/computing/academic-program-requirements/courses-in-computing/",
-        "retrievedAt": "2026-11-04T18:57:13.289Z",
+        "retrievedAt": "2026-11-05T19:09:00.839Z",
         "courseCount": 9
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/",
-        "retrievedAt": "2026-11-04T18:57:13.202Z",
+        "retrievedAt": "2026-11-05T19:09:00.935Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-dance/",
-        "retrievedAt": "2026-11-04T18:57:16.106Z",
+        "retrievedAt": "2026-11-05T19:09:04.677Z",
         "courseCount": 21
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-drama/",
-        "retrievedAt": "2026-11-04T18:57:16.181Z",
+        "retrievedAt": "2026-11-05T19:09:04.784Z",
         "courseCount": 27
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-film/",
-        "retrievedAt": "2026-11-04T18:57:16.282Z",
+        "retrievedAt": "2026-11-05T19:09:04.753Z",
         "courseCount": 20
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/dance-drama-film/academic-program-requirements/courses-in-production/",
-        "retrievedAt": "2026-11-04T18:57:16.337Z",
+        "retrievedAt": "2026-11-05T19:09:04.809Z",
         "courseCount": 3
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/economics/academic-program-requirements/courses-in-economics/",
-        "retrievedAt": "2026-11-04T18:57:13.863Z",
+        "retrievedAt": "2026-11-05T19:09:01.252Z",
         "courseCount": 40
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/english/academic-program-requirements/courses-in-english/",
-        "retrievedAt": "2026-11-04T18:57:13.902Z",
+        "retrievedAt": "2026-11-05T19:09:01.748Z",
         "courseCount": 121
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/environmental-studies/academic-program-requirements/courses-in-environmental-studies/",
-        "retrievedAt": "2026-11-04T18:57:13.559Z",
-        "courseCount": 16
+        "retrievedAt": "2026-11-05T19:09:02.039Z",
+        "courseCount": 15
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/experiential-learning/",
-        "retrievedAt": "2026-11-04T18:57:13.703Z",
+        "retrievedAt": "2026-11-05T19:09:02.170Z",
         "courseCount": 2
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/gender-sexuality-studies/academic-program-requirements/course-in-gender-sexuality-studies/",
-        "retrievedAt": "2026-11-04T18:57:13.879Z",
+        "retrievedAt": "2026-11-05T19:09:02.271Z",
         "courseCount": 14
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/history/academic-program-requirements/courses-in-history/",
-        "retrievedAt": "2026-11-04T18:57:16.399Z",
+        "retrievedAt": "2026-11-05T19:09:04.362Z",
         "courseCount": 114
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/integrated-program-in-humane-studies/academic-program-requirements/courses-in-integrated-program-in-humane-studies/",
-        "retrievedAt": "2026-11-04T18:57:14.093Z",
+        "retrievedAt": "2026-11-05T19:09:02.313Z",
         "courseCount": 10
       },
       {
         "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/interdisciplinary-courses/",
-        "retrievedAt": "2026-11-04T18:57:14.064Z",
+        "retrievedAt": "2026-11-05T19:09:02.457Z",
         "courseCount": 16
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/international-studies/academic-program-requirements/courses-in-international-studies/",
-        "retrievedAt": "2026-11-04T18:57:14.152Z",
+        "retrievedAt": "2026-11-05T19:09:02.449Z",
         "courseCount": 6
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/islamic-civilizations-cultures/courses-islamic-civilizations-cultures/",
-        "retrievedAt": "2026-11-04T18:57:14.204Z",
+        "retrievedAt": "2026-11-05T19:09:02.573Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/latine-studies/academic-program-requirements/course-listings-in-latine-studies/",
-        "retrievedAt": "2026-11-04T18:57:14.246Z",
+        "retrievedAt": "2026-11-05T19:09:02.601Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/law-society/academic-program-requirements/courses-in-law-society/",
-        "retrievedAt": "2026-11-04T18:57:14.324Z",
+        "retrievedAt": "2026-11-05T19:09:02.777Z",
         "courseCount": 6
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/",
-        "retrievedAt": "2026-11-04T18:57:14.311Z",
+        "retrievedAt": "2026-11-05T19:09:02.684Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/courses-in-mathematics/",
-        "retrievedAt": "2026-11-04T18:57:16.564Z",
+        "retrievedAt": "2026-11-05T19:09:05.020Z",
         "courseCount": 35
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/mathematics-statistics/academic-program-requirements/courses-in-statistics/",
-        "retrievedAt": "2026-11-04T18:57:16.472Z",
+        "retrievedAt": "2026-11-05T19:09:04.913Z",
         "courseCount": 9
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/",
-        "retrievedAt": "2026-11-04T18:57:14.348Z",
+        "retrievedAt": "2026-11-05T19:09:02.767Z",
         "courseCount": 0
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-american-sign-language/",
-        "retrievedAt": "2026-11-04T18:57:16.559Z",
+        "retrievedAt": "2026-11-05T19:09:04.920Z",
         "courseCount": 2
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-arabic/",
-        "retrievedAt": "2026-11-04T18:57:16.634Z",
+        "retrievedAt": "2026-11-05T19:09:05.058Z",
         "courseCount": 12
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-chinese/",
-        "retrievedAt": "2026-11-04T18:57:16.755Z",
+        "retrievedAt": "2026-11-05T19:09:05.039Z",
         "courseCount": 13
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-french/",
-        "retrievedAt": "2026-11-04T18:57:16.766Z",
+        "retrievedAt": "2026-11-05T19:09:05.300Z",
         "courseCount": 23
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-german/",
-        "retrievedAt": "2026-11-04T18:57:16.824Z",
+        "retrievedAt": "2026-11-05T19:09:05.236Z",
         "courseCount": 19
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-italian/",
-        "retrievedAt": "2026-11-04T18:57:16.913Z",
+        "retrievedAt": "2026-11-05T19:09:05.220Z",
         "courseCount": 9
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-japanese/",
-        "retrievedAt": "2026-11-04T18:57:16.930Z",
+        "retrievedAt": "2026-11-05T19:09:05.434Z",
         "courseCount": 12
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-russian/",
-        "retrievedAt": "2026-11-04T18:57:16.995Z",
+        "retrievedAt": "2026-11-05T19:09:05.499Z",
         "courseCount": 16
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-spanish/",
-        "retrievedAt": "2026-11-04T18:57:17.160Z",
+        "retrievedAt": "2026-11-05T19:09:05.614Z",
         "courseCount": 36
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/modern-languages-literatures/academic-program-requirements/courses-in-mll/",
-        "retrievedAt": "2026-11-04T18:57:17.121Z",
+        "retrievedAt": "2026-11-05T19:09:05.579Z",
         "courseCount": 7
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/music/academic-program-requirements/courses-in-music/",
-        "retrievedAt": "2026-11-04T18:57:32.861Z",
+        "retrievedAt": "2026-11-05T19:09:21.563Z",
         "courseCount": 159
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/neuroscience/academic-program-requirements/courses-in-neuroscience/",
-        "retrievedAt": "2026-11-04T18:57:14.523Z",
-        "courseCount": 25
+        "retrievedAt": "2026-11-05T19:09:03.347Z",
+        "courseCount": 21
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/philosophy/academic-program-requirements/courses-in-philosophy/",
-        "retrievedAt": "2026-11-04T18:57:14.724Z",
+        "retrievedAt": "2026-11-05T19:09:03.269Z",
         "courseCount": 46
       },
       {
         "url": "https://www.kenyon.edu/offices-and-services/registrar/kenyon-college-course-catalog/physical-education-and-health-studies/",
-        "retrievedAt": "2026-11-04T18:57:14.679Z",
+        "retrievedAt": "2026-11-05T19:09:03.407Z",
         "courseCount": 13
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/physics/academic-program-requirements/courses-in-physics/",
-        "retrievedAt": "2026-11-04T18:57:14.884Z",
+        "retrievedAt": "2026-11-05T19:09:03.547Z",
         "courseCount": 42
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/political-science/academic-program-requirements/courses-in-political-science/",
-        "retrievedAt": "2026-11-04T18:57:15.092Z",
+        "retrievedAt": "2026-11-05T19:09:03.901Z",
         "courseCount": 62
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/psychology/academic-program-requirements/courses-in-psychology/",
-        "retrievedAt": "2026-11-04T18:57:15.174Z",
+        "retrievedAt": "2026-11-05T19:09:03.877Z",
         "courseCount": 40
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/religious-studies/academic-program-requirements/courses-in-religious-studies/",
-        "retrievedAt": "2026-11-04T18:57:15.547Z",
+        "retrievedAt": "2026-11-05T19:09:04.310Z",
         "courseCount": 47
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/sociology/academic-program-requirements/courses-in-sociology/",
-        "retrievedAt": "2026-11-04T18:57:15.530Z",
+        "retrievedAt": "2026-11-05T19:09:04.260Z",
         "courseCount": 58
       },
       {
         "url": "https://www.kenyon.edu/academics/departments-and-majors/studio-art/academic-program-requirements/courses-in-studio-art/",
-        "retrievedAt": "2026-11-04T18:57:15.790Z",
+        "retrievedAt": "2026-11-05T19:09:04.539Z",
         "courseCount": 32
       }
     ]
@@ -289,12 +289,12 @@
       "summary": 44
     },
     "catalogPages": 53,
-    "catalogCourses": 1356,
+    "catalogCourses": 1349,
     "sections": 654,
     "prerequisites": {
-      "known": 472,
+      "known": 468,
       "none": 113,
-      "unavailable": 69
+      "unavailable": 73
     }
   },
   "completeness": {
@@ -381,6 +381,12 @@
       "courseCode": "BIOL 292",
       "title": "ST: Evolution Laboratory",
       "reason": "special-topic"
+    },
+    {
+      "crn": "10491",
+      "courseCode": "BIOL 385",
+      "title": "Research in Biology",
+      "reason": "catalog-course-not-found"
     },
     {
       "crn": "10736",
@@ -545,6 +551,12 @@
       "reason": "special-topic"
     },
     {
+      "crn": "10528",
+      "courseCode": "ENVS 385",
+      "title": "Research in Env Science",
+      "reason": "catalog-course-not-found"
+    },
+    {
       "crn": "10694",
       "courseCode": "GSS 481",
       "title": "Senior Colloquium",
@@ -639,6 +651,18 @@
       "courseCode": "NEUR 191",
       "title": "ST: Beauty and the Brain",
       "reason": "special-topic"
+    },
+    {
+      "crn": "10075",
+      "courseCode": "NEUR 259D",
+      "title": "Exper Neuromusc Systems",
+      "reason": "catalog-course-not-found"
+    },
+    {
+      "crn": "10080",
+      "courseCode": "NEUR 385",
+      "title": "Research in Neuroscience",
+      "reason": "catalog-course-not-found"
     },
     {
       "crn": "10716",
