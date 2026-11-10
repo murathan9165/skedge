@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-09T21:41:55.355Z",
+  "importedAt": "2026-11-10T18:58:24.750Z",
   "sections": [
     {
       "crn": "10369",
@@ -2985,7 +2985,7 @@
       "courseCode": "CHEM 372",
       "title": "Advanced Lab:Inorganic",
       "credits": 2,
-      "permission": null,
+      "permission": "PI",
       "seatLimit": 8,
       "seatsEnrolled": 6,
       "instructors": [
