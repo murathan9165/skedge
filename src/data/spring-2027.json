@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-10T18:58:24.750Z",
+  "importedAt": "2026-11-11T18:56:31.932Z",
   "sections": [
     {
       "crn": "10369",
@@ -830,7 +830,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Yi, S"
       ],
@@ -1430,7 +1430,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Warndorf, N"
       ],
@@ -2956,7 +2956,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 8,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Rouhier, K"
       ],
@@ -3835,7 +3835,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -4162,7 +4162,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 16,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 14,
       "instructors": [
         "Viccellio, B"
       ],
@@ -5805,8 +5805,8 @@
       "title": "Environmental Regionalism",
       "credits": 4,
       "permission": null,
-      "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatLimit": 19,
+      "seatsEnrolled": 8,
       "instructors": [
         "Suazo, M"
       ],
@@ -5871,7 +5871,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Jha, J"
       ],
@@ -6386,7 +6386,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Pruett, J"
       ],
@@ -6823,7 +6823,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 12,
+      "seatsEnrolled": 13,
       "instructors": [
         "Kilic-Schubel, N"
       ],
@@ -7405,7 +7405,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 22,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Levesque, C"
       ],
@@ -9100,7 +9100,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 9,
       "instructors": [
         "Hang, T"
       ],
@@ -14993,7 +14993,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 9,
       "instructors": [
         "Petersen, S"
       ],
@@ -15086,7 +15086,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 9,
       "instructors": [
         "McFarlane, H"
       ],
@@ -15366,7 +15366,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 19,
+      "seatsEnrolled": 20,
       "instructors": [
         "Richeimer, J"
       ],
@@ -16945,7 +16945,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Payne, T"
       ],
@@ -17077,7 +17077,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Stevenson, M"
       ],
@@ -17175,7 +17175,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Jones, C"
       ],
@@ -18357,7 +18357,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Theis, N"
       ],
