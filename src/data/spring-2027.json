@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-11T18:56:31.932Z",
+  "importedAt": "2026-11-12T19:16:01.640Z",
   "sections": [
     {
       "crn": "10369",
@@ -16,7 +16,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 14,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Kohlman, M"
       ],
@@ -48,7 +48,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 14,
       "instructors": [
         "Kass, H"
       ],
@@ -110,7 +110,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Porter, A"
       ],
@@ -174,7 +174,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 2,
       "instructors": [
         "Kass, H"
       ],
@@ -203,7 +203,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Powers, N"
       ],
@@ -235,7 +235,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 5,
       "instructors": [
         "Gourrier, F"
       ],
@@ -266,7 +266,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kass, H"
       ],
@@ -361,7 +361,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Gallareta Cervera, T"
       ],
@@ -458,7 +458,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Williamson, E"
       ],
@@ -491,7 +491,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 9,
       "instructors": [
         "Williamson, E"
       ],
@@ -557,7 +557,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 12,
       "instructors": [
         "Pack, S"
       ],
@@ -620,7 +620,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 12,
+      "seatsEnrolled": 15,
       "instructors": [
         "Westmor, T"
       ],
@@ -649,7 +649,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 4,
       "instructors": [
         "Williamson, E"
       ],
@@ -681,7 +681,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Pack, S"
       ],
@@ -744,7 +744,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Murphy, K"
       ],
@@ -797,7 +797,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 11,
       "instructors": [
         "Blick, S"
       ],
@@ -830,7 +830,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 10,
       "instructors": [
         "Yi, S"
       ],
@@ -863,7 +863,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 10,
       "instructors": [
         "Hostetler, B"
       ],
@@ -895,7 +895,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 12,
       "instructors": [
         "Calvin, K"
       ],
@@ -928,7 +928,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 22,
-      "seatsEnrolled": 15,
+      "seatsEnrolled": 22,
       "instructors": [
         "Calvin, K"
       ],
@@ -961,7 +961,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Porter, A"
       ],
@@ -993,7 +993,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 22,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 7,
       "instructors": [
         "Hostetler, B"
       ],
@@ -1010,9 +1010,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: any 100- or 200-level ARHS course.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/art-history/academic-program-requirements/courses-in-art-history/"
+        "status": "unavailable"
       }
     },
     {
@@ -1142,7 +1140,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1206,7 +1204,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Johnston, J"
       ],
@@ -1239,7 +1237,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Zeller, E"
       ],
@@ -1272,7 +1270,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 14,
       "instructors": [
         "Demosthene, F"
       ],
@@ -1333,7 +1331,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 4,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 8,
       "instructors": [
         "Hackbardt, M"
       ],
@@ -1365,7 +1363,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 6,
       "instructors": [
         "Demosthene, F"
       ],
@@ -1461,7 +1459,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 3,
       "instructors": [
         "Johnston, J"
       ],
@@ -1494,7 +1492,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 5,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1619,7 +1617,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Schubel, V"
       ],
@@ -1681,7 +1679,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 12,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -2028,7 +2026,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Clements, R"
       ],
@@ -2061,7 +2059,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 6,
       "instructors": [
         "Hillman, E"
       ],
@@ -2094,7 +2092,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 11,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 10,
       "instructors": [
         "Hillman, E"
       ],
@@ -2123,7 +2121,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 8,
       "instructors": [
         "Wright, N"
       ],
@@ -2156,7 +2154,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 12,
       "instructors": [
         "Gillen, C"
       ],
@@ -2188,7 +2186,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 8,
       "instructors": [
         "Gillen, C"
       ],
@@ -2217,7 +2215,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 10,
       "instructors": [
         "Hicks, K"
       ],
@@ -2250,7 +2248,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 5,
       "instructors": [
         "Hicks, K"
       ],
@@ -2279,7 +2277,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 6,
       "instructors": [
         "Petersen, S"
       ],
@@ -2311,7 +2309,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 4,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Petersen, S"
       ],
@@ -2340,7 +2338,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 12,
       "instructors": [
         "Clements, R"
       ],
@@ -2372,7 +2370,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 12,
       "instructors": [
         "Kropp, P"
       ],
@@ -2401,7 +2399,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "Tsunekage, T"
       ],
@@ -2430,7 +2428,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Fahey, C"
       ],
@@ -2462,7 +2460,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 40,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 5,
       "instructors": [
         "Fahey, C"
       ],
@@ -2513,7 +2511,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 45,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 2,
       "instructors": [
         "Keller, J"
       ],
@@ -2546,7 +2544,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 45,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 6,
       "instructors": [
         "Keller, J"
       ],
@@ -2610,7 +2608,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Garcia, S"
       ],
@@ -2766,7 +2764,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 9,
       "instructors": [
         "Hunsen, M"
       ],
@@ -2798,7 +2796,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 5,
       "instructors": [
         "Deifel, N"
       ],
@@ -2829,7 +2827,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Hunter, N"
       ],
@@ -2860,7 +2858,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 5,
       "instructors": [
         "Deifel, N"
       ],
@@ -2891,7 +2889,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 45,
-      "seatsEnrolled": 18,
+      "seatsEnrolled": 29,
       "instructors": [
         "Rouhier, K"
       ],
@@ -2924,7 +2922,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 7,
       "instructors": [
         "Deifel, N"
       ],
@@ -2956,7 +2954,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 8,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Rouhier, K"
       ],
@@ -3003,9 +3001,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: CHEM 234.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/chemistry/academic-program-requirements/courses-in-chemistry/"
+        "status": "unavailable"
       }
     },
     {
@@ -3084,7 +3080,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 33,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 11,
       "instructors": [
         "Myers, M"
       ],
@@ -3117,7 +3113,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 33,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kontes, Z"
       ],
@@ -3149,7 +3145,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hahnemann, C"
       ],
@@ -3181,7 +3177,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Davis, B"
       ],
@@ -3266,7 +3262,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Davis, B"
       ],
@@ -3297,7 +3293,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Davis, B"
       ],
@@ -3424,7 +3420,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kontes, Z"
       ],
@@ -3454,7 +3450,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Skon, J"
       ],
@@ -3486,7 +3482,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Oliveira, L"
       ],
@@ -3517,7 +3513,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Howley, I"
       ],
@@ -3549,7 +3545,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Cain, E"
       ],
@@ -3643,7 +3639,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Radella Feller, K"
       ],
@@ -3675,7 +3671,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Radella Feller, K"
       ],
@@ -3707,7 +3703,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Harris, I"
       ],
@@ -3739,7 +3735,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Harris, I"
       ],
@@ -3771,7 +3767,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Radella Feller, K"
       ],
@@ -3803,7 +3799,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -3835,7 +3831,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Craig-Quijada, B"
       ],
@@ -3867,7 +3863,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 10,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Brodie, J"
       ],
@@ -3973,7 +3969,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 14,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Dudley, A"
       ],
@@ -4004,7 +4000,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 10,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Dudley, A"
       ],
@@ -4068,7 +4064,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Wolf, R"
       ],
@@ -4130,7 +4126,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Viccellio, B"
       ],
@@ -4162,7 +4158,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 16,
-      "seatsEnrolled": 14,
+      "seatsEnrolled": 15,
       "instructors": [
         "Viccellio, B"
       ],
@@ -4194,7 +4190,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Silverman, F"
       ],
@@ -4226,7 +4222,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 14,
       "instructors": [
         "Silverman, F"
       ],
@@ -4257,7 +4253,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Tazewell, J"
       ],
@@ -4320,7 +4316,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Sherman, J"
       ],
@@ -4473,7 +4469,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Kolliner, D"
       ],
@@ -4570,7 +4566,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Glandon, P"
       ],
@@ -4603,7 +4599,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Glandon, P"
       ],
@@ -4669,7 +4665,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 14,
       "instructors": [
         "Black, K"
       ],
@@ -4702,7 +4698,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 14,
+      "seatsEnrolled": 25,
       "instructors": [
         "Shakya, K"
       ],
@@ -4734,7 +4730,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "An, G"
       ],
@@ -4764,9 +4760,9 @@
       "courseCode": "ECON 360",
       "title": "Game Theory",
       "credits": 4,
-      "permission": null,
+      "permission": "PI",
       "seatLimit": 25,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 25,
       "instructors": [
         "Corrigan, J"
       ],
@@ -4799,7 +4795,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 8,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "An, G"
       ],
@@ -4829,9 +4825,9 @@
       "courseCode": "ECON 470",
       "title": "Behavioral Public Policy Sem",
       "credits": 4,
-      "permission": null,
+      "permission": "PI",
       "seatLimit": 8,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 8,
       "instructors": [
         "Corrigan, J"
       ],
@@ -4863,7 +4859,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 8,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Black, K"
       ],
@@ -4895,7 +4891,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 8,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 8,
       "instructors": [
         "Rendell, L"
       ],
@@ -5023,7 +5019,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Parssinen, K"
       ],
@@ -5113,7 +5109,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Grace, A"
       ],
@@ -5142,7 +5138,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Leong, M"
       ],
@@ -5171,7 +5167,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 4,
       "instructors": [
         "Parssinen, K"
       ],
@@ -5234,7 +5230,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Matz, J"
       ],
@@ -5615,7 +5611,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Arocho Hernandez, N"
       ],
@@ -5646,7 +5642,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "Warren, H"
       ],
@@ -5677,7 +5673,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 13,
       "instructors": [
         "O'Neill, R"
       ],
@@ -5742,7 +5738,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 16,
       "instructors": [
         "Fernando, K"
       ],
@@ -5774,7 +5770,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 5,
       "instructors": [
         "Fernando, K"
       ],
@@ -5806,7 +5802,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 19,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 14,
       "instructors": [
         "Suazo, M"
       ],
@@ -5839,7 +5835,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 17,
+      "seatsEnrolled": 20,
       "instructors": [
         "Schoenfeld, J"
       ],
@@ -5871,7 +5867,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 8,
       "instructors": [
         "Jha, J"
       ],
@@ -5902,7 +5898,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 7,
       "instructors": [
         "Nath, M"
       ],
@@ -5994,7 +5990,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 9,
       "instructors": [
         "Matz, J"
       ],
@@ -6077,7 +6073,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 11,
       "instructors": [
         "Holdener, E"
       ],
@@ -6108,7 +6104,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 7,
       "instructors": [
         "Heindel, R"
       ],
@@ -6141,7 +6137,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Gray, R"
       ],
@@ -6174,7 +6170,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 13,
       "instructors": [
         "Gray, R"
       ],
@@ -6204,7 +6200,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Gray, R"
       ],
@@ -6236,7 +6232,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Shakya, K"
       ],
@@ -6268,7 +6264,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Shakya, K"
       ],
@@ -6353,7 +6349,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Jones, C"
       ],
@@ -6386,7 +6382,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Pruett, J"
       ],
@@ -6418,7 +6414,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 12,
       "instructors": [
         "Pruett, J"
       ],
@@ -6531,7 +6527,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Franco, R"
       ],
@@ -6563,7 +6559,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 7,
       "instructors": [
         "Novikoff, A"
       ],
@@ -6595,7 +6591,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Ehrenfreund, M"
       ],
@@ -6628,7 +6624,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 11,
       "instructors": [
         "Volz, S"
       ],
@@ -6661,7 +6657,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 8,
       "instructors": [
         "Li, L"
       ],
@@ -6694,7 +6690,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 10,
       "instructors": [
         "McNair, G"
       ],
@@ -6726,7 +6722,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 13,
       "instructors": [
         "Bottiger, P"
       ],
@@ -6791,7 +6787,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 9,
       "instructors": [
         "Ablovatski, E"
       ],
@@ -6823,7 +6819,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 18,
       "instructors": [
         "Kilic-Schubel, N"
       ],
@@ -6885,7 +6881,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Franco, R"
       ],
@@ -6947,7 +6943,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Novak, R"
       ],
@@ -6978,7 +6974,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 2,
       "instructors": [
         "Bottiger, P"
       ],
@@ -7009,7 +7005,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 7,
       "instructors": [
         "Coulibaly, S"
       ],
@@ -7071,7 +7067,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Li, L"
       ],
@@ -7100,7 +7096,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Buxton, H"
       ],
@@ -7129,7 +7125,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 6,
       "instructors": [
         "McNair, G"
       ],
@@ -7160,7 +7156,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Rivest, J"
       ],
@@ -7213,7 +7209,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Teall, A",
         "Ferenbaugh, A"
@@ -7350,7 +7346,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 12,
       "instructors": [
         "Elkins, K",
         "Chun, J"
@@ -7405,7 +7401,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 22,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 11,
       "instructors": [
         "Levesque, C"
       ],
@@ -7437,7 +7433,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 10,
       "instructors": [
         "Levesque, C"
       ],
@@ -7468,7 +7464,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Gee, M"
       ],
@@ -7600,7 +7596,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Edwards, D"
       ],
@@ -7633,7 +7629,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Aydin, N"
       ],
@@ -7666,7 +7662,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Milnikel, B"
       ],
@@ -7699,7 +7695,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Edwards, D"
       ],
@@ -7732,7 +7728,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Jones, B"
       ],
@@ -7765,7 +7761,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 6,
       "instructors": [
         "Milnikel, B"
       ],
@@ -7798,7 +7794,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Weeks, E"
       ],
@@ -7830,7 +7826,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Edwards, D"
       ],
@@ -7860,7 +7856,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Snipes, M"
       ],
@@ -7893,7 +7889,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Gee, M"
       ],
@@ -7981,7 +7977,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 10,
       "instructors": [
         "Leatherman, E"
       ],
@@ -8014,7 +8010,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Snipes, M"
       ],
@@ -8047,7 +8043,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "Hartlaub, B"
       ],
@@ -8080,7 +8076,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Leatherman, E"
       ],
@@ -8113,7 +8109,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 6,
       "instructors": [
         "Hartlaub, B"
       ],
@@ -8146,7 +8142,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 17,
       "instructors": [
         "Hartlaub, B"
       ],
@@ -8179,7 +8175,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Snipes, M"
       ],
@@ -8209,7 +8205,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 6,
       "instructors": [
         "Jones, B"
       ],
@@ -8349,7 +8345,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Sadek, R"
       ],
@@ -8380,7 +8376,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Carter, P"
       ],
@@ -8528,7 +8524,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Sun, C"
       ],
@@ -8740,7 +8736,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Guiney, M"
       ],
@@ -8847,7 +8843,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Riegert, L"
       ],
@@ -9100,7 +9096,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 11,
       "instructors": [
         "Hang, T"
       ],
@@ -9130,7 +9126,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Malone, M"
       ],
@@ -9159,7 +9155,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hedeen, K"
       ],
@@ -9280,7 +9276,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 8,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Aydinyan, A"
       ],
@@ -9502,7 +9498,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 3,
       "instructors": [
         "Sierra, M"
       ],
@@ -9533,7 +9529,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hartnett, D"
       ],
@@ -9564,7 +9560,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 10,
       "instructors": [
         "del Río Arrillaga, D"
       ],
@@ -9597,7 +9593,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 15,
       "instructors": [
         "Couso Diaz, S"
       ],
@@ -9629,7 +9625,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Sanders, R"
       ],
@@ -10878,7 +10874,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Buehrer, T"
       ],
@@ -14896,7 +14892,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 8,
       "instructors": [
         "Rudolph, L",
         "Kovach, J"
@@ -14961,7 +14957,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "White, A"
       ],
@@ -14993,7 +14989,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 10,
       "instructors": [
         "Petersen, S"
       ],
@@ -15086,7 +15082,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 12,
       "instructors": [
         "McFarlane, H"
       ],
@@ -15204,7 +15200,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Bradner, A"
       ],
@@ -15236,7 +15232,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 9,
       "instructors": [
         "Lloyd, R"
       ],
@@ -15269,7 +15265,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 9,
       "instructors": [
         "Lloyd, R"
       ],
@@ -15301,7 +15297,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Lottenbach, H"
       ],
@@ -15334,7 +15330,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 8,
       "instructors": [
         "DePascuale, J"
       ],
@@ -15366,7 +15362,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 20,
+      "seatsEnrolled": 19,
       "instructors": [
         "Richeimer, J"
       ],
@@ -15399,7 +15395,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Lottenbach, H"
       ],
@@ -15431,7 +15427,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Bradner, A"
       ],
@@ -15525,7 +15521,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Lloyd, R"
       ],
@@ -15578,7 +15574,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 17,
+      "seatsEnrolled": 19,
       "instructors": [
         "Schumacher, B"
       ],
@@ -15610,7 +15606,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 48,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 8,
       "instructors": [
         "Wade, M",
         "Giblin, T"
@@ -15644,7 +15640,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 16,
       "instructors": [
         "Holdener, E"
       ],
@@ -15676,7 +15672,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 48,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 14,
       "instructors": [
         "Wade, L"
       ],
@@ -15709,7 +15705,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 8,
       "instructors": [
         "Giblin, T"
       ],
@@ -15740,7 +15736,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Schumacher, B"
       ],
@@ -15771,7 +15767,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "Peiris, F"
       ],
@@ -16007,7 +16003,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 8,
       "instructors": [
         "Schumacher, B"
       ],
@@ -16040,7 +16036,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 6,
       "instructors": [
         "Reinhard, A"
       ],
@@ -16073,7 +16069,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 7,
       "instructors": [
         "Peiris, F",
         "Reinhard, A"
@@ -16105,7 +16101,7 @@
       "credits": 2,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 6,
       "instructors": [
         "Peiris, F",
         "Reinhard, A"
@@ -16342,7 +16338,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "Puerzer, C"
       ],
@@ -16375,7 +16371,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 5,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -16408,7 +16404,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 3,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -16441,7 +16437,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Camerra-Rowe, P"
       ],
@@ -16507,7 +16503,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 4,
       "instructors": [
         "McAllister, J"
       ],
@@ -16539,7 +16535,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 11,
       "instructors": [
         "Puerzer, C"
       ],
@@ -16571,7 +16567,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 5,
       "instructors": [
         "Klesner, J"
       ],
@@ -16603,7 +16599,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 12,
       "instructors": [
         "Powers, N"
       ],
@@ -16635,7 +16631,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 13,
       "instructors": [
         "Rowe, D"
       ],
@@ -16667,7 +16663,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 15,
+      "seatsEnrolled": 19,
       "instructors": [
         "Leibowitz, D"
       ],
@@ -16698,7 +16694,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 13,
       "instructors": [
         "Camerra-Rowe, P"
       ],
@@ -16760,7 +16756,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 15,
       "instructors": [
         "McAllister, J"
       ],
@@ -16814,7 +16810,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 35,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Dickens, L"
       ],
@@ -16847,7 +16843,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 35,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Ewell, P"
       ],
@@ -16880,7 +16876,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 35,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Dickens, L"
       ],
@@ -16913,7 +16909,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Krieg, D"
       ],
@@ -16978,7 +16974,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 16,
       "instructors": [
         "Aggarwal, A"
       ],
@@ -17011,7 +17007,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 10,
       "instructors": [
         "Jones, C"
       ],
@@ -17044,7 +17040,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 5,
       "instructors": [
         "Ewell, P"
       ],
@@ -17077,7 +17073,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 14,
       "instructors": [
         "Stevenson, M"
       ],
@@ -17110,7 +17106,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 8,
       "instructors": [
         "Murnen, S"
       ],
@@ -17142,7 +17138,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 2,
       "instructors": [
         "Ewell, P"
       ],
@@ -17175,7 +17171,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Jones, C"
       ],
@@ -17208,7 +17204,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 3,
       "instructors": [
         "Aggarwal, A"
       ],
@@ -17240,7 +17236,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 7,
       "instructors": [
         "Engell, A"
       ],
@@ -17272,7 +17268,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 15,
       "instructors": [
         "Millin-Lipnos, P"
       ],
@@ -17304,7 +17300,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Payne, T"
       ],
@@ -17337,7 +17333,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 6,
       "instructors": [
         "Engell, A"
       ],
@@ -17369,7 +17365,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 12,
       "instructors": [
         "Aggarwal, A"
       ],
@@ -17399,7 +17395,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 10,
       "instructors": [
         "Stevenson, M"
       ],
@@ -17431,7 +17427,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Jones, C"
       ],
@@ -17632,7 +17628,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 7,
       "instructors": [
         "Brennan, J"
       ],
@@ -17697,7 +17693,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 10,
       "instructors": [
         "Tetenbaum, N"
       ],
@@ -17729,7 +17725,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Tetenbaum, N"
       ],
@@ -17761,7 +17757,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Brennan, J"
       ],
@@ -17793,7 +17789,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 12,
       "instructors": [
         "Maldonado Rivera, D"
       ],
@@ -17825,7 +17821,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Rocklin, A"
       ],
@@ -17858,7 +17854,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 11,
       "instructors": [
         "Brennan, J"
       ],
@@ -17889,7 +17885,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Schubel, V"
       ],
@@ -17920,7 +17916,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 7,
       "instructors": [
         "Tetenbaum, N"
       ],
@@ -17949,7 +17945,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 8,
+      "seatsEnrolled": 11,
       "instructors": [
         "Maldonado Rivera, D"
       ],
@@ -17980,7 +17976,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 14,
+      "seatsEnrolled": 15,
       "instructors": [
         "Rocklin, A"
       ],
@@ -18012,7 +18008,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Schubel, V"
       ],
@@ -18063,7 +18059,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 8,
       "instructors": [
         "Theis, N"
       ],
@@ -18162,7 +18158,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Raza, S"
       ],
@@ -18195,7 +18191,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kohlman, M"
       ],
@@ -18227,7 +18223,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 9,
       "instructors": [
         "Cottingham, M"
       ],
@@ -18260,7 +18256,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 14,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 7,
       "instructors": [
         "Kohlman, M"
       ],
@@ -18292,7 +18288,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 3,
       "instructors": [
         "Raza, S"
       ],
@@ -18324,7 +18320,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 5,
       "instructors": [
         "Villegas, C"
       ],
@@ -18357,7 +18353,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 4,
       "instructors": [
         "Theis, N"
       ],
@@ -18390,7 +18386,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 4,
       "instructors": [
         "Jones, C"
       ],
@@ -18423,7 +18419,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 8,
       "instructors": [
         "Raza, S"
       ],
@@ -18454,7 +18450,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 5,
       "instructors": [
         "Cottingham, M"
       ],
@@ -18486,7 +18482,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Levesque, C"
       ],
@@ -18518,7 +18514,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 10,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Villegas, C"
       ],
