@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-14T17:24:24.527Z",
+  "importedAt": "2026-11-16T21:19:53.249Z",
   "sections": [
     {
       "crn": "10369",
@@ -328,7 +328,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Murphy, K"
       ],
@@ -524,7 +524,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Hardy, B"
       ],
@@ -1140,7 +1140,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 9,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Ishimura, M"
       ],
@@ -1867,7 +1867,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 14,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -2108,7 +2108,9 @@
         }
       ],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y-110Y or a chemistry lab course. Prerequisite or corequisite: BIOL 238.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
       }
     },
     {
@@ -2202,7 +2204,9 @@
         }
       ],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: BIOL 243.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
       }
     },
     {
@@ -2264,7 +2268,9 @@
         }
       ],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y-110Y and 116. Prerequisite or corequisite: BIOL 255.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
       }
     },
     {
@@ -2309,7 +2315,7 @@
       "credits": 2,
       "permission": "PI",
       "seatLimit": 4,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 1,
       "instructors": [
         "Petersen, S"
       ],
@@ -2325,7 +2331,9 @@
         }
       ],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: BIOL 258D.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
       }
     },
     {
@@ -2467,7 +2475,9 @@
       "meetingStatus": "time-unavailable",
       "meetings": [],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y–110Y and 116 and permission of instructor.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/biology/academic-program-requirements/courses-in-biology/"
       }
     },
     {
@@ -3080,7 +3090,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 33,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Myers, M"
       ],
@@ -3356,7 +3366,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 22,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Kontes, Z"
       ],
@@ -4253,7 +4263,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Tazewell, J"
       ],
@@ -4285,7 +4295,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 18,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Sherman, J"
       ],
@@ -4316,7 +4326,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Sherman, J"
       ],
@@ -4566,7 +4576,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Glandon, P"
       ],
@@ -6559,7 +6569,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 10,
       "instructors": [
         "Novikoff, A"
       ],
@@ -6787,7 +6797,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Ablovatski, E"
       ],
@@ -6912,7 +6922,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Ablovatski, E"
       ],
@@ -7314,7 +7324,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 30,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Novikoff, A",
         "Leibowitz, L"
@@ -7977,7 +7987,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Leatherman, E"
       ],
@@ -8409,7 +8419,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Limas, C"
       ],
@@ -8450,7 +8460,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Wu, Y"
       ],
@@ -8556,7 +8566,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Guiney, M"
       ],
@@ -9094,8 +9104,8 @@
       "courseCode": "JAPN 291",
       "title": "ST: Japan Warrior Tales (Engl)",
       "credits": 4,
-      "permission": null,
-      "seatLimit": 15,
+      "permission": "PI",
+      "seatLimit": 18,
       "seatsEnrolled": 12,
       "instructors": [
         "Hang, T"
@@ -9309,7 +9319,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Sierra, M"
       ],
@@ -9350,7 +9360,7 @@
       "credits": 6,
       "permission": "PI",
       "seatLimit": 18,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Hartnett, D"
       ],
@@ -9529,7 +9539,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 3,
       "instructors": [
         "Hartnett, D"
       ],
@@ -9591,7 +9601,7 @@
       "courseCode": "SPAN 340",
       "title": "Latin American Cinema",
       "credits": 4,
-      "permission": null,
+      "permission": "PI",
       "seatLimit": 15,
       "seatsEnrolled": 15,
       "instructors": [
@@ -9657,7 +9667,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 27,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Buehrer, T"
       ],
@@ -14957,7 +14967,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "White, A"
       ],
@@ -15574,7 +15584,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 22,
+      "seatsEnrolled": 23,
       "instructors": [
         "Schumacher, B"
       ],
@@ -15796,7 +15806,7 @@
       "courseCode": "PHYS 145",
       "title": "Modern Physics",
       "credits": 4,
-      "permission": "PI",
+      "permission": null,
       "seatLimit": 48,
       "seatsEnrolled": 1,
       "instructors": [
@@ -15829,7 +15839,7 @@
       "courseCode": "PHYS 146",
       "title": "Modern Physics Lab",
       "credits": 2,
-      "permission": "PI",
+      "permission": null,
       "seatLimit": 14,
       "seatsEnrolled": null,
       "instructors": [
@@ -15860,7 +15870,7 @@
       "courseCode": "PHYS 146",
       "title": "Modern Physics Lab",
       "credits": 2,
-      "permission": "PI",
+      "permission": null,
       "seatLimit": 14,
       "seatsEnrolled": 1,
       "instructors": [
@@ -16503,7 +16513,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 8,
       "instructors": [
         "McAllister, J"
       ],
@@ -16599,7 +16609,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 14,
       "instructors": [
         "Powers, N"
       ],
@@ -16631,7 +16641,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 14,
+      "seatsEnrolled": 13,
       "instructors": [
         "Rowe, D"
       ],
@@ -16909,7 +16919,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Krieg, D"
       ],
@@ -16941,7 +16951,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 2,
+      "seatsEnrolled": 4,
       "instructors": [
         "Payne, T"
       ],
@@ -17138,7 +17148,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 15,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Ewell, P"
       ],
@@ -17235,7 +17245,7 @@
       "title": "Animal Cognition",
       "credits": 4,
       "permission": null,
-      "seatLimit": 20,
+      "seatLimit": 15,
       "seatsEnrolled": 8,
       "instructors": [
         "Engell, A"
@@ -17628,7 +17638,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 8,
       "instructors": [
         "Brennan, J"
       ],
@@ -18008,7 +18018,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 6,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 5,
       "instructors": [
         "Schubel, V"
       ],
@@ -18223,7 +18233,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 10,
       "instructors": [
         "Cottingham, M"
       ],
@@ -18353,7 +18363,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 4,
       "instructors": [
         "Theis, N"
       ],
