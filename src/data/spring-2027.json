@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-16T21:19:53.249Z",
+  "importedAt": "2026-11-17T20:09:01.519Z",
   "sections": [
     {
       "crn": "10369",
@@ -863,7 +863,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 28,
-      "seatsEnrolled": 10,
+      "seatsEnrolled": 11,
       "instructors": [
         "Hostetler, B"
       ],
@@ -1139,7 +1139,7 @@
       "title": "Sculpture I",
       "credits": 4,
       "permission": null,
-      "seatLimit": 9,
+      "seatLimit": 8,
       "seatsEnrolled": 4,
       "instructors": [
         "Ishimura, M"
@@ -1679,7 +1679,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 14,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -3460,7 +3460,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Skon, J"
       ],
@@ -4642,7 +4642,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Glandon, P"
       ],
@@ -4675,7 +4675,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 16,
+      "seatsEnrolled": 17,
       "instructors": [
         "Black, K"
       ],
@@ -5206,7 +5206,7 @@
       "title": "Texting: Reading like an Eng M",
       "credits": 4,
       "permission": null,
-      "seatLimit": 18,
+      "seatLimit": 14,
       "seatsEnrolled": null,
       "instructors": [
         "Lobanov-Rostovsky, S"
@@ -5271,7 +5271,7 @@
       "title": "Shakespeare",
       "credits": 4,
       "permission": null,
-      "seatLimit": 18,
+      "seatLimit": 17,
       "seatsEnrolled": null,
       "instructors": [
         "Lobanov-Rostovsky, S"
@@ -6242,7 +6242,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Shakya, K"
       ],
@@ -7954,7 +7954,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Leatherman, E"
       ],
@@ -8086,7 +8086,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 9,
+      "seatsEnrolled": 10,
       "instructors": [
         "Leatherman, E"
       ],
@@ -15242,7 +15242,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Lloyd, R"
       ],
@@ -16577,7 +16577,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 6,
+      "seatsEnrolled": 7,
       "instructors": [
         "Klesner, J"
       ],
@@ -17925,7 +17925,7 @@
       "title": "ST:Jews&Muslims:Cont thru ages",
       "credits": 4,
       "permission": null,
-      "seatLimit": 12,
+      "seatLimit": 15,
       "seatsEnrolled": 8,
       "instructors": [
         "Tetenbaum, N"
