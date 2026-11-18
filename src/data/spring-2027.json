@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-17T20:09:01.519Z",
+  "importedAt": "2026-11-18T19:41:14.904Z",
   "sections": [
     {
       "crn": "10369",
@@ -1679,7 +1679,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 30,
-      "seatsEnrolled": 14,
+      "seatsEnrolled": 15,
       "instructors": [
         "Moyer-Horner, L"
       ],
@@ -2586,7 +2586,7 @@
       "title": "Introductory Chemistry Lab II",
       "credits": 2,
       "permission": null,
-      "seatLimit": 16,
+      "seatLimit": 15,
       "seatsEnrolled": null,
       "instructors": [
         "Garcia, S"
@@ -2617,7 +2617,7 @@
       "title": "Introductory Chemistry Lab II",
       "credits": 2,
       "permission": null,
-      "seatLimit": 16,
+      "seatLimit": 15,
       "seatsEnrolled": 1,
       "instructors": [
         "Garcia, S"
@@ -2648,7 +2648,7 @@
       "title": "Introductory Chemistry Lab II",
       "credits": 2,
       "permission": null,
-      "seatLimit": 16,
+      "seatLimit": 15,
       "seatsEnrolled": null,
       "instructors": [
         "Keller, J"
@@ -2679,7 +2679,7 @@
       "title": "Introductory Chemistry Lab II",
       "credits": 2,
       "permission": null,
-      "seatLimit": 16,
+      "seatLimit": 15,
       "seatsEnrolled": null,
       "instructors": [
         "Oliveira, L"
@@ -3187,7 +3187,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 16,
-      "seatsEnrolled": 7,
+      "seatsEnrolled": 8,
       "instructors": [
         "Davis, B"
       ],
@@ -4512,7 +4512,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 1,
+      "seatsEnrolled": 2,
       "instructors": [
         "Rendell, L"
       ],
@@ -6667,7 +6667,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": 11,
+      "seatsEnrolled": 12,
       "instructors": [
         "Li, L"
       ],
@@ -6922,7 +6922,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
-      "seatsEnrolled": 5,
+      "seatsEnrolled": 6,
       "instructors": [
         "Ablovatski, E"
       ],
@@ -6984,7 +6984,7 @@
       "credits": 4,
       "permission": "PI",
       "seatLimit": 15,
-      "seatsEnrolled": 3,
+      "seatsEnrolled": 4,
       "instructors": [
         "Bottiger, P"
       ],
@@ -7249,7 +7249,7 @@
       "credits": 1,
       "permission": "PI",
       "seatLimit": 30,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Bottiger, P",
         "Novotny, C"
@@ -7987,7 +7987,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 12,
+      "seatsEnrolled": 13,
       "instructors": [
         "Leatherman, E"
       ],
@@ -15047,7 +15047,9 @@
         }
       ],
       "prerequisite": {
-        "status": "unavailable"
+        "status": "known",
+        "text": "Prerequisite: BIOL 109Y-110Y. Prerequisite or corequisite: NEUR 258D.",
+        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/neuroscience/academic-program-requirements/courses-in-neuroscience/"
       }
     },
     {
@@ -15584,7 +15586,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 24,
-      "seatsEnrolled": 23,
+      "seatsEnrolled": 24,
       "instructors": [
         "Schumacher, B"
       ],
@@ -16414,7 +16416,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 4,
+      "seatsEnrolled": 5,
       "instructors": [
         "Spiekerman, T"
       ],
@@ -16641,7 +16643,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 25,
-      "seatsEnrolled": 13,
+      "seatsEnrolled": 14,
       "instructors": [
         "Rowe, D"
       ],
@@ -18135,7 +18137,7 @@
       "credits": 4,
       "permission": null,
       "seatLimit": 20,
-      "seatsEnrolled": null,
+      "seatsEnrolled": 1,
       "instructors": [
         "Jones, C"
       ],
