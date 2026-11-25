@@ -4,7 +4,7 @@
     "id": "spring-2027",
     "label": "Spring 2027"
   },
-  "importedAt": "2026-11-23T22:59:12.906Z",
+  "importedAt": "2026-11-25T20:46:04.513Z",
   "sections": [
     {
       "crn": "10369",
@@ -1198,7 +1198,7 @@
       "catalogNumber": "107",
       "sectionNumber": "00",
       "courseCode": "ARTS 107",
-      "title": "Digital Imaging",
+      "title": "Media Art:Anamatio,Video&Sound",
       "credits": 4,
       "permission": null,
       "seatLimit": 12,
@@ -1220,9 +1220,7 @@
         }
       ],
       "prerequisite": {
-        "status": "none",
-        "text": "No prerequisite.",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/studio-art/academic-program-requirements/courses-in-studio-art/"
+        "status": "unavailable"
       }
     },
     {
@@ -7372,9 +7370,7 @@
         }
       ],
       "prerequisite": {
-        "status": "known",
-        "text": "Prerequisite: COMP 118, IPHS 200 or IPHS 391 (fall 2025).",
-        "sourceUrl": "https://www.kenyon.edu/academics/departments-and-majors/integrated-program-in-humane-studies/academic-program-requirements/courses-in-integrated-program-in-humane-studies/"
+        "status": "unavailable"
       }
     },
     {
